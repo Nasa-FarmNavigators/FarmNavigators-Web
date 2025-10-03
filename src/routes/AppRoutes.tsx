@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import SignIn from "../pages/AuthPages/SignIn";
+import Login from "../pages/Login";
 import NGODashboard from "../pages/NGODashboard";
 import Admin from "../pages/Admin";
 import NotFound from "../pages/NotFound";
@@ -21,7 +21,8 @@ const AppRoutes = () => {
       <Route path="/serious-game" element={<SeriousGameDemo />} />
       <Route path="/old-landing" element={<RedirectToHTML />} />
       <Route path="/teste" element={<Home />} />
-      <Route path="/signin" element={<SignIn />} />
+      <Route path="/signin" element={<Login />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/videos" element={<VideoPublicList />} />
       
       {/* Rotas de Admin - Para administradores da plataforma */}

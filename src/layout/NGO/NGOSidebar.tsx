@@ -19,10 +19,10 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { name: "Dashboard", path: "/ngo", icon: <FaHome /> },
-  { name: "Mapa das Fazendas", path: "/ngo/farm-map", icon: <FaMap /> },
-  { name: "Agricultores", path: "/ngo/farmers", icon: <FaUsers /> },
-  { name: "Relatórios", path: "/ngo/farm-reports", icon: <FaChartLine /> },
-  { name: "Conteúdo Educativo", path: "/ngo/videos", icon: <FaVideo /> },
+  { name: "Mapas Regionais", path: "/ngo/regional-maps", icon: <FaMap /> },
+  { name: "Conteúdo Educativo", path: "/ngo/educational-content", icon: <FaVideo /> },
+  { name: "Relatórios de Impacto", path: "/ngo/impact-reports", icon: <FaChartLine /> },
+  { name: "Estatísticas Regionais", path: "/ngo/regional-stats", icon: <FaCog /> },
 ];
 
 export default function NGOSidebar() {

@@ -1,6 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import SignIn from "./AuthPages/SignIn";
-import SignUp from "./AuthPages/SignUp";
 import NotFound from "./Admin/OtherPage/NotFound";
 import UserProfiles from "./Admin/UserProfiles";
 import Videos from "./Admin/UiElements/Videos";
@@ -60,10 +58,6 @@ export default function Admin() {
           <Route path="line-chart" element={<LineChart />} />
           <Route path="bar-chart" element={<BarChart />} />
         </Route>
-
-        {/* Auth Layout */}
-        <Route path="signin" element={<SignIn />} />
-        <Route path="signup" element={<SignUp />} />
 
         {/* Fallback Route */}
         <Route path="*" element={<NotFound />} />

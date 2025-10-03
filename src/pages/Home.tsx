@@ -41,16 +41,15 @@ const Home: React.FC = () => {
           </button>
           <div className={`lg:flex lg:flex-grow lg:items-center ${isMenuOpen ? 'block' : 'hidden'} lg:block bg-gray-100 lg:bg-transparent w-full lg:w-auto`}>
             <ul className="pl-0 mt-3 mb-2 ml-auto flex flex-col list-none lg:mt-0 lg:mb-0 lg:flex-row">
-              <li><a className="nav-link px-2.5 py-2.5 text-gray-700 hover:text-pink-400" href="#header">Página inicial</a></li>
-              <li><a className="nav-link px-2.5 py-2.5 text-gray-700 hover:text-pink-400" href="/videos">Conteúdo educativo</a></li>
-              <li><a className="nav-link px-2.5 py-2.5 text-gray-700 hover:text-pink-400" href="https://html-starter-mh5hs388j-nzolakiampavas-projects.vercel.app/" target="_blank">API</a></li>
-              <li><span className="nav-link px-2.5 py-2.5 text-gray-700">|</span></li>
-              <li><a className="nav-link px-2.5 py-2.5 text-gray-700 hover:text-pink-400" href="/signin">Entrar</a></li>
-              <li><a className="nav-link px-2.5 py-2.5 text-gray-700 hover:text-pink-400" href="#download">Baixar</a></li>
+                            <li><a className="nav-link px-2.5 py-2.5 text-gray-700 hover:text-green-600" href="#header">Página inicial</a></li>
+              <li><a className="nav-link px-2.5 py-2.5 text-gray-700 hover:text-green-600" href="/videos">Conteúdo educativo</a></li>
+              <li><a className="nav-link px-2.5 py-2.5 text-gray-700 hover:text-green-600" href="https://html-starter-mh5hs388j-nzolakiampavas-projects.vercel.app/" target="_blank">API</a></li>
+              <li><a className="nav-link px-2.5 py-2.5 text-gray-700 hover:text-green-600" href="/login">Entrar</a></li>
+              <li><a className="nav-link px-2.5 py-2.5 text-gray-700 hover:text-green-600" href="#download">Baixar</a></li>
             </ul>
             <span className="block lg:ml-3.5">
-              <a href="#your-link" className="no-underline"><FaApple className="text-indigo-600 hover:text-pink-500 text-xl mr-1.5 inline" /></a>
-              <a href="#your-link" className="no-underline"><FaGooglePlay className="text-indigo-600 hover:text-pink-500 text-xl inline" /></a>
+              <a href="#your-link" className="no-underline"><FaApple className="text-green-600 hover:text-green-800 text-xl mr-1.5 inline" /></a>
+              <a href="#your-link" className="no-underline"><FaGooglePlay className="text-green-600 hover:text-green-800 text-xl inline" /></a>
             </span>
           </div>
         </div>
@@ -217,7 +216,7 @@ const Home: React.FC = () => {
           <div className="lg:mt-24 xl:mt-44 xl:ml-12">
             <p className="mb-9 text-gray-800 text-3xl leading-10">Segurança começa com informação. Baixe o app e ajude a mapear zonas de risco na sua região.</p>
             <a href="#your-link" className="inline-block px-11 py-6 border border-indigo-600 rounded-full bg-indigo-600 text-white font-semibold text-sm hover:bg-transparent hover:text-indigo-600 transition mr-2 mb-5"><FaApple className="mr-2 inline text-xl" />Download</a>
-            <a href="#your-link" className="inline-block px-11 py-6 border border-red-500 rounded-full bg-red-500 text-white font-semibold text-sm hover:bg-transparent hover:text-red-500 transition mb-5"><FaGooglePlay className="mr-2 inline text-xl" />Download</a>
+            <a href="#your-link" className="inline-block px-11 py-6 border border-green-500 rounded-full bg-green-500 text-white font-semibold text-sm hover:bg-transparent hover:text-green-500 transition mb-5"><FaGooglePlay className="mr-2 inline text-xl" />Download</a>
           </div>
         </div>
       </div>
