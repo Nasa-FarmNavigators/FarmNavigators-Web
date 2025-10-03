@@ -31,56 +31,38 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   {
-    icon: <PlusIcon />,
-    name: "Criar",
-    subItems: [
-      { name: "Instituições", path: "/admin/create-inst", pro: false },
-      { name: "Administradores", path: "/admin/create-admin", pro: false },
-      { name: "Conteúdo educativo", path: "/admin/create-video", pro: false },
-    ],
+    icon: <GridIcon />,
+    name: "Dashboard",
+    path: "/admin/dashboard",
   },
-  // {
-  //   icon: <UserCircleIcon />,
-  //   name: "Perfil",
-  //   path: "/admin/profile",
-  // },
-  // {
-  //   name: "Visualizar",
-  //   icon: <TableIcon />,
-  //   subItems: [
-  //     { name: "Usuários e instituições", path: "/admin/see-inst", pro: false },
-  //     // { name: "Usuários", path: "/admin/basic-tables", pro: false },
-  //     { name: "Zonas de riscos", path: "/admin/images", pro: false },
-  //   ],
-  // },
+  {
+    icon: <UserCircleIcon />,
+    name: "Gestão de Usuários",
+    path: "/admin/user-management",
+  },
+  {
+    icon: <BoxCubeIcon />,
+    name: "Moderação de Conteúdo",
+    path: "/admin/content-moderation",
+  },
+  {
+    icon: <PieChartIcon />,
+    name: "Relatórios",
+    path: "/admin/system-reports",
+  },
+  {
+    icon: <BoltIcon />,
+    name: "Configurações",
+    path: "/admin/system-settings",
+  },
 ];
 
 const othersItems: NavItem[] = [
-  // {
-  //   icon: <Icon.ShootingStarIcon />,
-  //   name: "Instituições",
-  //   path: "/admin/basic-tables"
-  // },
   {
-    icon: <Icon.UserIcon />,
-    name: "Usuários e instituições",
-    path: "/admin/see-inst"
+    icon: <UserCircleIcon />,
+    name: "Perfil",
+    path: "/admin/profile"
   },
-  {
-    icon: <Icon.AlertHexaIcon />,
-    name: "Zonas de riscos",
-    path: "/admin/images"
-  },
-  {
-    icon: <Icon.BoxCubeIcon />,
-    name: "Conteúdo educativo",
-    path: "/admin/see-video"
-  },
-  // {
-  //   icon: <Icon.BoltIcon />,
-  //   name: "Logs",
-  //   path: "/admin/alerts"
-  // },
 ];
 
 const AppSidebar: React.FC = () => {
@@ -282,39 +264,17 @@ const AppSidebar: React.FC = () => {
       <div className="flex items-center justify-center py-2 w-full">
         <Link to="/admin">
           {isExpanded || isHovered || isMobileOpen ? (
-            <>
-              <img
-                className="dark:hidden"
-                src="/images/others/logo.png"
-                alt="Logo"
-                width={80}
-                height={80}
-              />
-              <img
-                className="hidden dark:block"
-                src="/images/others/whitelogo.png"
-                alt="Logo"
-                width={80}
-                height={80}
-              />
-            </>
+            <img
+              src="/images/others/logo.png"
+              alt="Farm Navigators Logo"
+              className="h-8 w-auto"
+            />
           ) : (
-            <>
-              <img
-                className="dark:hidden"
-                src="/images/others/logo.png"
-                alt="Logo"
-                width={180}
-                height={80}
-              />
-              <img
-                className="hidden dark:block"
-                src="/images/others/whitelogo.png"
-                alt="Logo"
-                width={180}
-                height={80}
-              />
-            </>
+            <img
+              src="/images/others/logo.png"
+              alt="Farm Navigators Logo"
+              className="h-6 w-auto"
+            />
           )}
         </Link>
       </div>
@@ -344,7 +304,7 @@ const AppSidebar: React.FC = () => {
                   }`}
               >
                 {isExpanded || isHovered || isMobileOpen ? (
-                  "Visualizar"
+                  "Outros"
                 ) : (
                   <HorizontaLDots />
                 )}

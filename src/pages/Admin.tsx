@@ -1,25 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 import NotFound from "./Admin/OtherPage/NotFound";
-import UserProfiles from "./Admin/UserProfiles";
-import Videos from "./Admin/UiElements/Videos";
-import Images from "./Admin/UiElements/Images";
-import Alerts from "./Admin/UiElements/Alerts";
-import Badges from "./Admin/UiElements/Badges";
-import Avatars from "./Admin/UiElements/Avatars";
-import Buttons from "./Admin/UiElements/Buttons";
-import LineChart from "./Admin/Charts/LineChart";
-import BarChart from "./Admin/Charts/BarChart";
-import Calendar from "./Admin/Calendar";
-import BasicTables from "./Admin/Tables/BasicTables";
-import FormElements from "./Admin/Forms/FormElements";
-import Blank from "./Admin/Blank";
 import AppLayout from "../layout/Admin/AppLayout";
 import { ScrollToTop } from "../components/Admin/common/ScrollToTop";
-import InstForm from "./Admin/Forms/InstForm";
-import InstSee from "./Admin/Tables/InstSee";
-import AdminForm from "./Admin/Forms/AdminForm";
-import VideoForm from "./Admin/Forms/VideoForm";
-import VideoSee from "./Admin/Tables/VideoSee";
+import AdminDashboard from "./Admin/Dashboard/AdminHome";
+import UserManagement from "./Admin/UserManagement";
+import ContentModeration from "./Admin/ContentModeration";
+import SystemReports from "./Admin/SystemReports";
+import SystemSettings from "./Admin/SystemSettings";
+import AdminProfile from "./Admin/AdminProfile";
 
 export default function Admin() {
   return (
@@ -28,35 +16,17 @@ export default function Admin() {
       <Routes>
         {/* Dashboard Layout */}
         <Route element={<AppLayout />}>
-          <Route index path="/" element={<UserProfiles  />} />
+          <Route index path="/" element={<AdminDashboard />} />
 
-          {/* Others Page */}
-          <Route path="profile" element={<UserProfiles />} />
-          <Route path="calendar" element={<Calendar />} />
-          <Route path="blank" element={<Blank />} />
+          {/* Core Admin Pages */}
+          <Route path="dashboard" element={<AdminDashboard />} />
+          <Route path="user-management" element={<UserManagement />} />
+          <Route path="content-moderation" element={<ContentModeration />} />
+          <Route path="system-reports" element={<SystemReports />} />
+          <Route path="system-settings" element={<SystemSettings />} />
 
-          {/* Forms */}
-          <Route path="form-elements" element={<FormElements />} />
-          <Route path="create-inst" element={<InstForm />} />
-          <Route path="create-admin" element={<AdminForm />} />
-          <Route path="create-video" element={<VideoForm />} />
-
-          {/* Tables */}
-          <Route path="basic-tables" element={<BasicTables />} />
-          <Route path="see-inst" element={<InstSee />} />
-          <Route path="see-video" element={<VideoSee />} />
-
-          {/* Ui Elements */}
-          <Route path="alerts" element={<Alerts />} />
-          <Route path="avatars" element={<Avatars />} />
-          <Route path="badge" element={<Badges />} />
-          <Route path="buttons" element={<Buttons />} />
-          <Route path="images" element={<Images />} />
-          <Route path="videos" element={<Videos />} />
-
-          {/* Charts */}
-          <Route path="line-chart" element={<LineChart />} />
-          <Route path="bar-chart" element={<BarChart />} />
+          {/* Profile */}
+          <Route path="profile" element={<AdminProfile />} />
         </Route>
 
         {/* Fallback Route */}

@@ -10,12 +10,12 @@ const Home: React.FC = () => {
 
   // Dados para o slider
   const testimonials = [
-    { name: 'Clínica Sagrada Esperança', image: 'images/inst/cse.jpg' },
-    { name: 'Clínica Girassol', image: 'images/inst/cg.jpeg' },
-    { name: 'Hospital Josina Machel - Maria Pia', image: 'images/inst/mp.jpeg' },
-    { name: 'Medical Center', image: 'images/inst/mc.png' },
-    { name: 'Clínica Polichekinan', image: 'images/inst/pc.png' },
-    { name: 'Clínica Rosymed', image: 'images/inst/rd.png' },
+    { name: 'Cooperativa Agrícola de Luanda', image: 'images/testimonial-1.jpg' },
+    { name: 'Fazenda São José', image: 'images/testimonial-2.jpg' },
+    { name: 'ONG Verde Angola', image: 'images/testimonial-3.jpg' },
+    { name: 'Instituto de Pesquisa Agrícola', image: 'images/testimonial-4.jpg' },
+    { name: 'Cooperativa de Benguela', image: 'images/testimonial-5.jpg' },
+    { name: 'Fazenda Esperança', image: 'images/testimonial-6.jpg' },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -157,7 +157,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-8 lg:grid lg:grid-cols-12 lg:gap-x-12">
           <div className="lg:col-span-7">
             <div className="xl:ml-14">
-              <img src="images/others/saude.png" alt="alternative" className="inline" />
+              <img src="images/details-3.jpg" alt="Farm technology" className="inline" />
             </div>
           </div>
           <div className="lg:col-span-5">

@@ -16,7 +16,7 @@ export default function Alerts() {
           <Alert
             variant="success"
             title="Passing Toloba (244954218536)"
-            message="Instituição adicionada - Medical Center (244222780579)"
+            message="Organização adicionada - Instituto de Pesquisa Agrícola (244222780579)"
             showLink={false}
           />
           {/* <Alert
