@@ -36,8 +36,8 @@ export default function SignInForm() {
 
       if (role === "ADMIN") {
         navigate("/admin");
-      } else if (role === "INSTITUTION") {
-        navigate("/institution");
+      } else if (role === "NGO" || role === "INSTITUTION") {
+        navigate("/ngo");
       } else {
         setErrorMessage("Por favor, use o aplicativo mobile para acessar.");
         setShowModal(true);

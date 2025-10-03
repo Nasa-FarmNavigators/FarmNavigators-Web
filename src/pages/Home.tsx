@@ -57,13 +57,13 @@ const Home: React.FC = () => {
       </nav>
 
       {/* Header */}
-      <header id="header" className="py-28 text-center md:pt-36 lg:text-left xl:pt-44 xl:pb-32 bg-gradient-to-b from-blue-100 to-white">
+      <header id="header" className="py-28 text-center md:pt-36 lg:text-left xl:pt-44 xl:pb-32 bg-gradient-to-b from-green-100 to-white">
         <div className="container mx-auto px-4 sm:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
           <div className="mb-16 lg:mt-32 xl:mt-40 xl:mr-12">
-            <h1 className="text-4xl font-bold text-gray-900 mb-5 leading-tight">Conectando Instituições, Tecnologia e Propósito</h1>
-            <p className="text-lg mb-8">Uma plataforma digital que fortalece o combate à malária através da colaboração e inovação</p>
-            <a href="#your-link" className="inline-block px-11 py-6 border border-indigo-600 rounded-full bg-indigo-600 text-white font-semibold text-sm hover:bg-transparent hover:text-indigo-600 transition mr-2 mb-5"><FaApple className="mr-2 inline text-xl" />Baixar</a>
-            <a href="#your-link" className="inline-block px-11 py-6 border border-red-500 rounded-full bg-red-500 text-white font-semibold text-sm hover:bg-transparent hover:text-red-500 transition mb-5"><FaGooglePlay className="mr-2 inline text-xl" />Baixar</a>
+            <h1 className="text-4xl font-bold text-gray-900 mb-5 leading-tight">Farm Navigators Angola</h1>
+            <p className="text-lg mb-8">Uma plataforma digital que fortalece a agricultura angolana através de dados da NASA e inovação</p>
+            <a href="#your-link" className="inline-block px-11 py-6 border border-green-600 rounded-full bg-green-600 text-white font-semibold text-sm hover:bg-transparent hover:text-green-600 transition mr-2 mb-5"><FaApple className="mr-2 inline text-xl" />Baixar</a>
+            <a href="#your-link" className="inline-block px-11 py-6 border border-green-500 rounded-full bg-green-500 text-white font-semibold text-sm hover:bg-transparent hover:text-green-500 transition mb-5"><FaGooglePlay className="mr-2 inline text-xl" />Baixar</a>
           </div>
           <div className="xl:text-right">
             <img src="images/others/introv1.svg" alt="alternative" className="inline" />
@@ -75,7 +75,7 @@ const Home: React.FC = () => {
       <div className="pt-4 pb-14 text-center">
         <div className="container mx-auto px-4 sm:px-8 xl:px-4">
           <p className="mb-4 text-gray-800 text-3xl leading-10 lg:max-w-5xl lg:mx-auto">
-            Criamos um ecossistema digital pensado para facilitar a atuação de instituições, profissionais da saúde, pesquisadores e cidadãos na luta contra a malária.
+            Criamos um ecossistema digital pensado para facilitar a atuação de ONGs, agricultores, pesquisadores e cidadãos no desenvolvimento da agricultura sustentável em Angola.
           </p>
         </div>
       </div>
@@ -164,8 +164,8 @@ const Home: React.FC = () => {
           <div className="lg:col-span-5">
             <div className="mb-16 lg:mb-0 xl:mt-16">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Faça Parte da Solução</h2>
-              <p className="mb-4">Se você representa uma ONG, hospital, centro de pesquisa ou instituição pública, cadastre-se e ganhe acesso a uma plataforma personalizada para acompanhar ações, interagir com usuários e contribuir com dados importantes para o combate à malária</p>
-              <a href="#details-lightbox" className="inline-block px-9 py-5 border border-indigo-600 rounded-full bg-indigo-600 text-white font-semibold text-sm hover:bg-transparent hover:text-indigo-600 transition mr-1.5" onClick={toggleLightbox}>Registrar</a>
+              <p className="mb-4">Se você representa uma ONG, cooperativa agrícola, centro de pesquisa ou instituição pública, cadastre-se e ganhe acesso a uma plataforma personalizada para acompanhar ações, interagir com agricultores e contribuir com dados importantes para o desenvolvimento agrícola sustentável</p>
+              <a href="#details-lightbox" className="inline-block px-9 py-5 border border-green-600 rounded-full bg-green-600 text-white font-semibold text-sm hover:bg-transparent hover:text-green-600 transition mr-1.5" onClick={toggleLightbox}>Registrar</a>
             </div>
           </div>
         </div>
@@ -176,11 +176,11 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
             {[
-              { value: 231, label: 'Instituições registradas' },
-              { value: 385, label: 'Registros de Casos Acompanhados' },
-              { value: 159, label: 'Feedbacks Positivos' },
-              { value: 127, label: 'Campanhas Ativas' },
-              { value: 211, label: 'Usuários Mobilizados' },
+              { value: 52, label: 'ONGs registradas' },
+              { value: 1240, label: 'Fazendas Monitoradas' },
+              { value: 89, label: 'Relatórios Gerados' },
+              { value: 34, label: 'Campanhas Agrícolas' },
+              { value: 456, label: 'Agricultores Ativos' },
             ].map((stat, index) => (
               <div key={index}>
                 <div className="text-5xl font-bold text-gray-900">{stat.value}</div>

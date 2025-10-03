@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import SignIn from "../pages/AuthPages/SignIn";
-import Institution from "../pages/Institution";
+import NGODashboard from "../pages/NGODashboard";
 import Admin from "../pages/Admin";
 import NotFound from "../pages/NotFound";
 import RedirectToHTML from "../pages";
@@ -23,17 +23,17 @@ const AppRoutes = () => {
       <Route path="/teste" element={<Home />} />
       <Route path="/signin" element={<SignIn />} />
       <Route path="/videos" element={<VideoPublicList />} />
-      {/* <Route path="/admin/*" element={<Admin />} /> */}
-      {/* <Route path="/institution/*" element={<Institution />} /> */}
-       {/* Rotas de Admin */}
-       <Route path="/admin/*" element={<ProtectedRoute><Admin/></ProtectedRoute>}>
+      
+      {/* Rotas de Admin - Para administradores da plataforma */}
+      <Route path="/admin/*" element={<ProtectedRoute><Admin/></ProtectedRoute>}>
         <Route index element={<Admin />} />
       </Route>
 
-      {/* Rotas de Instituição */}
-      <Route path="/institution/*" element={<ProtectedRoute><Institution /></ProtectedRoute>}>
-        <Route index element={<Institution />} />
+      {/* Rotas de ONGs - Para organizações parceiras */}
+      <Route path="/ngo/*" element={<ProtectedRoute><NGODashboard /></ProtectedRoute>}>
+        <Route index element={<NGODashboard />} />
       </Route>
+      
       {/* Not Found */}
       <Route path="*" element={<NotFound />} />
     </Routes>

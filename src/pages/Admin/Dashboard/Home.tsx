@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import PageMeta from "../../../components/Admin/common/PageMeta";
 import { AlertIcon, ArrowDownIcon, ArrowUpIcon, BoltIcon } from "../../../icons";
-import Badge from "../../../components/Inst/ui/badge/Badge";
+import Badge from "../../../components/Admin/ui/badge/Badge";
 import { ApexOptions } from "apexcharts";
 import Chart from "react-apexcharts";
 

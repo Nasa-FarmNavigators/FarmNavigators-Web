@@ -150,7 +150,7 @@ export default function InstSee() {
                             <option value="ALL">Todos os papéis</option>
                             <option value="ADMIN">Admin</option>
                             <option value="USER">Usuário</option>
-                            <option value="INSTITUTION">Instituição</option>
+                            <option value="INSTITUTION">ONG/Instituição</option>
                         </select>
                     </div>
                 </ComponentCard>

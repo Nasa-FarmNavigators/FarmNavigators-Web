@@ -4,7 +4,7 @@ import Label from "../../../components/Admin/form/Label";
 import Input from "../../../components/Admin/form/input/InputField";
 import { EnvelopeIcon, EyeCloseIcon, EyeIcon } from "../../../icons";
 import ComponentCard from "../../../components/Admin/common/ComponentCard";
-import PhoneInput from "../../../components/Inst/form/group-input/PhoneInput";
+import PhoneInput from "../../../components/Admin/form/group-input/PhoneInput";
 import { useState, useEffect, useRef, KeyboardEvent } from "react";
 import FileInput from "../../../components/Admin/form/input/FileInput";
 import axios from "axios";
