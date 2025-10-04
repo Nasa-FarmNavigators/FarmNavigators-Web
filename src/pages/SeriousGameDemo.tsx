@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useI18n } from '../i18n/useI18n';
 import { 
   FaArrowLeft, 
   FaPlay, 
@@ -47,6 +48,8 @@ interface Decision {
 }
 
 const SeriousGameDemo: React.FC = () => {
+  const { t } = useI18n();
+  
   const [gameState, setGameState] = useState<GameState>({
     level: 1,
     score: 0,
@@ -74,8 +77,8 @@ const SeriousGameDemo: React.FC = () => {
   // Cenários do jogo baseados em dados reais da agricultura angolana
   const scenarios = [
     {
-      title: "Primeira Semana - Preparação do Solo",
-      description: "Início da estação agrícola em Huambo. Análise de satélite mostra solo ressecado após a estação seca. Como preparar melhor o terreno?",
+      title: t.seriousGameFull.scenarios.week1.title,
+      description: t.seriousGameFull.scenarios.week1.description,
       nasaData: {
         soilMoisture: 15,
         ndvi: 0.1,
@@ -85,27 +88,27 @@ const SeriousGameDemo: React.FC = () => {
       decisions: [
         {
           id: 'deep_tillage',
-          text: '🚜 Aração profunda para quebrar compactação',
+          text: t.seriousGameFull.scenarios.week1.decisions.deepTillage,
           impact: { soilHealth: +15, water: -5, score: +12 },
           cost: 32000
         },
         {
           id: 'organic_matter',
-          text: '🌿 Adicionar matéria orgânica e compostagem',
+          text: t.seriousGameFull.scenarios.week1.decisions.organicMatter,
           impact: { soilHealth: +20, water: +10, score: +18 },
           cost: 24000
         },
         {
           id: 'wait_rain',
-          text: '☁️ Aguardar primeira chuva antes de preparar',
+          text: t.seriousGameFull.scenarios.week1.decisions.waitRain,
           impact: { water: +5, soilHealth: +5, score: +8 },
           cost: 0
         }
       ]
     },
     {
-      title: "Segunda Semana - Plantio de Milho",
-      description: "Primeira chuva chegou! Dados de satélite mostram umidade adequada para plantio em Benguela. Qual variedade escolher?",
+      title: t.seriousGameFull.scenarios.week2.title,
+      description: t.seriousGameFull.scenarios.week2.description,
       nasaData: {
         soilMoisture: 45,
         ndvi: 0.2,
@@ -115,27 +118,27 @@ const SeriousGameDemo: React.FC = () => {
       decisions: [
         {
           id: 'drought_resistant',
-          text: '🌾 Variedade resistente à seca (ciclo longo)',
+          text: t.seriousGameFull.scenarios.week2.decisions.droughtResistant,
           impact: { water: +15, cropGrowth: +8, score: +15 },
           cost: 18000
         },
         {
           id: 'high_yield',
-          text: '🚀 Variedade de alto rendimento (mais exigente)',
+          text: t.seriousGameFull.scenarios.week2.decisions.highYield,
           impact: { water: -10, cropGrowth: +15, score: +12 },
           cost: 26000
         },
         {
           id: 'local_variety',
-          text: '🏡 Sementes locais adaptadas (menor risco)',
+          text: t.seriousGameFull.scenarios.week2.decisions.localVariety,
           impact: { water: +5, soilHealth: +5, cropGrowth: +5, score: +10 },
           cost: 10000
         }
       ]
     },
     {
-      title: "Quarta Semana - Crescimento Inicial",
-      description: "Plantas emergiram! NDVI indica crescimento desigual. Dados meteorológicos preveem período seco de 10 dias.",
+      title: t.seriousGameFull.scenarios.week4.title,
+      description: t.seriousGameFull.scenarios.week4.description,
       nasaData: {
         soilMoisture: 25,
         ndvi: 0.4,
@@ -145,27 +148,27 @@ const SeriousGameDemo: React.FC = () => {
       decisions: [
         {
           id: 'precision_irrigation',
-          text: '💧 Irrigação localizada nas áreas mais secas',
+          text: t.seriousGameFull.scenarios.week4.decisions.precisionIrrigation,
           impact: { water: -20, cropGrowth: +12, score: +15 },
           cost: 36000
         },
         {
           id: 'mulching',
-          text: '🍂 Cobertura morta para conservar umidade',
+          text: t.seriousGameFull.scenarios.week4.decisions.mulching,
           impact: { water: +15, soilHealth: +8, score: +18 },
           cost: 16000
         },
         {
           id: 'foliar_nutrition',
-          text: '🌱 Nutrição foliar para fortalecer plantas',
+          text: t.seriousGameFull.scenarios.week4.decisions.foliarNutrition,
           impact: { cropGrowth: +8, soilHealth: +5, score: +12 },
           cost: 14000
         }
       ]
     },
     {
-      title: "Sexta Semana - Controle de Pragas",
-      description: "Imagens de satélite detectam possível ataque de pragas no oeste da plantação. Como agir rapidamente?",
+      title: t.seriousGameFull.scenarios.week6.title,
+      description: t.seriousGameFull.scenarios.week6.description,
       nasaData: {
         soilMoisture: 60,
         ndvi: 0.6,
@@ -175,27 +178,27 @@ const SeriousGameDemo: React.FC = () => {
       decisions: [
         {
           id: 'biological_control',
-          text: '🐛 Controle biológico com predadores naturais',
+          text: t.seriousGameFull.scenarios.week6.decisions.biologicalControl,
           impact: { cropGrowth: +5, soilHealth: +10, score: +20 },
           cost: 20000
         },
         {
           id: 'targeted_pesticide',
-          text: '🎯 Pesticida específico apenas na área afetada',
+          text: t.seriousGameFull.scenarios.week6.decisions.targetedPesticide,
           impact: { cropGrowth: +10, soilHealth: -5, score: +8 },
           cost: 28000
         },
         {
           id: 'monitoring',
-          text: '📊 Intensificar monitoramento e armadilhas',
+          text: t.seriousGameFull.scenarios.week6.decisions.monitoring,
           impact: { cropGrowth: +3, score: +12 },
           cost: 8000
         }
       ]
     },
     {
-      title: "Oitava Semana - Fertilização Complementar",
-      description: "Análise NDVI mostra que algumas áreas precisam de nutrientes adicionais. Época crítica para floração do milho.",
+      title: t.seriousGameFull.scenarios.week8.title,
+      description: t.seriousGameFull.scenarios.week8.description,
       nasaData: {
         soilMoisture: 70,
         ndvi: 0.7,
@@ -205,27 +208,27 @@ const SeriousGameDemo: React.FC = () => {
       decisions: [
         {
           id: 'variable_rate',
-          text: '📍 Aplicação de fertilizante por taxa variável',
+          text: t.seriousGameFull.scenarios.week8.decisions.variableRate,
           impact: { cropGrowth: +15, soilHealth: +5, score: +22 },
           cost: 48000
         },
         {
           id: 'uniform_application',
-          text: '🌾 Aplicação uniforme em toda a área',
+          text: t.seriousGameFull.scenarios.week8.decisions.uniformApplication,
           impact: { cropGrowth: +10, soilHealth: +3, score: +12 },
           cost: 32000
         },
         {
           id: 'organic_fertilizer',
-          text: '🌿 Fertilizante orgânico (liberação lenta)',
+          text: t.seriousGameFull.scenarios.week8.decisions.organicFertilizer,
           impact: { cropGrowth: +8, soilHealth: +12, score: +18 },
           cost: 26000
         }
       ]
     },
     {
-      title: "Décima Semana - Gestão Hídrica Crítica",
-      description: "Período de enchimento de grãos! Dados NASA mostram chuva intensa aproximando. Como proteger a qualidade dos grãos?",
+      title: t.seriousGameFull.scenarios.week10.title,
+      description: t.seriousGameFull.scenarios.week10.description,
       nasaData: {
         soilMoisture: 85,
         ndvi: 0.8,
@@ -235,27 +238,27 @@ const SeriousGameDemo: React.FC = () => {
       decisions: [
         {
           id: 'drainage_system',
-          text: '🌊 Sistema de drenagem para evitar encharcamento',
+          text: t.seriousGameFull.scenarios.week10.decisions.drainageSystem,
           impact: { water: -15, soilHealth: +8, cropGrowth: +10, score: +25 },
           cost: 60000
         },
         {
           id: 'temporary_cover',
-          text: '☂️ Cobertura temporária nas áreas baixas',
+          text: t.seriousGameFull.scenarios.week10.decisions.temporaryCover,
           impact: { cropGrowth: +12, score: +15 },
           cost: 80000
         },
         {
           id: 'early_harvest_partial',
-          text: '⚡ Colheita antecipada das áreas mais maduras',
+          text: t.seriousGameFull.scenarios.week10.decisions.earlyHarvestPartial,
           impact: { cropGrowth: +5, score: +18 },
           cost: 40000
         }
       ]
     },
     {
-      title: "Décima Segunda Semana - Decisão de Colheita",
-      description: "Dados de maturação indicam 85% das plantas prontas. Previsão de chuva em 5 dias. Qual estratégia de colheita?",
+      title: t.seriousGameFull.scenarios.week12.title,
+      description: t.seriousGameFull.scenarios.week12.description,
       nasaData: {
         soilMoisture: 40,
         ndvi: 0.9,
@@ -265,27 +268,27 @@ const SeriousGameDemo: React.FC = () => {
       decisions: [
         {
           id: 'immediate_harvest',
-          text: '🚜 Colheita imediata de toda a área',
+          text: t.seriousGameFull.scenarios.week12.decisions.immediateHarvest,
           impact: { cropGrowth: +18, score: +25 },
           cost: 100000
         },
         {
           id: 'selective_harvest',
-          text: '🎯 Colheita seletiva das áreas mais maduras',
+          text: t.seriousGameFull.scenarios.week12.decisions.selectiveHarvest,
           impact: { cropGrowth: +20, score: +35 },
           cost: 120000
         },
         {
           id: 'wait_perfect_timing',
-          text: '📊 Aguardar 95% de maturação (risco climático)',
+          text: t.seriousGameFull.scenarios.week12.decisions.waitPerfectTiming,
           impact: { cropGrowth: +25, score: +30 },
           cost: 32000
         }
       ]
     },
     {
-      title: "Pós-Colheita - Preparação Próxima Safra",
-      description: "Colheita finalizada! Como preparar o solo para a próxima temporada? Dados mostram degradação em algumas áreas.",
+      title: t.seriousGameFull.scenarios.postHarvest.title,
+      description: t.seriousGameFull.scenarios.postHarvest.description,
       nasaData: {
         soilMoisture: 30,
         ndvi: 0.3,
@@ -295,19 +298,19 @@ const SeriousGameDemo: React.FC = () => {
       decisions: [
         {
           id: 'cover_crops',
-          text: '🌱 Plantar culturas de cobertura (fixação N2)',
+          text: t.seriousGameFull.scenarios.postHarvest.decisions.coverCrops,
           impact: { soilHealth: +25, water: +10, score: +30 },
           cost: 28000
         },
         {
           id: 'crop_rotation',
-          text: '🔄 Rotação com leguminosas (feijão/soja)',
+          text: t.seriousGameFull.scenarios.postHarvest.decisions.cropRotation,
           impact: { soilHealth: +20, cropGrowth: +5, score: +28 },
           cost: 34000
         },
         {
-          id: 'soil_rest',
-          text: '💤 Pousio com manejo de invasoras',
+          id: 'soil_analysis',
+          text: t.seriousGameFull.scenarios.postHarvest.decisions.soilAnalysis,
           impact: { soilHealth: +10, score: +15 },
           cost: 12000
         }
@@ -322,7 +325,7 @@ const SeriousGameDemo: React.FC = () => {
     if ((decision.cost || 0) > gameState.budget) {
       setGameState(prev => ({
         ...prev,
-        alerts: ['💰 Orçamento insuficiente! Escolha uma opção mais econômica.', ...prev.alerts.slice(0, 2)]
+        alerts: [t.seriousGameFull.ui.decisions.insufficientBudget, ...prev.alerts.slice(0, 2)]
       }));
       return;
     }
@@ -361,44 +364,44 @@ const SeriousGameDemo: React.FC = () => {
   const getFeedback = (decision: Decision): string => {
     const feedbacks: { [key: string]: string } = {
       // Semana 1 - Preparação do solo
-      'deep_tillage': '🚜 Boa preparação! Solo descompactado facilita desenvolvimento radicular.',
-      'organic_matter': '⭐ Excelente! Matéria orgânica melhora retenção de água e fertilidade.',
-      'wait_rain': '⏳ Estratégia conservadora, mas pode atrasar o plantio.',
+      'deep_tillage': t.seriousGameFull.feedback.deepTillage,
+      'organic_matter': t.seriousGameFull.feedback.organicMatter,
+      'wait_rain': t.seriousGameFull.feedback.waitRain,
       
       // Semana 2 - Plantio
-      'drought_resistant': '🌾 Escolha inteligente! Variedade adaptada ao clima angolano.',
-      'high_yield': '🚀 Alto potencial, mas precisa de manejo cuidadoso.',
-      'local_variety': '🏡 Seguro e sustentável! Variedades locais são mais resilientes.',
+      'drought_resistant': t.seriousGameFull.feedback.droughtResistant,
+      'high_yield': t.seriousGameFull.feedback.highYield,
+      'local_variety': t.seriousGameFull.feedback.localVariety,
       
       // Semana 4 - Crescimento inicial
-      'precision_irrigation': '💧 Tecnologia avançada! Uso eficiente da água.',
-      'mulching': '⭐ Decisão sustentável! Economiza água e enriquece o solo.',
-      'foliar_nutrition': '🌱 Boa estratégia! Nutrição rápida em período crítico.',
+      'precision_irrigation': t.seriousGameFull.feedback.precisionIrrigation,
+      'mulching': t.seriousGameFull.feedback.mulching,
+      'foliar_nutrition': t.seriousGameFull.feedback.foliarNutrition,
       
       // Semana 6 - Controle de pragas
-      'biological_control': '🏆 Perfeito! Controle sustentável protege o ecossistema.',
-      'targeted_pesticide': '🎯 Eficaz, mas use com moderação para preservar benefícios.',
-      'monitoring': '📊 Prevenção inteligente! Monitoramento evita grandes perdas.',
+      'biological_control': t.seriousGameFull.feedback.biologicalControl,
+      'targeted_pesticide': t.seriousGameFull.feedback.targetedPesticide,
+      'monitoring': t.seriousGameFull.feedback.monitoring,
       
       // Semana 8 - Fertilização
-      'variable_rate': '📍 Tecnologia de precisão! Máxima eficiência dos nutrientes.',
-      'uniform_application': '🌾 Estratégia tradicional, mas funcional.',
-      'organic_fertilizer': '🌿 Sustentável! Liberação gradual é melhor para o solo.',
+      'variable_rate': t.seriousGameFull.feedback.variableRate,
+      'uniform_application': t.seriousGameFull.feedback.uniformApplication,
+      'organic_fertilizer': t.seriousGameFull.feedback.organicFertilizer,
       
       // Semana 10 - Gestão hídrica
-      'drainage_system': '💡 Investimento certeiro! Previne perdas por encharcamento.',
-      'temporary_cover': '☂️ Proteção eficaz, mas considere custo-benefício.',
-      'early_harvest_partial': '⚡ Decisão estratégica! Reduz riscos climáticos.',
+      'drainage_system': t.seriousGameFull.feedback.drainageSystem,
+      'temporary_cover': t.seriousGameFull.feedback.temporaryCover,
+      'early_harvest_partial': t.seriousGameFull.feedback.earlyHarvestPartial,
       
       // Semana 12 - Colheita
-      'immediate_harvest': '🚜 Eficiente! Evitou riscos climáticos.',
-      'selective_harvest': '🏆 Excelente! Qualidade premium vale o investimento extra.',
-      'wait_perfect_timing': '🎲 Arriscado, mas pode render mais se o clima colaborar.',
+      'immediate_harvest': t.seriousGameFull.feedback.immediateHarvest,
+      'selective_harvest': t.seriousGameFull.feedback.selectiveHarvest,
+      'wait_perfect_timing': t.seriousGameFull.feedback.waitPerfectTiming,
       
       // Pós-colheita
-      'cover_crops': '⭐ Sustentabilidade máxima! Solo agradece para próxima safra.',
-      'crop_rotation': '🔄 Manejo inteligente! Quebra ciclo de pragas e doenças.',
-      'soil_rest': '💤 Estratégia conservadora, mas solo recupera naturalmente.'
+      'cover_crops': t.seriousGameFull.feedback.coverCrops,
+      'crop_rotation': t.seriousGameFull.feedback.cropRotation,
+      'soil_analysis': t.seriousGameFull.feedback.soilAnalysis
     };
     
     return feedbacks[decision.id] || 'Decisão tomada! Continue aprendendo com os dados da NASA.';
@@ -464,7 +467,7 @@ const SeriousGameDemo: React.FC = () => {
               >
                 <FaArrowLeft className="text-gray-600" />
               </button>
-              <h1 className="text-3xl font-bold text-gray-900">Farm Navigators - Serious Game 🎮</h1>
+              <h1 className="text-3xl font-bold text-gray-900">{t.seriousGameFull.welcome.title}</h1>
               <div className="w-10"></div>
             </div>
 
@@ -473,54 +476,53 @@ const SeriousGameDemo: React.FC = () => {
                 <FaGamepad className="text-white text-4xl" />
               </div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                🌾 Simulador de Agricultura Inteligente
+                {t.seriousGameFull.welcome.subtitle}
               </h2>
               <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
-                Tome decisões baseadas em dados reais da NASA para gerir sua fazenda virtual 
-                em Angola. Aprenda sobre agricultura sustentável enquanto se diverte!
+                {t.seriousGameFull.welcome.description}
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               <div className="bg-blue-50 rounded-xl p-4 text-center">
                 <FaSeedling className="text-blue-600 text-2xl mx-auto mb-2" />
-                <h3 className="font-bold text-blue-900">8 Cenários</h3>
-                <p className="text-sm text-blue-700">Do plantio à colheita</p>
+                <h3 className="font-bold text-blue-900">{t.seriousGameFull.welcome.features.realScenarios.title}</h3>
+                <p className="text-sm text-blue-700">{t.seriousGameFull.welcome.features.realScenarios.description}</p>
               </div>
               <div className="bg-green-50 rounded-xl p-4 text-center">
                 <FaLeaf className="text-green-600 text-2xl mx-auto mb-2" />
-                <h3 className="font-bold text-green-900">Dados NASA</h3>
-                <p className="text-sm text-green-700">Satélite & meteorologia</p>
+                <h3 className="font-bold text-green-900">{t.seriousGameFull.welcome.features.nasaData.title}</h3>
+                <p className="text-sm text-green-700">{t.seriousGameFull.welcome.features.nasaData.description}</p>
               </div>
               <div className="bg-yellow-50 rounded-xl p-4 text-center">
                 <FaTrophy className="text-yellow-600 text-2xl mx-auto mb-2" />
-                <h3 className="font-bold text-yellow-900">Desafios Reais</h3>
-                <p className="text-sm text-yellow-700">Situações da agricultura angolana</p>
+                <h3 className="font-bold text-yellow-900">{t.seriousGameFull.welcome.features.scientificFeedback.title}</h3>
+                <p className="text-sm text-yellow-700">{t.seriousGameFull.welcome.features.scientificFeedback.description}</p>
               </div>
               <div className="bg-purple-50 rounded-xl p-4 text-center">
                 <FaBolt className="text-purple-600 text-2xl mx-auto mb-2" />
-                <h3 className="font-bold text-purple-900">Orçamento Real</h3>
-                <p className="text-sm text-purple-700">Gestão em Kwanzas</p>
+                <h3 className="font-bold text-purple-900">{t.seriousGameFull.welcome.features.budgetManagement.title}</h3>
+                <p className="text-sm text-purple-700">{t.seriousGameFull.welcome.features.budgetManagement.description}</p>
               </div>
             </div>
 
             <div className="bg-orange-50 border border-orange-200 rounded-xl p-6 mb-8">
               <h3 className="font-bold text-orange-900 mb-3 flex items-center">
                 <FaInfoCircle className="mr-2" />
-                Como Jogar
+                {t.seriousGameFull.welcome.howToPlay.title}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-orange-800">
                 <div>
-                  <strong>1. Analise os dados:</strong> Use informações de satélite (NDVI, umidade do solo)
+                  <strong>{t.seriousGameFull.welcome.howToPlay.steps.analyze}</strong>
                 </div>
                 <div>
-                  <strong>2. Tome decisões:</strong> Escolha estratégias baseadas nos dados
+                  <strong>{t.seriousGameFull.welcome.howToPlay.steps.decide}</strong>
                 </div>
                 <div>
-                  <strong>3. Gerencie recursos:</strong> Mantenha orçamento e sustentabilidade
+                  <strong>{t.seriousGameFull.welcome.howToPlay.steps.manage}</strong>
                 </div>
                 <div>
-                  <strong>4. Aprenda:</strong> Receba feedback sobre suas escolhas
+                  <strong>{t.seriousGameFull.welcome.howToPlay.steps.learn}</strong>
                 </div>
               </div>
             </div>
@@ -530,10 +532,10 @@ const SeriousGameDemo: React.FC = () => {
                 onClick={startGame}
                 className="bg-gradient-to-r from-green-500 to-blue-600 text-white px-12 py-4 rounded-xl text-xl font-bold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
               >
-                🚀 Começar o Jogo
+                {t.seriousGameFull.welcome.startButton}
               </button>
               <p className="text-sm text-gray-500 mt-4">
-                Duração: ~15-20 minutos • Público: estudantes, agricultores, curiosos
+                {t.seriousGameFull.welcome.duration}
               </p>
             </div>
           </div>
@@ -560,7 +562,7 @@ const SeriousGameDemo: React.FC = () => {
               <div className="flex items-center">
                 <FaTint className="text-blue-500 mr-2" />
                 <div>
-                  <div className="text-xs text-gray-500">Água</div>
+                  <div className="text-xs text-gray-500">{t.seriousGameFull.ui.indicators.water}</div>
                   <div className="w-20 bg-gray-200 rounded-full h-2">
                     <div 
                       className={`h-2 rounded-full transition-all duration-300 ${getProgressColor(gameState.water)}`}
@@ -573,7 +575,7 @@ const SeriousGameDemo: React.FC = () => {
               <div className="flex items-center">
                 <FaLeaf className="text-green-500 mr-2" />
                 <div>
-                  <div className="text-xs text-gray-500">Solo</div>
+                  <div className="text-xs text-gray-500">{t.seriousGameFull.ui.indicators.soil}</div>
                   <div className="w-20 bg-gray-200 rounded-full h-2">
                     <div 
                       className={`h-2 rounded-full transition-all duration-300 ${getProgressColor(gameState.soilHealth)}`}
@@ -586,7 +588,7 @@ const SeriousGameDemo: React.FC = () => {
               <div className="flex items-center">
                 <FaSeedling className="text-green-600 mr-2" />
                 <div>
-                  <div className="text-xs text-gray-500">Crescimento</div>
+                  <div className="text-xs text-gray-500">{t.seriousGameFull.ui.indicators.growth}</div>
                   <div className="w-20 bg-gray-200 rounded-full h-2">
                     <div 
                       className={`h-2 rounded-full transition-all duration-300 ${getProgressColor(gameState.cropGrowth)}`}
@@ -599,7 +601,7 @@ const SeriousGameDemo: React.FC = () => {
               <div className="flex items-center">
                 <FaTrophy className="text-yellow-500 mr-2" />
                 <div>
-                  <div className="text-xs text-gray-500">Score</div>
+                  <div className="text-xs text-gray-500">{t.seriousGameFull.ui.indicators.score}</div>
                   <div className="text-lg font-bold text-gray-900">{gameState.score}</div>
                 </div>
               </div>
@@ -607,8 +609,8 @@ const SeriousGameDemo: React.FC = () => {
               <div className="flex items-center">
                 <FaBolt className="text-purple-500 mr-2" />
                 <div>
-                  <div className="text-xs text-gray-500">Orçamento</div>
-                  <div className="text-lg font-bold text-purple-900">{gameState.budget.toLocaleString()} Kz</div>
+                  <div className="text-xs text-gray-500">{t.seriousGameFull.ui.indicators.budget}</div>
+                  <div className="text-lg font-bold text-purple-900">{gameState.budget.toLocaleString()} {t.seriousGameFull.common.kz}</div>
                 </div>
               </div>
             </div>
@@ -644,34 +646,34 @@ const SeriousGameDemo: React.FC = () => {
               {/* Dados NASA */}
               <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6">
                 <h3 className="font-bold text-blue-900 mb-3 flex items-center">
-                  🛰️ Dados NASA em Tempo Real
+                  {t.seriousGameFull.ui.nasaPanel.title}
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                   <div className="flex items-center">
                     <FaTint className="text-blue-600 mr-2" />
                     <div>
-                      <div className="font-semibold">Umidade Solo</div>
+                      <div className="font-semibold">{t.seriousGameFull.ui.nasaPanel.soilMoisture}</div>
                       <div>{currentScenarioData?.nasaData.soilMoisture}%</div>
                     </div>
                   </div>
                   <div className="flex items-center">
                     <FaLeaf className="text-green-600 mr-2" />
                     <div>
-                      <div className="font-semibold">NDVI</div>
+                      <div className="font-semibold">{t.seriousGameFull.ui.nasaPanel.ndvi}</div>
                       <div>{currentScenarioData?.nasaData.ndvi}</div>
                     </div>
                   </div>
                   <div className="flex items-center">
                     <FaCloudRain className="text-blue-600 mr-2" />
                     <div>
-                      <div className="font-semibold">Precipitação</div>
+                      <div className="font-semibold">{t.seriousGameFull.ui.nasaPanel.precipitation}</div>
                       <div>{currentScenarioData?.nasaData.precipitation}mm</div>
                     </div>
                   </div>
                   <div className="flex items-center">
                     <FaThermometerHalf className="text-red-500 mr-2" />
                     <div>
-                      <div className="font-semibold">Temperatura</div>
+                      <div className="font-semibold">{t.seriousGameFull.ui.nasaPanel.temperature}</div>
                       <div>{currentScenarioData?.nasaData.temperature}°C</div>
                     </div>
                   </div>
@@ -711,7 +713,7 @@ const SeriousGameDemo: React.FC = () => {
                               </span>
                               {(decision.cost || 0) > gameState.budget && (
                                 <span className="text-xs bg-red-200 px-2 py-1 rounded-full">
-                                  Orçamento insuficiente
+                                  {t.seriousGameFull.ui.decisions.insufficientBudget}
                                 </span>
                               )}
                             </div>
@@ -766,12 +768,12 @@ const SeriousGameDemo: React.FC = () => {
 
             {/* Status da fazenda */}
             <div className="bg-white rounded-xl shadow-lg p-4">
-              <h3 className="font-bold text-gray-900 mb-4">📊 Status da Fazenda</h3>
+              <h3 className="font-bold text-gray-900 mb-4">{t.seriousGameFull.ui.status.title}</h3>
               
               <div className="space-y-4">
                 <div>
                   <div className="flex justify-between text-sm mb-1">
-                    <span>Reserva de Água</span>
+                    <span>{t.seriousGameFull.ui.status.waterReserve}</span>
                     <span>{gameState.water}%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
@@ -836,41 +838,41 @@ const SeriousGameDemo: React.FC = () => {
               <FaTrophy className="text-white text-3xl" />
             </div>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              🎉 Parabéns, Agricultor(a)!
+              {t.seriousGameFull.endGame.title}
             </h2>
             <p className="text-xl text-gray-600 mb-6">
-              Você completou a temporada de plantio usando dados da NASA!
+              {t.seriousGameFull.endGame.subtitle}
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
               <div className="bg-blue-50 rounded-xl p-4">
                 <div className="text-2xl font-bold text-blue-600">{gameState.score}</div>
-                <div className="text-sm text-blue-800">Pontuação Final</div>
+                <div className="text-sm text-blue-800">{t.seriousGameFull.endGame.results.finalScore}</div>
               </div>
               <div className="bg-green-50 rounded-xl p-4">
                 <div className="text-2xl font-bold text-green-600">{gameState.cropGrowth}%</div>
-                <div className="text-sm text-green-800">Crescimento das Culturas</div>
+                <div className="text-sm text-green-800">{t.seriousGameFull.ui.indicators.growth}</div>
               </div>
               <div className="bg-yellow-50 rounded-xl p-4">
                 <div className="text-2xl font-bold text-yellow-600">{Math.round(gameState.soilHealth)}%</div>
-                <div className="text-sm text-yellow-800">Saúde do Solo</div>
+                <div className="text-sm text-yellow-800">{t.seriousGameFull.ui.indicators.soil}</div>
               </div>
               <div className="bg-purple-50 rounded-xl p-4">
-                <div className="text-2xl font-bold text-purple-600">{gameState.budget.toLocaleString()} Kz</div>
-                <div className="text-sm text-purple-800">Orçamento Restante</div>
+                <div className="text-2xl font-bold text-purple-600">{gameState.budget.toLocaleString()} {t.seriousGameFull.common.kz}</div>
+                <div className="text-sm text-purple-800">{t.seriousGameFull.ui.indicators.budget}</div>
               </div>
             </div>
 
             {/* Análise de Performance */}
             <div className="bg-gray-50 rounded-xl p-6 max-w-3xl mx-auto mb-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">📊 Análise de Performance</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{t.seriousGameFull.endGame.performance.title}</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                 <div>
-                  <span className="font-semibold">Total Investido:</span>
-                  <span className="ml-2 text-green-600">{gameState.totalInvestment.toLocaleString()} Kz</span>
+                  <span className="font-semibold">{t.seriousGameFull.endGame.results.totalInvested}:</span>
+                  <span className="ml-2 text-green-600">{gameState.totalInvestment.toLocaleString()} {t.seriousGameFull.common.kz}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Eficiência do Orçamento:</span>
+                  <span className="font-semibold">{t.seriousGameFull.endGame.results.budgetEfficiency}:</span>
                   <span className="ml-2 text-blue-600">
                     {gameState.totalInvestment > 0 ? (gameState.score / gameState.totalInvestment * 1000).toFixed(1) : 0} pts/1000Kz
                   </span>
@@ -899,19 +901,19 @@ const SeriousGameDemo: React.FC = () => {
                 onClick={resetGame}
                 className="bg-gradient-to-r from-green-500 to-blue-600 text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 mr-4"
               >
-                🔄 Jogar Novamente
+                {t.seriousGameFull.endGame.actions.playAgain}
               </button>
               <button
                 onClick={() => window.location.href = '/'}
                 className="bg-gray-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-gray-700 transition-colors"
               >
-                🏠 Voltar ao Início
+                {t.seriousGameFull.endGame.actions.backHome}
               </button>
             </div>
 
             <div className="mt-8 text-center">
               <p className="text-sm text-gray-600">
-                🌱 Continue aprendendo: baixe o app Farm Navigators para dados reais da NASA!
+                {t.seriousGameFull.endGame.actions.downloadApp}
               </p>
             </div>
           </div>

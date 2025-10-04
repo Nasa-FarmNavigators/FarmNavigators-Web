@@ -226,6 +226,231 @@ export interface Translations {
     };
   };
   
+  // Serious Game Complete Interface
+  seriousGameFull: {
+    // Tutorial/Welcome Screen
+    welcome: {
+      title: string;
+      subtitle: string;
+      description: string;
+      features: {
+        nasaData: {
+          title: string;
+          description: string;
+        };
+        realScenarios: {
+          title: string;
+          description: string;
+        };
+        scientificFeedback: {
+          title: string;
+          description: string;
+        };
+        budgetManagement: {
+          title: string;
+          description: string;
+        };
+      };
+      howToPlay: {
+        title: string;
+        steps: {
+          analyze: string;
+          decide: string;
+          manage: string;
+          learn: string;
+        };
+      };
+      startButton: string;
+      duration: string;
+    };
+    
+    // Game UI
+    ui: {
+      indicators: {
+        water: string;
+        soil: string;
+        growth: string;
+        score: string;
+        budget: string;
+      };
+      status: {
+        title: string;
+        waterReserve: string;
+        soilHealth: string;
+        cropGrowth: string;
+        day: string;
+        season: string;
+        budgetRemaining: string;
+      };
+      feedback: {
+        title: string;
+      };
+      decisions: {
+        title: string;
+        free: string;
+        insufficientBudget: string;
+      };
+      nasaPanel: {
+        title: string;
+        soilMoisture: string;
+        ndvi: string;
+        precipitation: string;
+        temperature: string;
+      };
+      weather: {
+        temperature: string;
+        rainfall: string;
+        humidity: string;
+      };
+    };
+    
+    // Scenarios
+    scenarios: {
+      week1: {
+        title: string;
+        description: string;
+        decisions: {
+          deepTillage: string;
+          organicMatter: string;
+          waitRain: string;
+        };
+      };
+      week2: {
+        title: string;
+        description: string;
+        decisions: {
+          droughtResistant: string;
+          highYield: string;
+          localVariety: string;
+        };
+      };
+      week4: {
+        title: string;
+        description: string;
+        decisions: {
+          precisionIrrigation: string;
+          mulching: string;
+          foliarNutrition: string;
+        };
+      };
+      week6: {
+        title: string;
+        description: string;
+        decisions: {
+          biologicalControl: string;
+          targetedPesticide: string;
+          monitoring: string;
+        };
+      };
+      week8: {
+        title: string;
+        description: string;
+        decisions: {
+          variableRate: string;
+          uniformApplication: string;
+          organicFertilizer: string;
+        };
+      };
+      week10: {
+        title: string;
+        description: string;
+        decisions: {
+          drainageSystem: string;
+          temporaryCover: string;
+          earlyHarvestPartial: string;
+        };
+      };
+      week12: {
+        title: string;
+        description: string;
+        decisions: {
+          immediateHarvest: string;
+          selectiveHarvest: string;
+          waitPerfectTiming: string;
+        };
+      };
+      postHarvest: {
+        title: string;
+        description: string;
+        decisions: {
+          coverCrops: string;
+          cropRotation: string;
+          soilAnalysis: string;
+        };
+      };
+    };
+    
+    // Feedback messages
+    feedback: {
+      deepTillage: string;
+      organicMatter: string;
+      waitRain: string;
+      droughtResistant: string;
+      highYield: string;
+      localVariety: string;
+      precisionIrrigation: string;
+      mulching: string;
+      foliarNutrition: string;
+      biologicalControl: string;
+      targetedPesticide: string;
+      monitoring: string;
+      variableRate: string;
+      uniformApplication: string;
+      organicFertilizer: string;
+      drainageSystem: string;
+      temporaryCover: string;
+      earlyHarvestPartial: string;
+      immediateHarvest: string;
+      selectiveHarvest: string;
+      waitPerfectTiming: string;
+      coverCrops: string;
+      cropRotation: string;
+      soilAnalysis: string;
+    };
+    
+    // End game
+    endGame: {
+      title: string;
+      subtitle: string;
+      results: {
+        finalScore: string;
+        totalInvested: string;
+        budgetEfficiency: string;
+        sustainability: string;
+        waterManagement: string;
+        excellent: string;
+        good: string;
+        regular: string;
+        needsImprovement: string;
+        critical: string;
+      };
+      performance: {
+        title: string;
+      };
+      actions: {
+        playAgain: string;
+        backHome: string;
+        downloadApp: string;
+      };
+    };
+    
+    // Common terms
+    common: {
+      kz: string;
+      points: string;
+      percentage: string;
+      day: string;
+      week: string;
+      level: string;
+      season: string;
+      seasons: {
+        planting: string;
+        growing: string;
+        harvest: string;
+      };
+    };
+  };
+
   // CTA Download Section
   ctaDownload: {
     title: string;
@@ -414,6 +639,218 @@ export const pt: Translations = {
       downloads: "10K+ Downloads",
       rating: "4.8★ Avaliação",
       countries: "5 Países"
+    }
+  },
+  seriousGameFull: {
+    welcome: {
+      title: "🎮 Serious Game: Gestor Agrícola Virtual",
+      subtitle: "Simulação Realista da Agricultura Angolana",
+      description: "Tome decisões baseadas em dados reais da NASA e aprenda técnicas sustentáveis de agricultura adaptadas ao clima angolano.",
+      features: {
+        nasaData: {
+          title: "Dados Reais da NASA",
+          description: "NDVI, umidade do solo, precipitação"
+        },
+        realScenarios: {
+          title: "Cenários Angolanos",
+          description: "Situações baseadas em Huambo, Benguela, Uíge"
+        },
+        scientificFeedback: {
+          title: "Feedback Científico",
+          description: "Aprenda com cada decisão tomada"
+        },
+        budgetManagement: {
+          title: "Orçamento Real",
+          description: "Gestão em Kwanzas"
+        }
+      },
+      howToPlay: {
+        title: "Como Jogar",
+        steps: {
+          analyze: "1. Analise os dados: Use informações de satélite (NDVI, umidade do solo)",
+          decide: "2. Tome decisões: Escolha estratégias baseadas nos dados",
+          manage: "3. Gerencie recursos: Mantenha orçamento e sustentabilidade",
+          learn: "4. Aprenda: Receba feedback sobre suas escolhas"
+        }
+      },
+      startButton: "🚀 Começar o Jogo",
+      duration: "Duração: ~15-20 minutos • Público: estudantes, agricultores, curiosos"
+    },
+    ui: {
+      indicators: {
+        water: "Água",
+        soil: "Solo",
+        growth: "Crescimento",
+        score: "Pontuação",
+        budget: "Orçamento"
+      },
+      status: {
+        title: "📊 Status da Fazenda",
+        waterReserve: "Reserva de Água",
+        soilHealth: "Saúde do Solo",
+        cropGrowth: "Crescimento das Culturas",
+        day: "Dia",
+        season: "Estação",
+        budgetRemaining: "Orçamento Restante"
+      },
+      feedback: {
+        title: "Feedback"
+      },
+      decisions: {
+        title: "Decisões Disponíveis",
+        free: "💚 Grátis",
+        insufficientBudget: "Orçamento insuficiente"
+      },
+      nasaPanel: {
+        title: "🛰️ Dados NASA",
+        soilMoisture: "Umidade do Solo",
+        ndvi: "Índice NDVI",
+        precipitation: "Precipitação",
+        temperature: "Temperatura"
+      },
+      weather: {
+        temperature: "Temperatura",
+        rainfall: "Chuva",
+        humidity: "Umidade"
+      }
+    },
+    scenarios: {
+      week1: {
+        title: "Primeira Semana - Preparação do Solo",
+        description: "Início da estação agrícola em Huambo. Análise de satélite mostra solo ressecado após a estação seca. Como preparar melhor o terreno?",
+        decisions: {
+          deepTillage: "🚜 Aração profunda para quebrar compactação",
+          organicMatter: "🌿 Adicionar matéria orgânica e compostagem",
+          waitRain: "☁️ Aguardar primeira chuva antes de preparar"
+        }
+      },
+      week2: {
+        title: "Segunda Semana - Plantio de Milho",
+        description: "Primeira chuva chegou! Dados de satélite mostram umidade adequada para plantio em Benguela. Qual variedade escolher?",
+        decisions: {
+          droughtResistant: "🌾 Variedade resistente à seca (ciclo longo)",
+          highYield: "🚀 Variedade de alto rendimento (mais exigente)",
+          localVariety: "🏡 Sementes locais adaptadas (menor risco)"
+        }
+      },
+      week4: {
+        title: "Quarta Semana - Crescimento Inicial",
+        description: "Plantas emergiram! NDVI indica crescimento desigual. Dados meteorológicos preveem período seco de 10 dias.",
+        decisions: {
+          precisionIrrigation: "💧 Irrigação localizada nas áreas mais secas",
+          mulching: "🍂 Cobertura morta para conservar umidade",
+          foliarNutrition: "🌱 Nutrição foliar para fortalecer plantas"
+        }
+      },
+      week6: {
+        title: "Sexta Semana - Controle de Pragas",
+        description: "Imagens de satélite detectam possível ataque de pragas no oeste da plantação. Como agir rapidamente?",
+        decisions: {
+          biologicalControl: "🐛 Controle biológico com predadores naturais",
+          targetedPesticide: "🎯 Pesticida específico apenas na área afetada",
+          monitoring: "📊 Intensificar monitoramento e armadilhas"
+        }
+      },
+      week8: {
+        title: "Oitava Semana - Fertilização Complementar",
+        description: "Análise NDVI mostra que algumas áreas precisam de nutrientes adicionais. Época crítica para floração do milho.",
+        decisions: {
+          variableRate: "📍 Aplicação de fertilizante por taxa variável",
+          uniformApplication: "🌾 Aplicação uniforme em toda área",
+          organicFertilizer: "🌿 Fertilizante orgânico de liberação lenta"
+        }
+      },
+      week10: {
+        title: "Décima Semana - Gestão Hídrica Avançada",
+        description: "Previsão meteorológica indica 3 dias de chuva intensa. NDVI mostra culturas saudáveis, mas risco de encharcamento.",
+        decisions: {
+          drainageSystem: "🚰 Implementar sistema de drenagem temporário",
+          temporaryCover: "☂️ Cobertura temporária em áreas críticas",
+          earlyHarvestPartial: "⚡ Colheita parcial preventiva"
+        }
+      },
+      week12: {
+        title: "Décima Segunda Semana - Colheita",
+        description: "Milho atingiu maturidade. Análise de imagem mostra desenvolvimento heterogêneo. Previsão de chuva em 5 dias.",
+        decisions: {
+          immediateHarvest: "🚜 Colheita imediata de toda área",
+          selectiveHarvest: "🎯 Colheita seletiva das áreas mais maduras",
+          waitPerfectTiming: "🎲 Aguardar ponto ideal de colheita"
+        }
+      },
+      postHarvest: {
+        title: "Pós-Colheita - Preparação para Próxima Safra",
+        description: "Colheita concluída! Agora é hora de preparar o solo para a próxima temporada. Análise do solo mostra níveis baixos de nitrogênio.",
+        decisions: {
+          coverCrops: "🌱 Plantar culturas de cobertura (leguminosas)",
+          cropRotation: "🔄 Rotação com feijão-caupi na próxima safra",
+          soilAnalysis: "📋 Análise detalhada do solo e correção"
+        }
+      }
+    },
+    feedback: {
+      deepTillage: "🚜 Boa preparação! Solo descompactado facilita desenvolvimento radicular.",
+      organicMatter: "⭐ Excelente! Matéria orgânica melhora retenção de água e fertilidade.",
+      waitRain: "⏳ Estratégia conservadora, mas pode atrasar o plantio.",
+      droughtResistant: "🌾 Escolha inteligente! Variedade adaptada ao clima angolano.",
+      highYield: "🚀 Alto potencial, mas precisa de manejo cuidadoso.",
+      localVariety: "🏡 Seguro e sustentável! Variedades locais são mais resilientes.",
+      precisionIrrigation: "💧 Tecnologia avançada! Uso eficiente da água.",
+      mulching: "⭐ Decisão sustentável! Economiza água e enriquece o solo.",
+      foliarNutrition: "🌱 Boa estratégia! Nutrição rápida em período crítico.",
+      biologicalControl: "🏆 Perfeito! Controle sustentável protege o ecossistema.",
+      targetedPesticide: "🎯 Eficaz, mas use com moderação para preservar benefícios.",
+      monitoring: "📊 Prevenção inteligente! Monitoramento evita grandes perdas.",
+      variableRate: "📍 Tecnologia de precisão! Máxima eficiência dos nutrientes.",
+      uniformApplication: "🌾 Estratégia tradicional, mas funcional.",
+      organicFertilizer: "🌿 Sustentável! Liberação gradual é melhor para o solo.",
+      drainageSystem: "💡 Investimento certeiro! Previne perdas por encharcamento.",
+      temporaryCover: "☂️ Proteção eficaz, mas considere custo-benefício.",
+      earlyHarvestPartial: "⚡ Decisão estratégica! Reduz riscos climáticos.",
+      immediateHarvest: "🚜 Eficiente! Evitou riscos climáticos.",
+      selectiveHarvest: "🏆 Excelente! Qualidade premium vale o investimento extra.",
+      waitPerfectTiming: "🎲 Arriscado, mas pode render mais se o clima colaborar.",
+      coverCrops: "⭐ Sustentabilidade máxima! Solo agradece para próxima safra.",
+      cropRotation: "🔄 Manejo inteligente! Quebra ciclo de pragas e doenças.",
+      soilAnalysis: "📋 Investimento no futuro! Dados precisos orientam decisões."
+    },
+    endGame: {
+      title: "🏆 Parabéns! Safra Concluída",
+      subtitle: "Resultados da sua gestão agrícola",
+      results: {
+        finalScore: "Pontuação Final",
+        totalInvested: "Total Investido",
+        budgetEfficiency: "Eficiência do Orçamento",
+        sustainability: "Sustentabilidade",
+        waterManagement: "Gestão Hídrica",
+        excellent: "🏆 Excelente",
+        good: "✅ Boa",
+        regular: "⚠️ Regular",
+        needsImprovement: "❌ Precisa melhorar",
+        critical: "❌ Crítica"
+      },
+      performance: {
+        title: "📊 Análise de Performance"
+      },
+      actions: {
+        playAgain: "🔄 Jogar Novamente",
+        backHome: "🏠 Voltar ao Início",
+        downloadApp: "🌱 Continue aprendendo: baixe o app Farm Navigators para dados reais da NASA!"
+      }
+    },
+    common: {
+      kz: "Kz",
+      points: "pts",
+      percentage: "%",
+      day: "Dia",
+      week: "Semana",
+      level: "Nível",
+      season: "Estação",
+      seasons: {
+        planting: "Plantio",
+        growing: "Crescimento",
+        harvest: "Colheita"
+      }
     }
   },
   footer: {
@@ -914,6 +1351,164 @@ export const en: Translations = {
       title: "No internet? No problem!",
       description: "Send AGRI to +244 900 000 000 via SMS"
     }
+  },
+  seriousGameFull: {
+    welcome: {
+      title: "🎮 Serious Game: Virtual Farm Manager",
+      subtitle: "Realistic Simulation of Angolan Agriculture",
+      description: "Make decisions based on real NASA data and learn sustainable farming techniques adapted to the Angolan climate.",
+      features: {
+        nasaData: { title: "Real NASA Data", description: "NDVI, soil moisture, precipitation" },
+        realScenarios: { title: "Angolan Scenarios", description: "Situations based on Huambo, Benguela, Uíge" },
+        scientificFeedback: { title: "Scientific Feedback", description: "Learn from every decision made" },
+        budgetManagement: { title: "Real Budget", description: "Management in Kwanzas" }
+      },
+      howToPlay: {
+        title: "How to Play",
+        steps: {
+          analyze: "1. Analyze data: Use satellite information (NDVI, soil moisture)",
+          decide: "2. Make decisions: Choose strategies based on data",
+          manage: "3. Manage resources: Maintain budget and sustainability",
+          learn: "4. Learn: Receive feedback on your choices"
+        }
+      },
+      startButton: "🚀 Start Game",
+      duration: "Duration: ~15-20 minutes • Audience: students, farmers, curious minds"
+    },
+    ui: {
+      indicators: { water: "Water", soil: "Soil", growth: "Growth", score: "Score", budget: "Budget" },
+      status: {
+        title: "📊 Farm Status", waterReserve: "Water Reserve", soilHealth: "Soil Health",
+        cropGrowth: "Crop Growth", day: "Day", season: "Season", budgetRemaining: "Budget Remaining"
+      },
+      feedback: { title: "Feedback" },
+      decisions: { title: "Available Decisions", free: "💚 Free", insufficientBudget: "Insufficient budget" },
+      nasaPanel: {
+        title: "🛰️ NASA Data", soilMoisture: "Soil Moisture", ndvi: "NDVI Index",
+        precipitation: "Precipitation", temperature: "Temperature"
+      },
+      weather: { temperature: "Temperature", rainfall: "Rainfall", humidity: "Humidity" }
+    },
+    scenarios: {
+      week1: {
+        title: "First Week - Soil Preparation",
+        description: "Start of agricultural season in Huambo. Satellite analysis shows dried soil after dry season. How to best prepare the land?",
+        decisions: {
+          deepTillage: "🚜 Deep tillage to break compaction",
+          organicMatter: "🌿 Add organic matter and composting",
+          waitRain: "☁️ Wait for first rain before preparing"
+        }
+      },
+      week2: {
+        title: "Second Week - Corn Planting",
+        description: "First rain arrived! Satellite data shows adequate moisture for planting in Benguela. Which variety to choose?",
+        decisions: {
+          droughtResistant: "🌾 Drought-resistant variety (long cycle)",
+          highYield: "🚀 High-yield variety (more demanding)",
+          localVariety: "🏡 Adapted local seeds (lower risk)"
+        }
+      },
+      week4: {
+        title: "Fourth Week - Initial Growth",
+        description: "Plants emerged! NDVI indicates uneven growth. Weather data predicts 10-day dry period.",
+        decisions: {
+          precisionIrrigation: "💧 Localized irrigation in drier areas",
+          mulching: "🍂 Mulch to conserve moisture",
+          foliarNutrition: "🌱 Foliar nutrition to strengthen plants"
+        }
+      },
+      week6: {
+        title: "Sixth Week - Pest Control",
+        description: "Satellite images detect possible pest attack in west of plantation. How to act quickly?",
+        decisions: {
+          biologicalControl: "🐛 Biological control with natural predators",
+          targetedPesticide: "🎯 Specific pesticide only in affected area",
+          monitoring: "📊 Intensify monitoring and traps"
+        }
+      },
+      week8: {
+        title: "Eighth Week - Complementary Fertilization",
+        description: "NDVI analysis shows some areas need additional nutrients. Critical time for corn flowering.",
+        decisions: {
+          variableRate: "📍 Variable rate fertilizer application",
+          uniformApplication: "🌾 Uniform application across entire area",
+          organicFertilizer: "🌿 Slow-release organic fertilizer"
+        }
+      },
+      week10: {
+        title: "Tenth Week - Advanced Water Management",
+        description: "Weather forecast indicates 3 days of intense rain. NDVI shows healthy crops, but waterlogging risk.",
+        decisions: {
+          drainageSystem: "🚰 Implement temporary drainage system",
+          temporaryCover: "☂️ Temporary cover in critical areas",
+          earlyHarvestPartial: "⚡ Preventive partial harvest"
+        }
+      },
+      week12: {
+        title: "Twelfth Week - Harvest",
+        description: "Corn reached maturity. Image analysis shows heterogeneous development. Rain forecast in 5 days.",
+        decisions: {
+          immediateHarvest: "🚜 Immediate harvest of entire area",
+          selectiveHarvest: "🎯 Selective harvest of most mature areas",
+          waitPerfectTiming: "🎲 Wait for ideal harvest point"
+        }
+      },
+      postHarvest: {
+        title: "Post-Harvest - Next Season Preparation",
+        description: "Harvest completed! Now time to prepare soil for next season. Soil analysis shows low nitrogen levels.",
+        decisions: {
+          coverCrops: "🌱 Plant cover crops (legumes)",
+          cropRotation: "🔄 Rotation with cowpea next season",
+          soilAnalysis: "📋 Detailed soil analysis and correction"
+        }
+      }
+    },
+    feedback: {
+      deepTillage: "🚜 Good preparation! Decompacted soil facilitates root development.",
+      organicMatter: "⭐ Excellent! Organic matter improves water retention and fertility.",
+      waitRain: "⏳ Conservative strategy, but may delay planting.",
+      droughtResistant: "🌾 Smart choice! Variety adapted to Angolan climate.",
+      highYield: "🚀 High potential, but needs careful management.",
+      localVariety: "🏡 Safe and sustainable! Local varieties are more resilient.",
+      precisionIrrigation: "💧 Advanced technology! Efficient water use.",
+      mulching: "⭐ Sustainable decision! Saves water and enriches soil.",
+      foliarNutrition: "🌱 Good strategy! Quick nutrition in critical period.",
+      biologicalControl: "🏆 Perfect! Sustainable control protects ecosystem.",
+      targetedPesticide: "🎯 Effective, but use moderately to preserve benefits.",
+      monitoring: "📊 Smart prevention! Monitoring prevents major losses.",
+      variableRate: "📍 Precision technology! Maximum nutrient efficiency.",
+      uniformApplication: "🌾 Traditional strategy, but functional.",
+      organicFertilizer: "🌿 Sustainable! Gradual release is better for soil.",
+      drainageSystem: "💡 Smart investment! Prevents waterlogging losses.",
+      temporaryCover: "☂️ Effective protection, but consider cost-benefit.",
+      earlyHarvestPartial: "⚡ Strategic decision! Reduces climate risks.",
+      immediateHarvest: "🚜 Efficient! Avoided climate risks.",
+      selectiveHarvest: "🏆 Excellent! Premium quality worth extra investment.",
+      waitPerfectTiming: "🎲 Risky, but may yield more if weather cooperates.",
+      coverCrops: "⭐ Maximum sustainability! Soil thanks for next season.",
+      cropRotation: "🔄 Smart management! Breaks pest and disease cycle.",
+      soilAnalysis: "📋 Investment in future! Precise data guides decisions."
+    },
+    endGame: {
+      title: "🏆 Congratulations! Season Completed",
+      subtitle: "Results of your agricultural management",
+      results: {
+        finalScore: "Final Score", totalInvested: "Total Invested", budgetEfficiency: "Budget Efficiency",
+        sustainability: "Sustainability", waterManagement: "Water Management",
+        excellent: "🏆 Excellent", good: "✅ Good", regular: "⚠️ Regular",
+        needsImprovement: "❌ Needs improvement", critical: "❌ Critical"
+      },
+      performance: { title: "📊 Performance Analysis" },
+      actions: {
+        playAgain: "🔄 Play Again", backHome: "🏠 Back to Home",
+        downloadApp: "🌱 Keep learning: download Farm Navigators app for real NASA data!"
+      }
+    },
+    common: {
+      kz: "Kz", points: "pts", percentage: "%", day: "Day", week: "Week",
+      level: "Level", season: "Season",
+      seasons: { planting: "Planting", growing: "Growing", harvest: "Harvest" }
+    }
   }
 };
 
@@ -1215,6 +1810,84 @@ export const umb: Translations = {
     offline: {
       title: "Kimbua internet? Kimbua problema!",
       description: "Okuhepa AGRI ku +244 900 000 000 sikua mu SMS"
+    }
+  },
+  seriousGameFull: {
+    welcome: {
+      title: "🎮 Olutelelo: Okusonga Osinda",
+      subtitle: "Olutelelo wa Olima Angola",
+      description: "Fila okulima kwa mema na vya NASA. Londolola olima.",
+      features: {
+        nasaData: { title: "Vya NASA", description: "NDVI, ombela, omuva" },
+        realScenarios: { title: "Angola", description: "Huambo, Benguela, Uíge" },
+        scientificFeedback: { title: "Okulonga", description: "Londolola fahi" },
+        budgetManagement: { title: "Okuwila", description: "Kwanza" }
+      },
+      howToPlay: {
+        title: "Okutelela",
+        steps: {
+          analyze: "1. Hendelela vya NASA",
+          decide: "2. Fila okufika",
+          manage: "3. Wila okukonga",
+          learn: "4. Londolola"
+        }
+      },
+      startButton: "🚀 Tonda",
+      duration: "Ovala: ~15-20 omuaso"
+    },
+    ui: {
+      indicators: { water: "Ombela", soil: "Ovunda", growth: "Okuvila", score: "Onumelo", budget: "Okuwila" },
+      status: {
+        title: "📊 Oko", waterReserve: "Ombela", soilHealth: "Ovunda",
+        cropGrowth: "Okuvila", day: "Olusiku", season: "Epoko", budgetRemaining: "Okuwila"
+      },
+      feedback: { title: "Okulonga" },
+      decisions: { title: "Okufika", free: "💚 Teli", insufficientBudget: "Okuwila tondilua" },
+      nasaPanel: {
+        title: "🛰️ NASA", soilMoisture: "Ovunda", ndvi: "NDVI",
+        precipitation: "Omuva", temperature: "Okuviya"
+      },
+      weather: { temperature: "Okuviya", rainfall: "Omuva", humidity: "Ombela" }
+    },
+    scenarios: {
+      week1: { title: "Ovunda", description: "Ovunda konga.", decisions: { deepTillage: "Ovunda", organicMatter: "Olima", waitRain: "Omuva" } },
+      week2: { title: "Olima", description: "Olima kongo.", decisions: { droughtResistant: "Olima", highYield: "Olima", localVariety: "Olima" } },
+      week4: { title: "Okuvila", description: "Okuvila kongo.", decisions: { precisionIrrigation: "Ombela", mulching: "Ovunda", foliarNutrition: "Olima" } },
+      week6: { title: "Ombili", description: "Ombili kongo.", decisions: { biologicalControl: "Ombili", targetedPesticide: "Ombili", monitoring: "Ombili" } },
+      week8: { title: "Okuvila", description: "Okuvila kongo.", decisions: { variableRate: "Ovunda", uniformApplication: "Ovunda", organicFertilizer: "Ovunda" } },
+      week10: { title: "Ombela", description: "Ombela kongo.", decisions: { drainageSystem: "Ombela", temporaryCover: "Ombela", earlyHarvestPartial: "Okuwonga" } },
+      week12: { title: "Okuwonga", description: "Okuwonga kongo.", decisions: { immediateHarvest: "Okuwonga", selectiveHarvest: "Okuwonga", waitPerfectTiming: "Okuwonga" } },
+      postHarvest: { title: "Epoko", description: "Epoko kongo.", decisions: { coverCrops: "Olima", cropRotation: "Olima", soilAnalysis: "Ovunda" } }
+    },
+    feedback: {
+      deepTillage: "Omema!", organicMatter: "Okulonga omema!", waitRain: "Etelele.",
+      droughtResistant: "Omema!", highYield: "Omema!", localVariety: "Okulonga!",
+      precisionIrrigation: "Omema!", mulching: "Okulonga!", foliarNutrition: "Omema!",
+      biologicalControl: "Omema havi!", targetedPesticide: "Omema.", monitoring: "Okulonga!",
+      variableRate: "Omema!", uniformApplication: "Omema.", organicFertilizer: "Okulonga!",
+      drainageSystem: "Omema!", temporaryCover: "Omema.", earlyHarvestPartial: "Okulonga!",
+      immediateHarvest: "Omema!", selectiveHarvest: "Omema havi!", waitPerfectTiming: "Etelele.",
+      coverCrops: "Okulonga havi!", cropRotation: "Okulonga!", soilAnalysis: "Omema!"
+    },
+    endGame: {
+      title: "🏆 Okulonga! Epoko ye kwa.",
+      subtitle: "Osoma ya oko lyaku",
+      results: {
+        finalScore: "Onumelo", totalInvested: "Okuwila", budgetEfficiency: "Okuwila",
+        sustainability: "Okulonga", waterManagement: "Ombela",
+        excellent: "🏆 Omema havi", good: "✅ Omema", regular: "⚠️ Omema",
+        needsImprovement: "❌ Kuvelela", critical: "❌ Kuvelela"
+      },
+      performance: { title: "📊 Onumelo" },
+      actions: {
+        playAgain: "🔄 Telela hange", backHome: "🏠 Vutuka",
+        downloadApp: "🌱 Londolola: tunga Farm Navigators!"
+      }
+    },
+    common: {
+      kz: "Kz", points: "pts", percentage: "%", day: "Olusiku", week: "Ovikela",
+      level: "Osila", season: "Epoko",
+      seasons: { planting: "Olima", growing: "Okuvila", harvest: "Okuwonga" }
     }
   }
 };
@@ -1518,6 +2191,84 @@ export const kmb: Translations = {
       title: "Kimbamba internet? Kimbamba problema!",
       description: "Kuhepa AGRI ku +244 900 000 000 sikua mu SMS"
     }
+  },
+  seriousGameFull: {
+    welcome: {
+      title: "🎮 Jingu: Mukuxi wa Kima",
+      subtitle: "Jingu ya Kilima Angola",
+      description: "Sobolola kilima kya mema ni dya NASA. Jingisa kilima.",
+      features: {
+        nasaData: { title: "Dya NASA", description: "NDVI, mesu, mvula" },
+        realScenarios: { title: "Angola", description: "Huambo, Benguela, Uíge" },
+        scientificFeedback: { title: "Kujinga", description: "Jingisa mbutu" },
+        budgetManagement: { title: "Kibanji", description: "Kwanza" }
+      },
+      howToPlay: {
+        title: "Kujinga",
+        steps: {
+          analyze: "1. Mona dya NASA",
+          decide: "2. Sobolola",
+          manage: "3. Banji kibanji",
+          learn: "4. Jingisa"
+        }
+      },
+      startButton: "🚀 Banda",
+      duration: "Tempu: ~15-20 minutos"
+    },
+    ui: {
+      indicators: { water: "Mesu", soil: "Muxi", growth: "Mbongo", score: "Puntos", budget: "Kibanji" },
+      status: {
+        title: "📊 Kima", waterReserve: "Mesu", soilHealth: "Muxi",
+        cropGrowth: "Mbongo", day: "Siku", season: "Tempu", budgetRemaining: "Kibanji"
+      },
+      feedback: { title: "Kujinga" },
+      decisions: { title: "Kisobo", free: "💚 Kimbamba", insufficientBudget: "Kibanji kiadi" },
+      nasaPanel: {
+        title: "🛰️ NASA", soilMoisture: "Muxi", ndvi: "NDVI",
+        precipitation: "Mvula", temperature: "Kutenda"
+      },
+      weather: { temperature: "Kutenda", rainfall: "Mvula", humidity: "Mesu" }
+    },
+    scenarios: {
+      week1: { title: "Muxi", description: "Muxi wa banda.", decisions: { deepTillage: "Muxi", organicMatter: "Kilima", waitRain: "Mvula" } },
+      week2: { title: "Kilima", description: "Kilima kya banda.", decisions: { droughtResistant: "Kilima", highYield: "Kilima", localVariety: "Kilima" } },
+      week4: { title: "Mbongo", description: "Mbongo ya banda.", decisions: { precisionIrrigation: "Mesu", mulching: "Muxi", foliarNutrition: "Kilima" } },
+      week6: { title: "Bibila", description: "Bibila bya banda.", decisions: { biologicalControl: "Bibila", targetedPesticide: "Bibila", monitoring: "Bibila" } },
+      week8: { title: "Mbongo", description: "Mbongo ya banda.", decisions: { variableRate: "Muxi", uniformApplication: "Muxi", organicFertilizer: "Muxi" } },
+      week10: { title: "Mesu", description: "Mesu ya banda.", decisions: { drainageSystem: "Mesu", temporaryCover: "Mesu", earlyHarvestPartial: "Kusola" } },
+      week12: { title: "Kusola", description: "Kusola kya banda.", decisions: { immediateHarvest: "Kusola", selectiveHarvest: "Kusola", waitPerfectTiming: "Kusola" } },
+      postHarvest: { title: "Tempu", description: "Tempu ya banda.", decisions: { coverCrops: "Kilima", cropRotation: "Kilima", soilAnalysis: "Muxi" } }
+    },
+    feedback: {
+      deepTillage: "Mema!", organicMatter: "Kujinga mema!", waitRain: "Kandengesa.",
+      droughtResistant: "Mema!", highYield: "Mema!", localVariety: "Kujinga!",
+      precisionIrrigation: "Mema!", mulching: "Kujinga!", foliarNutrition: "Mema!",
+      biologicalControl: "Mema makuxi!", targetedPesticide: "Mema.", monitoring: "Kujinga!",
+      variableRate: "Mema!", uniformApplication: "Mema.", organicFertilizer: "Kujinga!",
+      drainageSystem: "Mema!", temporaryCover: "Mema.", earlyHarvestPartial: "Kujinga!",
+      immediateHarvest: "Mema!", selectiveHarvest: "Mema makuxi!", waitPerfectTiming: "Kandengesa.",
+      coverCrops: "Kujinga makuxi!", cropRotation: "Kujinga!", soilAnalysis: "Mema!"
+    },
+    endGame: {
+      title: "🏆 Kujinga! Tempu yi kua.",
+      subtitle: "Bisolo bya kima yaku",
+      results: {
+        finalScore: "Puntos", totalInvested: "Kibanji", budgetEfficiency: "Kibanji",
+        sustainability: "Kujinga", waterManagement: "Mesu",
+        excellent: "🏆 Mema makuxi", good: "✅ Mema", regular: "⚠️ Mema",
+        needsImprovement: "❌ Kubongisa", critical: "❌ Kubongisa"
+      },
+      performance: { title: "📊 Puntos" },
+      actions: {
+        playAgain: "🔄 Jingisa kamba", backHome: "🏠 Kuvutuka",
+        downloadApp: "🌱 Jingisa: solola Farm Navigators!"
+      }
+    },
+    common: {
+      kz: "Kz", points: "pts", percentage: "%", day: "Siku", week: "Semana",
+      level: "Nivel", season: "Tempu",
+      seasons: { planting: "Kilima", growing: "Mbongo", harvest: "Kusola" }
+    }
   }
 };
 
@@ -1819,6 +2570,84 @@ export const lun: Translations = {
     offline: {
       title: "Kimbamba internet? Kimbamba problema!",
       description: "Kuhepa AGRI ku +244 900 000 000 sikua mu SMS"
+    }
+  },
+  seriousGameFull: {
+    welcome: {
+      title: "🎮 Ntuxi: Mukanda wa Kilima",
+      subtitle: "Ntuxi ya Kilima Angola",
+      description: "Jingisela kilima kya mema na dya NASA. Longela kilima.",
+      features: {
+        nasaData: { title: "Dya NASA", description: "NDVI, mema, mvula" },
+        realScenarios: { title: "Angola", description: "Huambo, Benguela, Uíge" },
+        scientificFeedback: { title: "Kujinga", description: "Longela mbutu" },
+        budgetManagement: { title: "Kibanji", description: "Kwanza" }
+      },
+      howToPlay: {
+        title: "Kulongela",
+        steps: {
+          analyze: "1. Talela dya NASA",
+          decide: "2. Jingisela",
+          manage: "3. Longela kibanji",
+          learn: "4. Jingisa"
+        }
+      },
+      startButton: "🚀 Komesa",
+      duration: "Tempu: ~15-20 minutos"
+    },
+    ui: {
+      indicators: { water: "Mema", soil: "Muxi", growth: "Ngongo", score: "Puntos", budget: "Kibanji" },
+      status: {
+        title: "📊 Kilima", waterReserve: "Mema", soilHealth: "Muxi",
+        cropGrowth: "Ngongo", day: "Siku", season: "Tempu", budgetRemaining: "Kibanji"
+      },
+      feedback: { title: "Kujinga" },
+      decisions: { title: "Kilongo", free: "💚 Kimbamba", insufficientBudget: "Kibanji kiadi" },
+      nasaPanel: {
+        title: "🛰️ NASA", soilMoisture: "Muxi", ndvi: "NDVI",
+        precipitation: "Mvula", temperature: "Moto"
+      },
+      weather: { temperature: "Moto", rainfall: "Mvula", humidity: "Mema" }
+    },
+    scenarios: {
+      week1: { title: "Muxi", description: "Muxi wa komesa.", decisions: { deepTillage: "Muxi", organicMatter: "Kilima", waitRain: "Mvula" } },
+      week2: { title: "Kilima", description: "Kilima kya komesa.", decisions: { droughtResistant: "Kilima", highYield: "Kilima", localVariety: "Kilima" } },
+      week4: { title: "Ngongo", description: "Ngongo ya komesa.", decisions: { precisionIrrigation: "Mema", mulching: "Muxi", foliarNutrition: "Kilima" } },
+      week6: { title: "Bibila", description: "Bibila bya komesa.", decisions: { biologicalControl: "Bibila", targetedPesticide: "Bibila", monitoring: "Bibila" } },
+      week8: { title: "Ngongo", description: "Ngongo ya komesa.", decisions: { variableRate: "Muxi", uniformApplication: "Muxi", organicFertilizer: "Muxi" } },
+      week10: { title: "Mema", description: "Mema ya komesa.", decisions: { drainageSystem: "Mema", temporaryCover: "Mema", earlyHarvestPartial: "Kulonga" } },
+      week12: { title: "Kulonga", description: "Kulonga kya komesa.", decisions: { immediateHarvest: "Kulonga", selectiveHarvest: "Kulonga", waitPerfectTiming: "Kulonga" } },
+      postHarvest: { title: "Tempu", description: "Tempu ya komesa.", decisions: { coverCrops: "Kilima", cropRotation: "Kilima", soilAnalysis: "Muxi" } }
+    },
+    feedback: {
+      deepTillage: "Mema!", organicMatter: "Kujinga mema!", waitRain: "Lalela.",
+      droughtResistant: "Mema!", highYield: "Mema!", localVariety: "Kujinga!",
+      precisionIrrigation: "Mema!", mulching: "Kujinga!", foliarNutrition: "Mema!",
+      biologicalControl: "Mema makuxi!", targetedPesticide: "Mema.", monitoring: "Kujinga!",
+      variableRate: "Mema!", uniformApplication: "Mema.", organicFertilizer: "Kujinga!",
+      drainageSystem: "Mema!", temporaryCover: "Mema.", earlyHarvestPartial: "Kujinga!",
+      immediateHarvest: "Mema!", selectiveHarvest: "Mema makuxi!", waitPerfectTiming: "Lalela.",
+      coverCrops: "Kujinga makuxi!", cropRotation: "Kujinga!", soilAnalysis: "Mema!"
+    },
+    endGame: {
+      title: "🏆 Kujinga! Tempu yi kua.",
+      subtitle: "Masolo ma kilima yaku",
+      results: {
+        finalScore: "Puntos", totalInvested: "Kibanji", budgetEfficiency: "Kibanji",
+        sustainability: "Kujinga", waterManagement: "Mema",
+        excellent: "🏆 Mema makuxi", good: "✅ Mema", regular: "⚠️ Mema",
+        needsImprovement: "❌ Kulongesa", critical: "❌ Kulongesa"
+      },
+      performance: { title: "📊 Puntos" },
+      actions: {
+        playAgain: "🔄 Jingisa kamba", backHome: "🏠 Kuvutuka",
+        downloadApp: "🌱 Jingisa: solola Farm Navigators!"
+      }
+    },
+    common: {
+      kz: "Kz", points: "pts", percentage: "%", day: "Siku", week: "Semana",
+      level: "Nivel", season: "Tempu",
+      seasons: { planting: "Kilima", growing: "Ngongo", harvest: "Kulonga" }
     }
   }
 };
