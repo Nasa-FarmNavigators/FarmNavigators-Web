@@ -756,6 +756,50 @@ export interface Translations {
       info: string;
     };
   };
+  
+  // Login Page
+  login: {
+    // Header
+    header: {
+      title: string;
+      subtitle: string;
+      backButton: string;
+      changeBackground: string;
+    };
+    
+    // Form Fields
+    form: {
+      emailLabel: string;
+      emailPlaceholder: string;
+      passwordLabel: string;
+      passwordPlaceholder: string;
+      loginButton: string;
+      loginButtonLoading: string;
+    };
+    
+    // Quick Login Demo
+    quickLogin: {
+      title: string;
+      adminButton: string;
+      ngoButton: string;
+      credentials: {
+        admin: string;
+        ngo: string;
+      };
+    };
+    
+    // Error Messages
+    errors: {
+      invalidCredentials: string;
+      loginError: string;
+      required: string;
+    };
+    
+    // Footer
+    footer: {
+      copyright: string;
+    };
+  };
 }
 
 // Tradução em Português (PT) - Padrão
@@ -1523,7 +1567,51 @@ export const pt: Translations = {
     demo: {
       info: "💡 Demo do Farm Tinder - Dados baseados em informações reais da NASA e agricultura angolana",
     },
-  }
+  },
+  
+  // Login Page
+  login: {
+    // Header
+    header: {
+      title: "Farm Navigators Angola",
+      subtitle: "Plataforma Agrícola com Dados NASA",
+      backButton: "Voltar ao início",
+      changeBackground: "Trocar imagem de fundo",
+    },
+    
+    // Form Fields
+    form: {
+      emailLabel: "Email",
+      emailPlaceholder: "seu@email.com",
+      passwordLabel: "Senha",
+      passwordPlaceholder: "••••••••",
+      loginButton: "Entrar",
+      loginButtonLoading: "Entrando...",
+    },
+    
+    // Quick Login Demo
+    quickLogin: {
+      title: "Demonstração - Login Rápido:",
+      adminButton: "Admin",
+      ngoButton: "ONG",
+      credentials: {
+        admin: "Admin: admin@farmnavigators.ao / admin123",
+        ngo: "ONG: ong@farmnavigators.ao / ong123",
+      },
+    },
+    
+    // Error Messages
+    errors: {
+      invalidCredentials: "Credenciais inválidas. Use as credenciais de demonstração.",
+      loginError: "Erro ao fazer login. Tente novamente.",
+      required: "Este campo é obrigatório",
+    },
+    
+    // Footer
+    footer: {
+      copyright: "© 2025 Farm Navigators Angola. Todos os direitos reservados.",
+    },
+  },
 };
 
 // Tradução em Inglês (EN)
@@ -2237,7 +2325,51 @@ export const en: Translations = {
     demo: {
       info: "💡 Farm Tinder Demo - Based on real NASA data and Angolan agriculture",
     },
-  }
+  },
+  
+  // Login Page
+  login: {
+    // Header
+    header: {
+      title: "Farm Navigators Angola",
+      subtitle: "Agricultural Platform with NASA Data",
+      backButton: "Back to home",
+      changeBackground: "Change background image",
+    },
+    
+    // Form Fields
+    form: {
+      emailLabel: "Email",
+      emailPlaceholder: "your@email.com",
+      passwordLabel: "Password",
+      passwordPlaceholder: "••••••••",
+      loginButton: "Login",
+      loginButtonLoading: "Logging in...",
+    },
+    
+    // Quick Login Demo
+    quickLogin: {
+      title: "Demo - Quick Login:",
+      adminButton: "Admin",
+      ngoButton: "NGO",
+      credentials: {
+        admin: "Admin: admin@farmnavigators.ao / admin123",
+        ngo: "NGO: ong@farmnavigators.ao / ong123",
+      },
+    },
+    
+    // Error Messages
+    errors: {
+      invalidCredentials: "Invalid credentials. Use demo credentials.",
+      loginError: "Login error. Please try again.",
+      required: "This field is required",
+    },
+    
+    // Footer
+    footer: {
+      copyright: "© 2025 Farm Navigators Angola. All rights reserved.",
+    },
+  },
 };
 
 // Tradução em Umbundu (UMB) - Uma das línguas nacionais mais faladas
@@ -2662,6 +2794,15 @@ export const umb: Translations = {
       tomato: { name: "Otomate", description: "Lupakasa mema", pros: ["Lupakasa", "Kuria", "Lumbu"], considerations: ["Ombela", "Katuluka", "Lupakasa"], plantingSeason: "Maio - Julho" }
     },
     demo: { info: "💡 Farm Tinder Demo - NASA ya Angola olima" }
+  },
+  
+  // Login Page - Versão Simplificada Umbundu
+  login: {
+    header: { title: "Farm Navigators Angola", subtitle: "NASA ya olima", backButton: "Vutuka ekaya", changeBackground: "Tuka omaka" },
+    form: { emailLabel: "Email", emailPlaceholder: "email@", passwordLabel: "Sima", passwordPlaceholder: "••••••••", loginButton: "Kinjila", loginButtonLoading: "Okukinjila..." },
+    quickLogin: { title: "Demo - Kinjila:", adminButton: "Admin", ngoButton: "ONG", credentials: { admin: "Admin: admin@farmnavigators.ao / admin123", ngo: "ONG: ong@farmnavigators.ao / ong123" } },
+    errors: { invalidCredentials: "Sima kimbamba. Hemelela demo.", loginError: "Ekuluvila kinjila. Tondilua.", required: "Otondile oviya" },
+    footer: { copyright: "© 2025 Farm Navigators Angola. Omvelo vosi." }
   }
 };
 
@@ -3087,6 +3228,15 @@ export const kmb: Translations = {
       tomato: { name: "Tomate", description: "Lukeba mema", pros: ["Lukeba", "Kilima", "Tempu"], considerations: ["Mesu", "Kandengesa", "Lukeba"], plantingSeason: "Maio - Julho" }
     },
     demo: { info: "💡 Farm Tinder Demo - NASA ya Angola kilima" }
+  },
+  
+  // Login Page - Versão Simplificada Kimbundu
+  login: {
+    header: { title: "Farm Navigators Angola", subtitle: "NASA ya kilima", backButton: "Kuvutuka muzubu", changeBackground: "Tuka mfutu" },
+    form: { emailLabel: "Email", emailPlaceholder: "email@", passwordLabel: "Sima", passwordPlaceholder: "••••••••", loginButton: "Kinjila", loginButtonLoading: "Kukinjila..." },
+    quickLogin: { title: "Demo - Kinjila:", adminButton: "Admin", ngoButton: "ONG", credentials: { admin: "Admin: admin@farmnavigators.ao / admin123", ngo: "ONG: ong@farmnavigators.ao / ong123" } },
+    errors: { invalidCredentials: "Sima kimbamba. Sobolola demo.", loginError: "Kimbamba kinjila. Kandengesa.", required: "Osolola oviya" },
+    footer: { copyright: "© 2025 Farm Navigators Angola. Mavalo osi." }
   }
 };
 
@@ -3512,6 +3662,15 @@ export const lun: Translations = {
       tomato: { name: "Tomate", description: "Lukeba mema", pros: ["Lukeba", "Kilima", "Tempu"], considerations: ["Mema", "Longela", "Lukeba"], plantingSeason: "Maio - Julho" }
     },
     demo: { info: "💡 Farm Tinder Demo - NASA ya Angola kilima" }
+  },
+  
+  // Login Page - Versão Simplificada Lunda
+  login: {
+    header: { title: "Farm Navigators Angola", subtitle: "NASA ya kilima", backButton: "Kuvutuka xietu", changeBackground: "Tuka mfutu" },
+    form: { emailLabel: "Email", emailPlaceholder: "email@", passwordLabel: "Sima", passwordPlaceholder: "••••••••", loginButton: "Kinjila", loginButtonLoading: "Kukinjila..." },
+    quickLogin: { title: "Demo - Kinjila:", adminButton: "Admin", ngoButton: "ONG", credentials: { admin: "Admin: admin@farmnavigators.ao / admin123", ngo: "ONG: ong@farmnavigators.ao / ong123" } },
+    errors: { invalidCredentials: "Sima kimbamba. Longela demo.", loginError: "Kimbamba kinjila. Longela.", required: "Olongela oviya" },
+    footer: { copyright: "© 2025 Farm Navigators Angola. Mavalo osi." }
   }
 };
 
