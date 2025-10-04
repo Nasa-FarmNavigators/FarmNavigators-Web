@@ -31,8 +31,11 @@ import {
     FaArrowRight,
     FaRocket
 } from 'react-icons/fa';
+import { useTranslations } from '../i18n/useI18n';
+import { LanguageSelector } from '../components/LanguageSelector';
 
 const FarmNavigatorsLanding: React.FC = () => {
+    const t = useTranslations();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [currentFeature, setCurrentFeature] = useState(0);
     const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -40,57 +43,52 @@ const FarmNavigatorsLanding: React.FC = () => {
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+    // Features do Farm Navigators - usando traduções
     const features = [
         {
             icon: <FaSeedling />,
-            title: "Farm Tinder",
-            description: "Recomendações personalizadas de culturas baseadas em dados NASA, solo e clima da sua região",
-            benefits: ["Matching inteligente", "Dados NASA integrados", "Recomendações personalizadas"]
+            title: t.features.farmTinder.title,
+            description: t.features.farmTinder.description,
+            benefits: t.features.farmTinder.benefits
         },
         {
             icon: <FaCloudRain />,
-            title: "Previsões Climáticas",
-            description: "Dados da NASA em tempo real: chuva, temperatura, umidade do solo e alertas de pragas",
-            benefits: ["Dados em tempo real", "Alertas de pragas", "Monitoramento contínuo"]
+            title: t.features.weather.title,
+            description: t.features.weather.description,
+            benefits: t.features.weather.benefits
         },
         {
             icon: <FaMobile />,
-            title: "AgriFlix",
-            description: "Mini-vídeos educativos de 1 minuto com técnicas agrícolas em português e línguas locais",
-            benefits: []
+            title: t.features.agriflix.title,
+            description: t.features.agriflix.description,
+            benefits: t.features.agriflix.benefits
         },
         {
             icon: <FaGamepad />,
-            title: "Jogo",
-            description: "Jogo educativo que ensina como usar dados de satélite para tomar decisões agrícolas inteligentes",
-            benefits: []
+            title: t.features.alerts.title,
+            description: t.features.alerts.description,
+            benefits: t.features.alerts.benefits
         },
         {
             icon: <FaChartLine />,
-            title: "Simulador de Crescimento",
-            description: "Veja como suas culturas vão crescer baseado nas condições reais da sua terra",
-            benefits: ["Projeções visuais", "Baseado em dados reais", "Planejamento antecipado"]
-        },
-        {
-            icon: <FaGlobe />,
-            title: "Funciona Offline",
-            description: "Previsões e alertas via USSD/SMS mesmo sem internet, em Kimbundu, Umbundu e Kikongo",
-            benefits: ["Acesso universal", "Multi-idioma", "Sem dependência de internet"]
+            title: t.features.community.title,
+            description: t.features.community.description,
+            benefits: t.features.community.benefits
         },
         {
             icon: <FaLeaf />,
-            title: "Conservação do Solo",
-            description: "Monitore a saúde da sua terra e aprenda práticas sustentáveis de agricultura",
-            benefits: ["Monitoramento contínuo", "Práticas sustentáveis", "Preservação ambiental"]
+            title: t.features.marketplace.title,
+            description: t.features.marketplace.description,
+            benefits: t.features.marketplace.benefits
         }
     ];
 
-    // Estatísticas (placeholder para dados reais futuros)
+    // Estatísticas usando traduções
     const stats = [
-        { value: "25%", label: "Aumento médio de produtividade", icon: <FaChartLine /> },
-        { value: "5 idiomas", label: "Português, Inglês + línguas nacionais", icon: <FaGlobe /> },
-        { value: "18 províncias", label: "Cobertura em todo Angola", icon: <FaMapMarkerAlt /> },
-        { value: "24/7", label: "Alertas em tempo real", icon: <FaCloudRain /> }
+        { value: t.stats.productivity.value, label: t.stats.productivity.label, icon: <FaChartLine /> },
+        { value: t.stats.languages.value, label: t.stats.languages.label, icon: <FaGlobe /> },
+        { value: t.stats.coverage.value, label: t.stats.coverage.label, icon: <FaMapMarkerAlt /> },
+        { value: t.stats.realtime.value, label: t.stats.realtime.label, icon: <FaCloudRain /> }
     ];
 
     // Organizações parceiras (placeholder)
@@ -156,7 +154,7 @@ const FarmNavigatorsLanding: React.FC = () => {
                             <img src='public/images/others/logo.png'></img>
                         </div>
                         <div>
-                            <h1 className="text-xl font-bold text-gray-900">Farm Navigators</h1>
+                            <h1 className="text-xl font-bold text-gray-900">{t.companyName}</h1>
                             <p className="text-xs text-gray-600">Angola</p>
                         </div>
                     </div>
@@ -173,13 +171,13 @@ const FarmNavigatorsLanding: React.FC = () => {
 
                     <div className={`${isMenuOpen ? 'block' : 'hidden'} lg:block`}>
                         <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-8 lg:items-center">
-                            {/* <a href="#features" className="text-gray-700 hover:text-green-600 transition-colors">Funcionalidades</a> */}
-                            {/* <a href="#how-it-works" className="text-gray-700 hover:text-green-600 transition-colors">Como Funciona</a> */}
-                            {/* <a href="#impact" className="text-gray-700 hover:text-green-600 transition-colors">Impacto</a> */}
-                            <a href="/farm-tinder" className="text-gray-700 hover:text-green-600 transition-colors">Demo Farm Tinder</a>
-                            <a href="/agriflix" className="text-gray-700 hover:text-green-600 transition-colors">AgriFlix</a>
-                            <a href="/serious-game" className="text-gray-700 hover:text-orange-600 transition-colors">Jogo Educativo</a>
-                            {/* <a href="#download" className="text-gray-700 hover:text-green-600 transition-colors">Baixar App</a> */}
+                            <a href="/farm-tinder" className="text-gray-700 hover:text-green-600 transition-colors">{t.interactiveDemos.farmTinder.title}</a>
+                            <a href="/agriflix" className="text-gray-700 hover:text-green-600 transition-colors">{t.interactiveDemos.agriflix.title}</a>
+                            <a href="/serious-game" className="text-gray-700 hover:text-orange-600 transition-colors">{t.interactiveDemos.seriousGame.title}</a>
+                            
+                            {/* Language Selector */}
+                            <LanguageSelector variant="default" />
+                            
                             <a href="/signin" className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
                                 Portal
                             </a>
@@ -204,32 +202,25 @@ const FarmNavigatorsLanding: React.FC = () => {
                 <div className="relative z-10 container mx-auto text-center">
                     <div className="max-w-4xl mx-auto">
                         <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                            Agricultura Inteligente
-                            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-blue-300">
-                                Powered by NASA 🛰️
-                            </span>
+                            {t.hero.title}
                         </h1>
 
                         <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-                            Conectamos agricultores angolanos com dados espaciais da NASA,
-                            <br className="hidden md:block" />
-                            inteligência artificial e tecnologia para <strong className="text-green-300">aumentar a produtividade</strong>
-                            <br className="hidden md:block" />
-                            e <strong className="text-blue-300">conservar o meio ambiente</strong>.
+                            {t.hero.description}
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                             <button className="bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center">
                                 <FaApple className="mr-2 text-xl" />
-                                Baixar para iOS
+                                {t.download.platforms.ios}
                             </button>
                             <button className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center">
                                 <FaGooglePlay className="mr-2 text-xl" />
-                                Baixar para Android
+                                {t.download.platforms.android}
                             </button>
                             <button className="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center">
                                 <FaDesktop className="mr-2 text-xl" />
-                                Baixar para Desktop
+                                {t.download.platforms.desktop}
                             </button>
                         </div>
 
@@ -379,10 +370,10 @@ const FarmNavigatorsLanding: React.FC = () => {
                 <div className="relative z-10 container mx-auto px-4 sm:px-8">
                     <div className="text-center mb-12">
                         <h2 className="text-4xl font-bold text-white mb-4">
-                            Veja o Farm Navigators em Ação
+                            {t.videoDemo.title}
                         </h2>
                         <p className="text-xl text-white/90 max-w-3xl mx-auto">
-                            Demonstração completa de como a tecnologia NASA pode transformar a agricultura angolana
+                            {t.videoDemo.subtitle}
                         </p>
                     </div>
 
@@ -406,9 +397,9 @@ const FarmNavigatorsLanding: React.FC = () => {
                                     </div>
                                     <div className="absolute bottom-4 left-4 right-4">
                                         <div className="bg-black/50 backdrop-blur-sm rounded-lg p-4">
-                                            <h3 className="text-white font-bold text-lg mb-2">NASA Applied Sciences</h3>
+                                            <h3 className="text-white font-bold text-lg mb-2">{t.videoDemo.thumbnailTitle}</h3>
                                             <p className="text-white/90 text-sm">
-                                                Dados satelitais • Agricultura inteligente • Tecnologia espacial aplicada
+                                                {t.videoDemo.thumbnailDescription}
                                             </p>
                                         </div>
                                     </div>
@@ -439,16 +430,16 @@ const FarmNavigatorsLanding: React.FC = () => {
 
                             <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
                                 <div className="text-white">
-                                    <div className="text-2xl font-bold text-green-300">8:54</div>
-                                    <div className="text-sm text-white/80">Duração do vídeo</div>
+                                    <div className="text-2xl font-bold text-green-300">{t.videoDemo.duration}</div>
+                                    <div className="text-sm text-white/80">{t.videoDemo.stats.duration}</div>
                                 </div>
                                 <div className="text-white">
-                                    <div className="text-2xl font-bold text-blue-300">NASA</div>
-                                    <div className="text-sm text-white/80">Dados oficiais</div>
+                                    <div className="text-2xl font-bold text-blue-300">{t.videoDemo.source}</div>
+                                    <div className="text-sm text-white/80">{t.videoDemo.stats.dataSource}</div>
                                 </div>
                                 <div className="text-white">
-                                    <div className="text-2xl font-bold text-purple-300">HD 1080p</div>
-                                    <div className="text-sm text-white/80">Qualidade premium</div>
+                                    <div className="text-2xl font-bold text-purple-300">{t.videoDemo.quality}</div>
+                                    <div className="text-sm text-white/80">{t.videoDemo.stats.quality}</div>
                                 </div>
                             </div>
                         </div>
@@ -461,10 +452,10 @@ const FarmNavigatorsLanding: React.FC = () => {
                 <div className="container mx-auto px-4 sm:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl font-bold mb-4">
-                            Experimente Nossas Demos
+                            {t.interactiveDemos.title}
                         </h2>
                         <p className="text-lg opacity-90 max-w-2xl mx-auto">
-                            Veja como o Farm Navigators funciona na prática
+                            {t.interactiveDemos.subtitle}
                         </p>
                     </div>
 
@@ -476,20 +467,20 @@ const FarmNavigatorsLanding: React.FC = () => {
                                 <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                                     <FaHeart className="text-2xl text-white" />
                                 </div>
-                                <h3 className="text-xl font-bold mb-3">Farm Tinder</h3>
+                                <h3 className="text-xl font-bold mb-3">{t.interactiveDemos.farmTinder.title}</h3>
                                 <p className="mb-4 opacity-90 text-sm">
-                                    Descubra as melhores culturas para sua terra com interface intuitiva
+                                    {t.interactiveDemos.farmTinder.description}
                                 </p>
                                 <div className="bg-white/10 rounded-lg p-3 mb-4">
-                                    <p className="text-xs font-semibold mb-2">Funcionalidades:</p>
+                                    <p className="text-xs font-semibold mb-2">O que você vai ver:</p>
                                     <ul className="text-xs space-y-1 opacity-90">
-                                        <li>• Recomendações personalizadas</li>
-                                        <li>• Dados NASA integrados</li>
-                                        <li>• Interface tipo Tinder</li>
+                                        {t.interactiveDemos.farmTinder.features.map((feature, index) => (
+                                            <li key={index}>• {feature}</li>
+                                        ))}
                                     </ul>
                                 </div>
                                 <button className="bg-white text-green-600 px-4 py-2 rounded-lg font-semibold hover:shadow-md transition-all text-sm w-full">
-                                    Testar Demo →
+                                    {t.interactiveDemos.farmTinder.button}
                                 </button>
                             </div>
                         </div>
@@ -501,20 +492,20 @@ const FarmNavigatorsLanding: React.FC = () => {
                                 <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                                     <FaPlay className="text-2xl text-white ml-1" />
                                 </div>
-                                <h3 className="text-xl font-bold mb-3">AgriFlix</h3>
+                                <h3 className="text-xl font-bold mb-3">{t.interactiveDemos.agriflix.title}</h3>
                                 <p className="mb-4 opacity-90 text-sm">
-                                    Vídeos educativos curtos em português e línguas locais
+                                    {t.interactiveDemos.agriflix.description}
                                 </p>
                                 <div className="bg-white/10 rounded-lg p-3 mb-4">
-                                    <p className="text-xs font-semibold mb-2">Conteúdo:</p>
+                                    <p className="text-xs font-semibold mb-2">O que você vai ver:</p>
                                     <ul className="text-xs space-y-1 opacity-90">
-                                        <li>• Vídeos de 1-4 minutos</li>
-                                        <li>• Técnicas práticas</li>
-                                        <li>• Múltiplos idiomas</li>
+                                        {t.interactiveDemos.agriflix.features.map((feature, index) => (
+                                            <li key={index}>• {feature}</li>
+                                        ))}
                                     </ul>
                                 </div>
                                 <button className="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:shadow-md transition-all text-sm w-full">
-                                    Ver Vídeos →
+                                    {t.interactiveDemos.agriflix.button}
                                 </button>
                             </div>
                         </div>
@@ -526,20 +517,20 @@ const FarmNavigatorsLanding: React.FC = () => {
                                 <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                                     <FaGamepad className="text-2xl text-white" />
                                 </div>
-                                <h3 className="text-xl font-bold mb-3">Jogo Educativo</h3>
+                                <h3 className="text-xl font-bold mb-3">{t.interactiveDemos.seriousGame.title}</h3>
                                 <p className="mb-4 opacity-90 text-sm">
-                                    Aprenda agricultura sustentável com dados de satélite
+                                    {t.interactiveDemos.seriousGame.description}
                                 </p>
                                 <div className="bg-white/10 rounded-lg p-3 mb-4">
-                                    <p className="text-xs font-semibold mb-2">Você vai aprender:</p>
+                                    <p className="text-xs font-semibold mb-2">O que você vai ver:</p>
                                     <ul className="text-xs space-y-1 opacity-90">
-                                        <li>• Dados NASA na prática</li>
-                                        <li>• Decisões de irrigação</li>
-                                        <li>• Sustentabilidade</li>
+                                        {t.interactiveDemos.seriousGame.features.map((feature, index) => (
+                                            <li key={index}>• {feature}</li>
+                                        ))}
                                     </ul>
                                 </div>
                                 <button className="bg-white text-orange-600 px-4 py-2 rounded-lg font-semibold hover:shadow-md transition-all text-sm w-full">
-                                    Jogar Agora →
+                                    {t.interactiveDemos.seriousGame.button}
                                 </button>
                             </div>
                         </div>
@@ -562,10 +553,10 @@ const FarmNavigatorsLanding: React.FC = () => {
                             <span className="text-sm font-medium text-emerald-700">Processo Simplificado</span>
                         </div>
                         <h2 className="text-5xl font-bold bg-gradient-to-r from-gray-900 to-emerald-700 bg-clip-text text-transparent mb-6">
-                            Como Funciona
+                            {t.howItWorks.title}
                         </h2>
                         <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                            Uma experiência intuitiva e poderosa desenvolvida para revolucionar a agricultura moderna
+                            {t.howItWorks.subtitle}
                         </p>
                     </div>
 
@@ -579,30 +570,25 @@ const FarmNavigatorsLanding: React.FC = () => {
                                         <FaMobile className="text-white text-lg" />
                                     </div>
                                     <div>
-                                        <h3 className="text-2xl font-bold text-gray-900">Para Agricultores</h3>
-                                        <p className="text-gray-500 text-sm">Experiência Mobile Otimizada</p>
+                                        <h3 className="text-2xl font-bold text-gray-900">{t.howItWorks.mobile.title}</h3>
+                                        <p className="text-gray-500 text-sm">{t.howItWorks.mobile.subtitle}</p>
                                     </div>
                                 </div>
 
                                 <div className="space-y-8">
-                                    {[
-                                        { number: "01", title: "Cadastro Simplificado", desc: "Telefone, localização e tipo de culturas que planta", icon: "📱" },
-                                        { number: "02", title: "Farm Tinder 🌱❤️", desc: "Deslize para escolher as melhores culturas para sua terra", icon: "💚" },
-                                        { number: "03", title: "Alertas Inteligentes", desc: "Notificações sobre clima, pragas e melhores práticas", icon: "🔔" },
-                                        { number: "04", title: "AgriFlix + USSD", desc: "Aprenda com vídeos curtos, mesmo sem internet via SMS", icon: "🎬" }
-                                    ].map((item, index) => (
+                                    {t.howItWorks.mobile.steps.map((step, index) => (
                                         <div key={index} className="flex items-start gap-4 group">
                                             <div className="flex-shrink-0">
                                                 <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/25 group-hover:scale-110 transition-transform duration-300">
-                                                    <span className="text-white font-bold text-lg">{item.number}</span>
+                                                    <span className="text-white font-bold text-lg">{String(index + 1).padStart(2, '0')}</span>
                                                 </div>
                                             </div>
                                             <div className="flex-1 pt-1">
                                                 <div className="flex items-center gap-2 mb-1">
-                                                    <span className="text-lg">{item.icon}</span>
-                                                    <h4 className="font-semibold text-gray-900 text-lg">{item.title}</h4>
+                                                    <span className="text-lg">📱</span>
+                                                    <h4 className="font-semibold text-gray-900 text-lg">{step.title}</h4>
                                                 </div>
-                                                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                                                <p className="text-gray-600 leading-relaxed">{step.description}</p>
                                             </div>
                                         </div>
                                     ))}
@@ -619,30 +605,25 @@ const FarmNavigatorsLanding: React.FC = () => {
                                         <FaGlobe className="text-white text-lg" />
                                     </div>
                                     <div>
-                                        <h3 className="text-2xl font-bold text-gray-900">Para ONGs e Governo</h3>
-                                        <p className="text-gray-500 text-sm">Plataforma Web Avançada</p>
+                                        <h3 className="text-2xl font-bold text-gray-900">{t.howItWorks.web.title}</h3>
+                                        <p className="text-gray-500 text-sm">{t.howItWorks.web.subtitle}</p>
                                     </div>
                                 </div>
 
                                 <div className="space-y-8">
-                                    {[
-                                        { number: "01", title: "Mapas Interativos", desc: "Visualize dados agrícolas e climáticos por região", icon: "🗺️" },
-                                        { number: "02", title: "Gestão de Conteúdo", desc: "Upload de vídeos educativos e materiais de capacitação", icon: "📊" },
-                                        { number: "03", title: "Relatórios e Analytics", desc: "Dados de produtividade e impacto para políticas públicas", icon: "📈" },
-                                        { number: "04", title: "Suporte a Decisões", desc: "Use dados confiáveis para programas e investimentos", icon: "🎯" }
-                                    ].map((item, index) => (
+                                    {t.howItWorks.web.steps.map((step, index) => (
                                         <div key={index} className="flex items-start gap-4 group">
                                             <div className="flex-shrink-0">
                                                 <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/25 group-hover:scale-110 transition-transform duration-300">
-                                                    <span className="text-white font-bold text-lg">{item.number}</span>
+                                                    <span className="text-white font-bold text-lg">{String(index + 1).padStart(2, '0')}</span>
                                                 </div>
                                             </div>
                                             <div className="flex-1 pt-1">
                                                 <div className="flex items-center gap-2 mb-1">
-                                                    <span className="text-lg">{item.icon}</span>
-                                                    <h4 className="font-semibold text-gray-900 text-lg">{item.title}</h4>
+                                                    <span className="text-lg">🌐</span>
+                                                    <h4 className="font-semibold text-gray-900 text-lg">{step.title}</h4>
                                                 </div>
-                                                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                                                <p className="text-gray-600 leading-relaxed">{step.description}</p>
                                             </div>
                                         </div>
                                     ))}
@@ -656,7 +637,7 @@ const FarmNavigatorsLanding: React.FC = () => {
                         <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200 px-6 py-4 shadow-lg">
                             <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
                             <p className="text-gray-700 font-medium">
-                                Pronto para transformar a agricultura? <span className="text-emerald-600 font-semibold">Junte-se a nós hoje</span>
+                                {t.howItWorks.cta}
                             </p>
                         </div>
                     </div>
@@ -828,10 +809,10 @@ const FarmNavigatorsLanding: React.FC = () => {
                     <div className="text-center mb-20">
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
                             <FaHandshake className="text-blue-600 text-sm" />
-                            <span className="text-sm font-medium text-blue-700">Parcerias Estratégicas</span>
+                            <span className="text-sm font-medium text-blue-700">{t.partners.subtitle}</span>
                         </div>
                         <h2 className="text-5xl font-bold bg-gradient-to-r from-gray-900 to-blue-700 bg-clip-text text-transparent mb-6">
-                            Parceiros e Colaboradores
+                            {t.partners.title}
                         </h2>
                         <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
                             Unindo forças com as principais instituições para revolucionar a agricultura angolana
@@ -839,7 +820,7 @@ const FarmNavigatorsLanding: React.FC = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {partners.map((partner, index) => (
+                        {t.partners.items.map((partner, index) => (
                             <div
                                 key={index}
                                 className="group relative"
@@ -878,17 +859,17 @@ const FarmNavigatorsLanding: React.FC = () => {
                         <div className="bg-gradient-to-r from-blue-500/5 to-indigo-500/5 rounded-2xl border border-blue-500/10 p-8 backdrop-blur-sm">
                             <div className="max-w-2xl mx-auto">
                                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                                    Junte-se à Nossa Rede de Parceiros
+                                    {t.partners.cta.title}
                                 </h3>
                                 <p className="text-gray-600 mb-6 leading-relaxed">
-                                    Faça parte desta revolução agrícola e contribua para o desenvolvimento sustentável de Angola
+                                    {t.partners.cta.description}
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                     <button className="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-xl font-semibold shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-300 hover:scale-105">
-                                        Tornar-se Parceiro
+                                        {t.partners.cta.primaryButton}
                                     </button>
                                     <button className="px-6 py-3 bg-white text-gray-700 rounded-xl font-semibold border border-gray-300 hover:border-blue-500/30 hover:shadow-lg transition-all duration-300">
-                                        Saber Mais
+                                        {t.partners.cta.secondaryButton}
                                     </button>
                                 </div>
                             </div>
@@ -898,10 +879,10 @@ const FarmNavigatorsLanding: React.FC = () => {
                     {/* Trust Indicators */}
                     <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                         {[
-                            { number: "15+", label: "Parceiros Ativos" },
-                            { number: "8", label: "Províncias Cobertas" },
-                            { number: "50K+", label: "Agricultores Beneficiados" },
-                            { number: "3", label: "Anos de Colaboração" }
+                            { number: "15+", label: t.partners.stats.activePartners },
+                            { number: "8", label: t.partners.stats.provinces },
+                            { number: "50K+", label: t.partners.stats.beneficiaries },
+                            { number: "3", label: t.partners.stats.yearsActive }
                         ].map((stat, index) => (
                             <div key={index} className="group">
                                 <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-700 bg-clip-text text-transparent mb-2">
@@ -931,38 +912,37 @@ const FarmNavigatorsLanding: React.FC = () => {
                 {/* Content */}
                 <div className="relative z-10 container mx-auto px-4 sm:px-8 text-center">
                     <h2 className="text-4xl font-bold text-white mb-6">
-                        Pronto para Revolucionar sua Agricultura?
+                        {t.ctaDownload.title}
                     </h2>
                     <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                        Junte-se aos agricultores que já estão usando tecnologia espacial da NASA
-                        para aumentar a produtividade e cuidar da terra.
+                        {t.ctaDownload.subtitle}
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 max-w-4xl mx-auto">
                         <button className="bg-white/90 backdrop-blur-sm text-green-600 px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center hover:bg-white">
                             <FaApple className="mr-2 text-xl" />
-                            Baixar para iOS
+                            {t.ctaDownload.buttons.ios}
                         </button>
                         <button className="bg-white/90 backdrop-blur-sm text-blue-600 px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center hover:bg-white">
                             <FaGooglePlay className="mr-2 text-xl" />
-                            Baixar para Android
+                            {t.ctaDownload.buttons.android}
                         </button>
                         <button className="bg-white/90 backdrop-blur-sm text-purple-600 px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center hover:bg-white">
                             <FaDesktop className="mr-2 text-xl" />
-                            Baixar para Desktop
+                            {t.ctaDownload.buttons.desktop}
                         </button>
                         <button className="bg-white/90 backdrop-blur-sm text-orange-600 px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center hover:bg-white">
                             <FaGamepad className="mr-2 text-xl" />
-                            Jogo Desktop
+                            {t.ctaDownload.buttons.game}
                         </button>
                     </div>
 
                     <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 max-w-md mx-auto border border-white/20">
                         <p className="text-white/90 text-lg mb-2">
-                            <strong className="text-green-300">Sem internet?</strong> Sem problema!
+                            <strong className="text-green-300">{t.ctaDownload.offline.title}</strong>
                         </p>
                         <p className="text-white/80">
-                            Envie <strong className="text-blue-300">AGRI</strong> para <strong className="text-blue-300">+244 900 000 000</strong> via SMS
+                            {t.ctaDownload.offline.description}
                         </p>
                     </div>
                 </div>
@@ -984,7 +964,7 @@ const FarmNavigatorsLanding: React.FC = () => {
                                 </div>
                             </div>
                             <p className="text-gray-400 mb-6">
-                                Conectando agricultura angolana com tecnologia espacial da NASA
+                                {t.footer.description}
                             </p>
                             <div className="flex space-x-4">
                                 <a href="#" className="text-gray-400 hover:text-green-400 transition-colors">
@@ -1000,48 +980,55 @@ const FarmNavigatorsLanding: React.FC = () => {
                         </div>
 
                         <div>
-                            <h4 className="text-lg font-semibold mb-4">Para Agricultores</h4>
+                            <h4 className="text-lg font-semibold mb-4">{t.footer.sections.product.title}</h4>
                             <ul className="space-y-2 text-gray-400">
-                                <li><a href="#" className="hover:text-green-400 transition-colors">Baixar App</a></li>
-                                <li><a href="#" className="hover:text-green-400 transition-colors">Como Usar</a></li>
-                                <li><a href="#" className="hover:text-green-400 transition-colors">USSD Offline</a></li>
-                                <li><a href="#" className="hover:text-green-400 transition-colors">Suporte</a></li>
+                                {t.footer.sections.product.links.map((link, index) => (
+                                    <li key={index}>
+                                        <a href="#" className="hover:text-green-400 transition-colors">{link}</a>
+                                    </li>
+                                ))}
                             </ul>
                         </div>
 
                         <div>
-                            <h4 className="text-lg font-semibold mb-4">Para ONGs</h4>
+                            <h4 className="text-lg font-semibold mb-4">{t.footer.sections.company.title}</h4>
                             <ul className="space-y-2 text-gray-400">
-                                <li><a href="/signin" className="hover:text-green-400 transition-colors">Portal Web</a></li>
-                                <li><a href="#" className="hover:text-green-400 transition-colors">API Documentação</a></li>
-                                <li><a href="#" className="hover:text-green-400 transition-colors">Relatórios</a></li>
-                                <li><a href="#" className="hover:text-green-400 transition-colors">Parcerias</a></li>
+                                {t.footer.sections.company.links.map((link, index) => (
+                                    <li key={index}>
+                                        <a href="#" className="hover:text-green-400 transition-colors">{link}</a>
+                                    </li>
+                                ))}
                             </ul>
                         </div>
 
                         <div>
-                            <h4 className="text-lg font-semibold mb-4">Contato</h4>
+                            <h4 className="text-lg font-semibold mb-4">{t.footer.sections.support.title}</h4>
                             <ul className="space-y-2 text-gray-400">
+                                {t.footer.sections.support.links.map((link, index) => (
+                                    <li key={index}>
+                                        <a href={index === 0 ? "/signin" : "#"} className="hover:text-green-400 transition-colors">{link}</a>
+                                    </li>
+                                ))}
                                 <li className="flex items-center">
                                     <FaEnvelope className="mr-2" />
-                                    info@farmnavigators.ao
+                                    {t.footer.contact.email}
                                 </li>
                                 <li className="flex items-center">
                                     <FaPhoneAlt className="mr-2" />
-                                    +244 900 000 000
+                                    {t.footer.contact.phone}
                                 </li>
                                 <li className="flex items-center">
                                     <FaMapMarkerAlt className="mr-2" />
-                                    Luanda, Angola
+                                    {t.footer.contact.address}
                                 </li>
                             </ul>
                         </div>
                     </div>
 
                     <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-                        <p>&copy; 2025 Farm Navigators Angola. Todos os direitos reservados.</p>
+                        <p>{t.footer.copyright}</p>
                         <p className="mt-2">
-                            Desenvolvido com 💚 para o futuro da agricultura angolana
+                            {t.footer.tagline || "Desenvolvido com 💚 para o futuro da agricultura angolana"}
                         </p>
                     </div>
                 </div>
