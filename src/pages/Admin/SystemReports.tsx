@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaChartLine, FaDownload, FaUsers, FaVideo, FaMapMarkerAlt, FaCalendarAlt, FaCog, FaServer } from "react-icons/fa";
+import { useI18n } from "../../i18n/useI18n";
 
 interface SystemMetrics {
   period: string;
@@ -66,16 +67,17 @@ const regionalData: RegionalMetrics[] = [
   { province: "Bié", users: 1200, growth: 16.4, engagement: 83, contentViews: 5210 }
 ];
 
-const reportTypes = [
-  { value: "system", label: "Relatório do Sistema", icon: <FaServer /> },
-  { value: "users", label: "Relatório de Usuários", icon: <FaUsers /> },
-  { value: "content", label: "Relatório de Conteúdo", icon: <FaVideo /> },
-  { value: "regional", label: "Relatório Regional", icon: <FaMapMarkerAlt /> }
-];
-
 export default function SystemReports() {
+  const { t } = useI18n();
   const [selectedPeriod, setSelectedPeriod] = useState("Janeiro 2024");
   const [selectedReport, setSelectedReport] = useState("system");
+
+  const reportTypes = [
+    { value: "system", label: t.admin.systemReports.reportTypes.systemPerformance, icon: <FaServer /> },
+    { value: "users", label: t.admin.systemReports.reportTypes.userActivity, icon: <FaUsers /> },
+    { value: "content", label: t.admin.systemReports.reportTypes.contentAnalytics, icon: <FaVideo /> },
+    { value: "regional", label: "Relatório Regional", icon: <FaMapMarkerAlt /> }
+  ];
 
   const currentData = systemData.find(data => data.period === selectedPeriod) || systemData[0];
   const previousData = systemData[systemData.indexOf(currentData) + 1];
@@ -101,10 +103,10 @@ export default function SystemReports() {
     <div className="p-6">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          Relatórios do Sistema
+          {t.admin.systemReports.title}
         </h1>
         <p className="text-gray-600">
-          Análise completa da performance e uso da plataforma Farm Navigators
+          {t.admin.systemReports.subtitle}
         </p>
       </div>
 

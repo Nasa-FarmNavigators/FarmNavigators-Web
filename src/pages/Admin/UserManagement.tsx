@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { FaUsers, FaSearch, FaFilter, FaPlus, FaEdit, FaTrash, FaBan, FaCheck, FaMapMarkerAlt } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaUsers, FaSearch, FaEdit, FaTrash, FaBan, FaCheck, FaPlus, FaMapMarkerAlt } from "react-icons/fa";
+import { useI18n } from "../../i18n/useI18n";
 
 interface User {
   id: string;
@@ -75,22 +76,23 @@ const mockUsers: User[] = [
   }
 ];
 
-const roles = [
-  { value: "all", label: "Todos os Tipos", color: "gray" },
-  { value: "farmer", label: "Agricultores", color: "green" },
-  { value: "ngo", label: "ONGs", color: "blue" },
-  { value: "tech", label: "Técnicos", color: "purple" },
-  { value: "admin", label: "Administradores", color: "red" }
-];
-
-const statuses = [
-  { value: "all", label: "Todos os Status" },
-  { value: "active", label: "Ativo" },
-  { value: "inactive", label: "Inativo" },
-  { value: "suspended", label: "Suspenso" }
-];
-
 export default function UserManagement() {
+  const { t } = useI18n();
+
+  const roles = [
+    { value: "all", label: t.admin.userManagement.filters.allRoles, color: "gray" },
+    { value: "farmer", label: t.admin.userManagement.roles.farmer, color: "green" },
+    { value: "ngo", label: t.admin.userManagement.roles.ngo, color: "blue" },
+    { value: "tech", label: t.admin.userManagement.roles.tech, color: "purple" },
+    { value: "admin", label: t.admin.userManagement.roles.admin, color: "red" }
+  ];
+
+  const statuses = [
+    { value: "all", label: t.admin.userManagement.filters.allStatuses },
+    { value: "active", label: t.admin.userManagement.statuses.active },
+    { value: "inactive", label: t.admin.userManagement.statuses.inactive },
+    { value: "suspended", label: t.admin.userManagement.statuses.suspended }
+  ];
   const [users, setUsers] = useState<User[]>(mockUsers);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedRole, setSelectedRole] = useState("all");
@@ -119,10 +121,10 @@ export default function UserManagement() {
 
   const getRoleLabel = (role: string) => {
     switch (role) {
-      case "farmer": return "Agricultor";
-      case "ngo": return "ONG";
-      case "tech": return "Técnico";
-      case "admin": return "Admin";
+      case "farmer": return t.admin.userManagement.roles.farmer;
+      case "ngo": return t.admin.userManagement.roles.ngo;
+      case "tech": return t.admin.userManagement.roles.tech;
+      case "admin": return t.admin.userManagement.roles.admin;
       default: return role;
     }
   };
@@ -138,9 +140,9 @@ export default function UserManagement() {
 
   const getStatusLabel = (status: string) => {
     switch (status) {
-      case "active": return "Ativo";
-      case "inactive": return "Inativo";
-      case "suspended": return "Suspenso";
+      case "active": return t.admin.userManagement.statuses.active;
+      case "inactive": return t.admin.userManagement.statuses.inactive;
+      case "suspended": return t.admin.userManagement.statuses.suspended;
       default: return status;
     }
   };
@@ -156,10 +158,10 @@ export default function UserManagement() {
     <div className="p-6">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          Gestão de Usuários
+          {t.admin.userManagement.title}
         </h1>
         <p className="text-gray-600">
-          Gerencie todos os usuários da plataforma Farm Navigators
+          {t.admin.userManagement.subtitle}
         </p>
       </div>
 
@@ -172,7 +174,7 @@ export default function UserManagement() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-gray-900">{userStats.total}</h3>
-              <p className="text-gray-600">Total de Usuários</p>
+              <p className="text-gray-600">{t.admin.userManagement.stats.totalUsers}</p>
             </div>
           </div>
         </div>
@@ -184,7 +186,7 @@ export default function UserManagement() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-gray-900">{userStats.active}</h3>
-              <p className="text-gray-600">Usuários Ativos</p>
+              <p className="text-gray-600">{t.admin.userManagement.stats.activeUsers}</p>
             </div>
           </div>
         </div>
@@ -196,7 +198,7 @@ export default function UserManagement() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-gray-900">{userStats.farmers}</h3>
-              <p className="text-gray-600">Agricultores</p>
+              <p className="text-gray-600">{t.admin.userManagement.stats.farmers}</p>
             </div>
           </div>
         </div>
@@ -208,7 +210,7 @@ export default function UserManagement() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-gray-900">{userStats.ngos}</h3>
-              <p className="text-gray-600">ONGs</p>
+              <p className="text-gray-600">{t.admin.userManagement.stats.ngos}</p>
             </div>
           </div>
         </div>
@@ -223,7 +225,7 @@ export default function UserManagement() {
               <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
               <input
                 type="text"
-                placeholder="Buscar usuários..."
+                placeholder={t.admin.userManagement.search.placeholder}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
@@ -259,7 +261,7 @@ export default function UserManagement() {
             className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center"
           >
             <FaPlus className="mr-2" />
-            Adicionar Usuário
+            {t.admin.userManagement.actions.addUser}
           </button>
         </div>
       </div>
@@ -271,22 +273,22 @@ export default function UserManagement() {
             <thead className="bg-gray-50">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Usuário
+                  {t.admin.userManagement.table.user}
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Tipo
+                  {t.admin.userManagement.table.type}
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Status
+                  {t.admin.userManagement.table.status}
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Localização
+                  {t.admin.userManagement.table.location}
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Última Atividade
+                  {t.admin.userManagement.table.lastActivity}
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Ações
+                  {t.admin.userManagement.table.actions}
                 </th>
               </tr>
             </thead>
@@ -350,8 +352,8 @@ export default function UserManagement() {
       {filteredUsers.length === 0 && (
         <div className="text-center py-12">
           <FaUsers className="text-6xl text-gray-300 mx-auto mb-4" />
-          <h3 className="text-xl font-semibold text-gray-600 mb-2">Nenhum usuário encontrado</h3>
-          <p className="text-gray-500">Tente ajustar os filtros ou adicione novos usuários.</p>
+          <h3 className="text-xl font-semibold text-gray-600 mb-2">{t.admin.userManagement.noUsers.title}</h3>
+          <p className="text-gray-500">{t.admin.userManagement.noUsers.description}</p>
         </div>
       )}
 
@@ -359,22 +361,22 @@ export default function UserManagement() {
       {showAddModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-6 w-full max-w-md">
-            <h3 className="text-lg font-bold text-gray-900 mb-4">Adicionar Novo Usuário</h3>
+            <h3 className="text-lg font-bold text-gray-900 mb-4">{t.admin.userManagement.addUserModal.title}</h3>
             <p className="text-gray-600 mb-4">
-              Funcionalidade de adição de usuários em desenvolvimento. Integração com sistema de cadastro.
+              {t.admin.userManagement.addUserModal.description}
             </p>
             <div className="flex justify-end space-x-2">
               <button
                 onClick={() => setShowAddModal(false)}
                 className="px-4 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50"
               >
-                Cancelar
+                {t.admin.userManagement.addUserModal.cancel}
               </button>
               <button
                 onClick={() => setShowAddModal(false)}
                 className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
               >
-                Entendi
+                {t.admin.userManagement.addUserModal.understood}
               </button>
             </div>
           </div>

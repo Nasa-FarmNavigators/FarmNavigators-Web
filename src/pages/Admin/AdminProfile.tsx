@@ -2,8 +2,10 @@ import { useState } from "react";
 import { FaUser, FaEnvelope, FaPhone, FaMapMarkerAlt, FaKey, FaSave } from "react-icons/fa";
 import PageBreadcrumb from "../../components/Admin/common/PageBreadCrumb";
 import PageMeta from "../../components/Admin/common/PageMeta";
+import { useI18n } from "../../i18n/useI18n";
 
 export default function AdminProfile() {
+  const { t } = useI18n();
   const [formData, setFormData] = useState({
     name: "Admin Farm Navigators",
     email: "admin@farmnavigators.ao",
@@ -52,16 +54,16 @@ export default function AdminProfile() {
   return (
     <>
       <PageMeta
-        title="Perfil do Administrador"
-        description="Perfil e configurações do administrador da plataforma Farm Navigators"
+        title={t.admin.profile.title}
+        description={t.admin.profile.subtitle}
       />
-      <PageBreadcrumb pageTitle="Perfil" />
+      <PageBreadcrumb pageTitle={t.admin.profile.title} />
       
       <div className="space-y-6">
         {/* Profile Information Card */}
         <div className="bg-white rounded-lg shadow p-6">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-bold text-gray-900">Informações do Perfil</h2>
+            <h2 className="text-xl font-bold text-gray-900">{t.admin.profile.sections.personalInfo}</h2>
             <button
               onClick={() => setIsEditing(!isEditing)}
               className={`px-4 py-2 rounded-lg transition-colors ${

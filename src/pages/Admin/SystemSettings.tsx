@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaCog, FaServer, FaDatabase, FaKey, FaBell, FaGlobe, FaSave, FaUndo } from "react-icons/fa";
+import { useI18n } from "../../i18n/useI18n";
 
 interface SystemConfig {
   platformName: string;
@@ -50,15 +51,16 @@ const mockAPIConfig: APIConfig = {
 };
 
 export default function SystemSettings() {
+  const { t } = useI18n();
   const [systemConfig, setSystemConfig] = useState<SystemConfig>(mockSystemConfig);
   const [apiConfig, setAPIConfig] = useState<APIConfig>(mockAPIConfig);
   const [activeTab, setActiveTab] = useState("general");
   const [hasChanges, setHasChanges] = useState(false);
 
   const tabs = [
-    { id: "general", label: "Configurações Gerais", icon: <FaCog /> },
-    { id: "api", label: "APIs & Integrações", icon: <FaKey /> },
-    { id: "notifications", label: "Notificações", icon: <FaBell /> },
+    { id: "general", label: t.admin.systemSettings.sections.general, icon: <FaCog /> },
+    { id: "api", label: t.admin.systemSettings.sections.api, icon: <FaKey /> },
+    { id: "notifications", label: t.admin.systemSettings.sections.notifications, icon: <FaBell /> },
     { id: "system", label: "Sistema", icon: <FaServer /> },
     { id: "localization", label: "Localização", icon: <FaGlobe /> }
   ];
@@ -90,10 +92,10 @@ export default function SystemSettings() {
     <div className="p-6">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          Configurações do Sistema
+          {t.admin.systemSettings.title}
         </h1>
         <p className="text-gray-600">
-          Gerencie configurações da plataforma Farm Navigators Angola
+          {t.admin.systemSettings.subtitle}
         </p>
       </div>
 

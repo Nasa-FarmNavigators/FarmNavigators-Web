@@ -884,6 +884,38 @@ export interface Translations {
         ngos: string;
         admins: string;
       };
+      stats: {
+        totalUsers: string;
+        activeUsers: string;
+        farmers: string;
+        ngos: string;
+      };
+      filters: {
+        allRoles: string;
+        allStatuses: string;
+      };
+      roles: {
+        farmer: string;
+        ngo: string;
+        tech: string;
+        admin: string;
+      };
+      statuses: {
+        active: string;
+        inactive: string;
+        suspended: string;
+      };
+      search: {
+        placeholder: string;
+      };
+      table: {
+        user: string;
+        type: string;
+        status: string;
+        location: string;
+        lastActivity: string;
+        actions: string;
+      };
       actions: {
         addUser: string;
         exportData: string;
@@ -903,6 +935,16 @@ export interface Translations {
         inactive: string;
         suspended: string;
       };
+      noUsers: {
+        title: string;
+        description: string;
+      };
+      addUserModal: {
+        title: string;
+        description: string;
+        cancel: string;
+        understood: string;
+      };
     };
     
     // Content Moderation
@@ -910,19 +952,146 @@ export interface Translations {
       title: string;
       subtitle: string;
       tabs: {
+        all: string;
         pending: string;
         approved: string;
         rejected: string;
+        flagged: string;
+      };
+      stats: {
+        total: string;
+        pending: string;
+        approved: string;
+        flagged: string;
       };
       contentTypes: {
         video: string;
         article: string;
         comment: string;
       };
+      search: {
+        placeholder: string;
+      };
+      filters: {
+        category: string;
+        status: string;
+      };
+      table: {
+        content: string;
+        uploader: string;
+        status: string;
+        category: string;
+        uploadDate: string;
+        actions: string;
+      };
       moderationActions: {
         approve: string;
         reject: string;
         needsReview: string;
+        view: string;
+      };
+      rejectModal: {
+        title: string;
+        reason: string;
+        placeholder: string;
+        cancel: string;
+        confirm: string;
+      };
+    };
+
+    // System Reports
+    systemReports: {
+      title: string;
+      subtitle: string;
+      reportTypes: {
+        userActivity: string;
+        contentAnalytics: string;
+        systemPerformance: string;
+        securityAudit: string;
+      };
+      filters: {
+        dateRange: string;
+        reportType: string;
+        export: string;
+      };
+      stats: {
+        totalReports: string;
+        scheduledReports: string;
+        lastGenerated: string;
+      };
+    };
+
+    // System Settings
+    systemSettings: {
+      title: string;
+      subtitle: string;
+      sections: {
+        general: string;
+        security: string;
+        notifications: string;
+        api: string;
+        maintenance: string;
+      };
+      general: {
+        siteName: string;
+        language: string;
+        timezone: string;
+        maintenanceMode: string;
+      };
+      security: {
+        passwordPolicy: string;
+        twoFactorAuth: string;
+        sessionTimeout: string;
+        ipWhitelist: string;
+      };
+      notifications: {
+        emailNotifications: string;
+        smsNotifications: string;
+        pushNotifications: string;
+      };
+      actions: {
+        save: string;
+        reset: string;
+        test: string;
+      };
+    };
+
+    // Admin Profile
+    profile: {
+      title: string;
+      subtitle: string;
+      sections: {
+        personalInfo: string;
+        security: string;
+        preferences: string;
+        activity: string;
+      };
+      personalInfo: {
+        name: string;
+        email: string;
+        phone: string;
+        role: string;
+        department: string;
+        avatar: string;
+      };
+      security: {
+        currentPassword: string;
+        newPassword: string;
+        confirmPassword: string;
+        twoFactor: string;
+        loginHistory: string;
+      };
+      preferences: {
+        language: string;
+        theme: string;
+        notifications: string;
+        timezone: string;
+      };
+      actions: {
+        updateProfile: string;
+        changePassword: string;
+        enableTwoFactor: string;
+        downloadData: string;
       };
     };
   };
@@ -2056,11 +2225,43 @@ export const pt: Translations = {
     // User Management
     userManagement: {
       title: "Gestão de Usuários",
-      subtitle: "Gerencie agricultores, ONGs e administradores da plataforma",
+      subtitle: "Gerencie todos os usuários da plataforma Farm Navigators",
       tabs: {
         farmers: "Agricultores",
         ngos: "ONGs",
         admins: "Administradores",
+      },
+      stats: {
+        totalUsers: "Total de Usuários",
+        activeUsers: "Usuários Ativos",
+        farmers: "Agricultores",
+        ngos: "ONGs",
+      },
+      filters: {
+        allRoles: "Todos os Tipos",
+        allStatuses: "Todos os Status",
+      },
+      roles: {
+        farmer: "Agricultor",
+        ngo: "ONG",
+        tech: "Técnico",
+        admin: "Admin",
+      },
+      statuses: {
+        active: "Ativo",
+        inactive: "Inativo",
+        suspended: "Suspenso",
+      },
+      search: {
+        placeholder: "Buscar usuários...",
+      },
+      table: {
+        user: "Usuário",
+        type: "Tipo",
+        status: "Status",
+        location: "Localização",
+        lastActivity: "Última Atividade",
+        actions: "Ações",
       },
       actions: {
         addUser: "Adicionar Usuário",
@@ -2081,26 +2282,163 @@ export const pt: Translations = {
         inactive: "Inativo",
         suspended: "Suspenso",
       },
+      noUsers: {
+        title: "Nenhum usuário encontrado",
+        description: "Tente ajustar os filtros ou adicione novos usuários.",
+      },
+      addUserModal: {
+        title: "Adicionar Novo Usuário",
+        description: "Funcionalidade de adição de usuários em desenvolvimento. Integração com sistema de cadastro.",
+        cancel: "Cancelar",
+        understood: "Entendi",
+      },
     },
     
     // Content Moderation
     contentModeration: {
       title: "Moderação de Conteúdo",
-      subtitle: "Revise e aprove conteúdo da plataforma",
+      subtitle: "Revise e aprove conteúdo educativo para a plataforma AgriFlix",
       tabs: {
+        all: "Todos",
         pending: "Pendente",
         approved: "Aprovado",
         rejected: "Rejeitado",
+        flagged: "Sinalizado",
+      },
+      stats: {
+        total: "Total de Conteúdos",
+        pending: "Aguardando Revisão",
+        approved: "Aprovados",
+        flagged: "Sinalizados",
       },
       contentTypes: {
         video: "Vídeo",
         article: "Artigo",
         comment: "Comentário",
       },
+      search: {
+        placeholder: "Buscar conteúdo...",
+      },
+      filters: {
+        category: "Categoria",
+        status: "Status",
+      },
+      table: {
+        content: "Conteúdo",
+        uploader: "Enviado por",
+        status: "Status",
+        category: "Categoria",
+        uploadDate: "Data de Upload",
+        actions: "Ações",
+      },
       moderationActions: {
         approve: "Aprovar",
         reject: "Rejeitar",
         needsReview: "Precisa Revisão",
+        view: "Visualizar",
+      },
+      rejectModal: {
+        title: "Rejeitar Conteúdo",
+        reason: "Motivo da Rejeição",
+        placeholder: "Descreva o motivo da rejeição...",
+        cancel: "Cancelar",
+        confirm: "Confirmar Rejeição",
+      },
+    },
+
+    // System Reports
+    systemReports: {
+      title: "Relatórios do Sistema",
+      subtitle: "Monitore atividade, performance e segurança da plataforma",
+      reportTypes: {
+        userActivity: "Atividade de Usuários",
+        contentAnalytics: "Análise de Conteúdo",
+        systemPerformance: "Performance do Sistema",
+        securityAudit: "Auditoria de Segurança",
+      },
+      filters: {
+        dateRange: "Período",
+        reportType: "Tipo de Relatório",
+        export: "Exportar",
+      },
+      stats: {
+        totalReports: "Total de Relatórios",
+        scheduledReports: "Relatórios Agendados",
+        lastGenerated: "Último Gerado",
+      },
+    },
+
+    // System Settings
+    systemSettings: {
+      title: "Configurações do Sistema",
+      subtitle: "Gerencie configurações gerais, segurança e manutenção",
+      sections: {
+        general: "Geral",
+        security: "Segurança",
+        notifications: "Notificações",
+        api: "API",
+        maintenance: "Manutenção",
+      },
+      general: {
+        siteName: "Nome do Site",
+        language: "Idioma",
+        timezone: "Fuso Horário",
+        maintenanceMode: "Modo Manutenção",
+      },
+      security: {
+        passwordPolicy: "Política de Senhas",
+        twoFactorAuth: "Autenticação 2FA",
+        sessionTimeout: "Timeout de Sessão",
+        ipWhitelist: "Lista Branca de IPs",
+      },
+      notifications: {
+        emailNotifications: "Notificações por Email",
+        smsNotifications: "Notificações SMS",
+        pushNotifications: "Notificações Push",
+      },
+      actions: {
+        save: "Salvar",
+        reset: "Redefinir",
+        test: "Testar",
+      },
+    },
+
+    // Admin Profile
+    profile: {
+      title: "Perfil do Administrador",
+      subtitle: "Gerencie suas informações pessoais e configurações",
+      sections: {
+        personalInfo: "Informações Pessoais",
+        security: "Segurança",
+        preferences: "Preferências",
+        activity: "Atividade",
+      },
+      personalInfo: {
+        name: "Nome",
+        email: "Email",
+        phone: "Telefone",
+        role: "Função",
+        department: "Departamento",
+        avatar: "Foto de Perfil",
+      },
+      security: {
+        currentPassword: "Senha Atual",
+        newPassword: "Nova Senha",
+        confirmPassword: "Confirmar Senha",
+        twoFactor: "Autenticação 2FA",
+        loginHistory: "Histórico de Login",
+      },
+      preferences: {
+        language: "Idioma",
+        theme: "Tema",
+        notifications: "Notificações",
+        timezone: "Fuso Horário",
+      },
+      actions: {
+        updateProfile: "Atualizar Perfil",
+        changePassword: "Alterar Senha",
+        enableTwoFactor: "Ativar 2FA",
+        downloadData: "Baixar Dados",
       },
     },
   },
@@ -3180,11 +3518,43 @@ export const en: Translations = {
     // User Management
     userManagement: {
       title: "User Management",
-      subtitle: "Manage farmers, NGOs and platform administrators",
+      subtitle: "Manage all Farm Navigators platform users",
       tabs: {
         farmers: "Farmers",
         ngos: "NGOs",
         admins: "Administrators",
+      },
+      stats: {
+        totalUsers: "Total Users",
+        activeUsers: "Active Users",
+        farmers: "Farmers",
+        ngos: "NGOs",
+      },
+      filters: {
+        allRoles: "All Types",
+        allStatuses: "All Statuses",
+      },
+      roles: {
+        farmer: "Farmer",
+        ngo: "NGO",
+        tech: "Tech",
+        admin: "Admin",
+      },
+      statuses: {
+        active: "Active",
+        inactive: "Inactive",
+        suspended: "Suspended",
+      },
+      search: {
+        placeholder: "Search users...",
+      },
+      table: {
+        user: "User",
+        type: "Type",
+        status: "Status",
+        location: "Location",
+        lastActivity: "Last Activity",
+        actions: "Actions",
       },
       actions: {
         addUser: "Add User",
@@ -3205,26 +3575,163 @@ export const en: Translations = {
         inactive: "Inactive",
         suspended: "Suspended",
       },
+      noUsers: {
+        title: "No users found",
+        description: "Try adjusting the filters or add new users.",
+      },
+      addUserModal: {
+        title: "Add New User",
+        description: "User addition functionality in development. Integration with registration system.",
+        cancel: "Cancel",
+        understood: "Understood",
+      },
     },
     
     // Content Moderation
     contentModeration: {
       title: "Content Moderation",
-      subtitle: "Review and approve platform content",
+      subtitle: "Review and approve educational content for AgriFlix platform",
       tabs: {
+        all: "All",
         pending: "Pending",
         approved: "Approved",
         rejected: "Rejected",
+        flagged: "Flagged",
+      },
+      stats: {
+        total: "Total Content",
+        pending: "Awaiting Review",
+        approved: "Approved",
+        flagged: "Flagged",
       },
       contentTypes: {
         video: "Video",
         article: "Article",
         comment: "Comment",
       },
+      search: {
+        placeholder: "Search content...",
+      },
+      filters: {
+        category: "Category",
+        status: "Status",
+      },
+      table: {
+        content: "Content",
+        uploader: "Uploaded by",
+        status: "Status",
+        category: "Category",
+        uploadDate: "Upload Date",
+        actions: "Actions",
+      },
       moderationActions: {
         approve: "Approve",
         reject: "Reject",
         needsReview: "Needs Review",
+        view: "View",
+      },
+      rejectModal: {
+        title: "Reject Content",
+        reason: "Rejection Reason",
+        placeholder: "Describe the reason for rejection...",
+        cancel: "Cancel",
+        confirm: "Confirm Rejection",
+      },
+    },
+
+    // System Reports
+    systemReports: {
+      title: "System Reports",
+      subtitle: "Monitor platform activity, performance and security",
+      reportTypes: {
+        userActivity: "User Activity",
+        contentAnalytics: "Content Analytics",
+        systemPerformance: "System Performance",
+        securityAudit: "Security Audit",
+      },
+      filters: {
+        dateRange: "Date Range",
+        reportType: "Report Type",
+        export: "Export",
+      },
+      stats: {
+        totalReports: "Total Reports",
+        scheduledReports: "Scheduled Reports",
+        lastGenerated: "Last Generated",
+      },
+    },
+
+    // System Settings
+    systemSettings: {
+      title: "System Settings",
+      subtitle: "Manage general settings, security and maintenance",
+      sections: {
+        general: "General",
+        security: "Security",
+        notifications: "Notifications",
+        api: "API",
+        maintenance: "Maintenance",
+      },
+      general: {
+        siteName: "Site Name",
+        language: "Language",
+        timezone: "Timezone",
+        maintenanceMode: "Maintenance Mode",
+      },
+      security: {
+        passwordPolicy: "Password Policy",
+        twoFactorAuth: "Two-Factor Auth",
+        sessionTimeout: "Session Timeout",
+        ipWhitelist: "IP Whitelist",
+      },
+      notifications: {
+        emailNotifications: "Email Notifications",
+        smsNotifications: "SMS Notifications",
+        pushNotifications: "Push Notifications",
+      },
+      actions: {
+        save: "Save",
+        reset: "Reset",
+        test: "Test",
+      },
+    },
+
+    // Admin Profile
+    profile: {
+      title: "Administrator Profile",
+      subtitle: "Manage your personal information and settings",
+      sections: {
+        personalInfo: "Personal Information",
+        security: "Security",
+        preferences: "Preferences",
+        activity: "Activity",
+      },
+      personalInfo: {
+        name: "Name",
+        email: "Email",
+        phone: "Phone",
+        role: "Role",
+        department: "Department",
+        avatar: "Profile Picture",
+      },
+      security: {
+        currentPassword: "Current Password",
+        newPassword: "New Password",
+        confirmPassword: "Confirm Password",
+        twoFactor: "Two-Factor Auth",
+        loginHistory: "Login History",
+      },
+      preferences: {
+        language: "Language",
+        theme: "Theme",
+        notifications: "Notifications",
+        timezone: "Timezone",
+      },
+      actions: {
+        updateProfile: "Update Profile",
+        changePassword: "Change Password",
+        enableTwoFactor: "Enable 2FA",
+        downloadData: "Download Data",
       },
     },
   },
@@ -3906,8 +4413,179 @@ export const umb: Translations = {
     common: { dashboard: "", users: "", content: "", reports: "", settings: "", profile: "", search: "", filter: "", export: "", save: "", cancel: "", delete: "", edit: "", view: "", approve: "", reject: "", loading: "", error: "", success: "", warning: "" },
     navigation: { main: "", others: "", dashboard: "", userManagement: "", contentModeration: "", systemReports: "", systemSettings: "", profile: "" },
     dashboard: { title: "", subtitle: "", timeRanges: { "24h": "", "7d": "", "30d": "", "90d": "" }, stats: { totalUsers: "", activeUsers: "", totalNGOs: "", totalContent: "", systemHealth: "", apiCalls: "" }, charts: { userGrowth: "", contentStats: "", systemAlerts: "", recentActivity: "" }, alerts: { high_latency: "", backup_completed: "", new_ngo: "", storage_warning: "" }, activity: { video_upload: "", new_registration: "", report_generated: "", content_approved: "" } },
-    userManagement: { title: "", subtitle: "", tabs: { farmers: "", ngos: "", admins: "" }, actions: { addUser: "", exportData: "", bulkActions: "" }, userDetails: { name: "", email: "", role: "", status: "", registrationDate: "", lastLogin: "", location: "" }, status: { active: "", inactive: "", suspended: "" } },
-    contentModeration: { title: "", subtitle: "", tabs: { pending: "", approved: "", rejected: "" }, contentTypes: { video: "", article: "", comment: "" }, moderationActions: { approve: "", reject: "", needsReview: "" } }
+    userManagement: {
+      title: "", subtitle: "", tabs: { farmers: "", ngos: "", admins: "" }, actions: { addUser: "", exportData: "", bulkActions: "" }, userDetails: { name: "", email: "", role: "", status: "", registrationDate: "", lastLogin: "", location: "" }, status: { active: "", inactive: "", suspended: "" },
+      stats: {
+        totalUsers: "",
+        activeUsers: "",
+        farmers: "",
+        ngos: ""
+      },
+      filters: {
+        allRoles: "",
+        allStatuses: ""
+      },
+      roles: {
+        farmer: "",
+        ngo: "",
+        tech: "",
+        admin: ""
+      },
+      statuses: {
+        active: "",
+        inactive: "",
+        suspended: ""
+      },
+      search: {
+        placeholder: ""
+      },
+      table: {
+        user: "",
+        type: "",
+        status: "",
+        location: "",
+        lastActivity: "",
+        actions: ""
+      },
+      noUsers: {
+        title: "",
+        description: ""
+      },
+      addUserModal: {
+        title: "",
+        description: "",
+        cancel: "",
+        understood: ""
+      }
+    },
+    contentModeration: {
+      title: "", subtitle: "", tabs: {
+        pending: "", approved: "", rejected: "",
+        all: "",
+        flagged: ""
+      }, contentTypes: { video: "", article: "", comment: "" }, moderationActions: {
+        approve: "", reject: "", needsReview: "",
+        view: ""
+      },
+      stats: {
+        total: "",
+        pending: "",
+        approved: "",
+        flagged: ""
+      },
+      search: {
+        placeholder: ""
+      },
+      filters: {
+        category: "",
+        status: ""
+      },
+      table: {
+        content: "",
+        uploader: "",
+        status: "",
+        category: "",
+        uploadDate: "",
+        actions: ""
+      },
+      rejectModal: {
+        title: "",
+        reason: "",
+        placeholder: "",
+        cancel: "",
+        confirm: ""
+      }
+    },
+    systemReports: {
+      title: "",
+      subtitle: "",
+      reportTypes: {
+        userActivity: "",
+        contentAnalytics: "",
+        systemPerformance: "",
+        securityAudit: ""
+      },
+      filters: {
+        dateRange: "",
+        reportType: "",
+        export: ""
+      },
+      stats: {
+        totalReports: "",
+        scheduledReports: "",
+        lastGenerated: ""
+      }
+    },
+    systemSettings: {
+      title: "",
+      subtitle: "",
+      sections: {
+        general: "",
+        security: "",
+        notifications: "",
+        api: "",
+        maintenance: ""
+      },
+      general: {
+        siteName: "",
+        language: "",
+        timezone: "",
+        maintenanceMode: ""
+      },
+      security: {
+        passwordPolicy: "",
+        twoFactorAuth: "",
+        sessionTimeout: "",
+        ipWhitelist: ""
+      },
+      notifications: {
+        emailNotifications: "",
+        smsNotifications: "",
+        pushNotifications: ""
+      },
+      actions: {
+        save: "",
+        reset: "",
+        test: ""
+      }
+    },
+    profile: {
+      title: "",
+      subtitle: "",
+      sections: {
+        personalInfo: "",
+        security: "",
+        preferences: "",
+        activity: ""
+      },
+      personalInfo: {
+        name: "",
+        email: "",
+        phone: "",
+        role: "",
+        department: "",
+        avatar: ""
+      },
+      security: {
+        currentPassword: "",
+        newPassword: "",
+        confirmPassword: "",
+        twoFactor: "",
+        loginHistory: ""
+      },
+      preferences: {
+        language: "",
+        theme: "",
+        notifications: "",
+        timezone: ""
+      },
+      actions: {
+        updateProfile: "",
+        changePassword: "",
+        enableTwoFactor: "",
+        downloadData: ""
+      }
+    }
   },
   ngo: {
     common: { dashboard: "", maps: "", content: "", reports: "", statistics: "", profile: "", farmers: "", videos: "", impact: "", reach: "", coverage: "" },
@@ -4357,8 +5035,179 @@ export const kmb: Translations = {
     common: { dashboard: "", users: "", content: "", reports: "", settings: "", profile: "", search: "", filter: "", export: "", save: "", cancel: "", delete: "", edit: "", view: "", approve: "", reject: "", loading: "", error: "", success: "", warning: "" },
     navigation: { main: "", others: "", dashboard: "", userManagement: "", contentModeration: "", systemReports: "", systemSettings: "", profile: "" },
     dashboard: { title: "", subtitle: "", timeRanges: { "24h": "", "7d": "", "30d": "", "90d": "" }, stats: { totalUsers: "", activeUsers: "", totalNGOs: "", totalContent: "", systemHealth: "", apiCalls: "" }, charts: { userGrowth: "", contentStats: "", systemAlerts: "", recentActivity: "" }, alerts: { high_latency: "", backup_completed: "", new_ngo: "", storage_warning: "" }, activity: { video_upload: "", new_registration: "", report_generated: "", content_approved: "" } },
-    userManagement: { title: "", subtitle: "", tabs: { farmers: "", ngos: "", admins: "" }, actions: { addUser: "", exportData: "", bulkActions: "" }, userDetails: { name: "", email: "", role: "", status: "", registrationDate: "", lastLogin: "", location: "" }, status: { active: "", inactive: "", suspended: "" } },
-    contentModeration: { title: "", subtitle: "", tabs: { pending: "", approved: "", rejected: "" }, contentTypes: { video: "", article: "", comment: "" }, moderationActions: { approve: "", reject: "", needsReview: "" } }
+    userManagement: {
+      title: "", subtitle: "", tabs: { farmers: "", ngos: "", admins: "" }, actions: { addUser: "", exportData: "", bulkActions: "" }, userDetails: { name: "", email: "", role: "", status: "", registrationDate: "", lastLogin: "", location: "" }, status: { active: "", inactive: "", suspended: "" },
+      stats: {
+        totalUsers: "",
+        activeUsers: "",
+        farmers: "",
+        ngos: ""
+      },
+      filters: {
+        allRoles: "",
+        allStatuses: ""
+      },
+      roles: {
+        farmer: "",
+        ngo: "",
+        tech: "",
+        admin: ""
+      },
+      statuses: {
+        active: "",
+        inactive: "",
+        suspended: ""
+      },
+      search: {
+        placeholder: ""
+      },
+      table: {
+        user: "",
+        type: "",
+        status: "",
+        location: "",
+        lastActivity: "",
+        actions: ""
+      },
+      noUsers: {
+        title: "",
+        description: ""
+      },
+      addUserModal: {
+        title: "",
+        description: "",
+        cancel: "",
+        understood: ""
+      }
+    },
+    contentModeration: {
+      title: "", subtitle: "", tabs: {
+        pending: "", approved: "", rejected: "",
+        all: "",
+        flagged: ""
+      }, contentTypes: { video: "", article: "", comment: "" }, moderationActions: {
+        approve: "", reject: "", needsReview: "",
+        view: ""
+      },
+      stats: {
+        total: "",
+        pending: "",
+        approved: "",
+        flagged: ""
+      },
+      search: {
+        placeholder: ""
+      },
+      filters: {
+        category: "",
+        status: ""
+      },
+      table: {
+        content: "",
+        uploader: "",
+        status: "",
+        category: "",
+        uploadDate: "",
+        actions: ""
+      },
+      rejectModal: {
+        title: "",
+        reason: "",
+        placeholder: "",
+        cancel: "",
+        confirm: ""
+      }
+    },
+    systemReports: {
+      title: "",
+      subtitle: "",
+      reportTypes: {
+        userActivity: "",
+        contentAnalytics: "",
+        systemPerformance: "",
+        securityAudit: ""
+      },
+      filters: {
+        dateRange: "",
+        reportType: "",
+        export: ""
+      },
+      stats: {
+        totalReports: "",
+        scheduledReports: "",
+        lastGenerated: ""
+      }
+    },
+    systemSettings: {
+      title: "",
+      subtitle: "",
+      sections: {
+        general: "",
+        security: "",
+        notifications: "",
+        api: "",
+        maintenance: ""
+      },
+      general: {
+        siteName: "",
+        language: "",
+        timezone: "",
+        maintenanceMode: ""
+      },
+      security: {
+        passwordPolicy: "",
+        twoFactorAuth: "",
+        sessionTimeout: "",
+        ipWhitelist: ""
+      },
+      notifications: {
+        emailNotifications: "",
+        smsNotifications: "",
+        pushNotifications: ""
+      },
+      actions: {
+        save: "",
+        reset: "",
+        test: ""
+      }
+    },
+    profile: {
+      title: "",
+      subtitle: "",
+      sections: {
+        personalInfo: "",
+        security: "",
+        preferences: "",
+        activity: ""
+      },
+      personalInfo: {
+        name: "",
+        email: "",
+        phone: "",
+        role: "",
+        department: "",
+        avatar: ""
+      },
+      security: {
+        currentPassword: "",
+        newPassword: "",
+        confirmPassword: "",
+        twoFactor: "",
+        loginHistory: ""
+      },
+      preferences: {
+        language: "",
+        theme: "",
+        notifications: "",
+        timezone: ""
+      },
+      actions: {
+        updateProfile: "",
+        changePassword: "",
+        enableTwoFactor: "",
+        downloadData: ""
+      }
+    }
   },
   ngo: {
     common: { dashboard: "", maps: "", content: "", reports: "", statistics: "", profile: "", farmers: "", videos: "", impact: "", reach: "", coverage: "" },
@@ -4808,8 +5657,179 @@ export const lun: Translations = {
     common: { dashboard: "", users: "", content: "", reports: "", settings: "", profile: "", search: "", filter: "", export: "", save: "", cancel: "", delete: "", edit: "", view: "", approve: "", reject: "", loading: "", error: "", success: "", warning: "" },
     navigation: { main: "", others: "", dashboard: "", userManagement: "", contentModeration: "", systemReports: "", systemSettings: "", profile: "" },
     dashboard: { title: "", subtitle: "", timeRanges: { "24h": "", "7d": "", "30d": "", "90d": "" }, stats: { totalUsers: "", activeUsers: "", totalNGOs: "", totalContent: "", systemHealth: "", apiCalls: "" }, charts: { userGrowth: "", contentStats: "", systemAlerts: "", recentActivity: "" }, alerts: { high_latency: "", backup_completed: "", new_ngo: "", storage_warning: "" }, activity: { video_upload: "", new_registration: "", report_generated: "", content_approved: "" } },
-    userManagement: { title: "", subtitle: "", tabs: { farmers: "", ngos: "", admins: "" }, actions: { addUser: "", exportData: "", bulkActions: "" }, userDetails: { name: "", email: "", role: "", status: "", registrationDate: "", lastLogin: "", location: "" }, status: { active: "", inactive: "", suspended: "" } },
-    contentModeration: { title: "", subtitle: "", tabs: { pending: "", approved: "", rejected: "" }, contentTypes: { video: "", article: "", comment: "" }, moderationActions: { approve: "", reject: "", needsReview: "" } }
+    userManagement: {
+      title: "", subtitle: "", tabs: { farmers: "", ngos: "", admins: "" }, actions: { addUser: "", exportData: "", bulkActions: "" }, userDetails: { name: "", email: "", role: "", status: "", registrationDate: "", lastLogin: "", location: "" }, status: { active: "", inactive: "", suspended: "" },
+      stats: {
+        totalUsers: "",
+        activeUsers: "",
+        farmers: "",
+        ngos: ""
+      },
+      filters: {
+        allRoles: "",
+        allStatuses: ""
+      },
+      roles: {
+        farmer: "",
+        ngo: "",
+        tech: "",
+        admin: ""
+      },
+      statuses: {
+        active: "",
+        inactive: "",
+        suspended: ""
+      },
+      search: {
+        placeholder: ""
+      },
+      table: {
+        user: "",
+        type: "",
+        status: "",
+        location: "",
+        lastActivity: "",
+        actions: ""
+      },
+      noUsers: {
+        title: "",
+        description: ""
+      },
+      addUserModal: {
+        title: "",
+        description: "",
+        cancel: "",
+        understood: ""
+      }
+    },
+    contentModeration: {
+      title: "", subtitle: "", tabs: {
+        pending: "", approved: "", rejected: "",
+        all: "",
+        flagged: ""
+      }, contentTypes: { video: "", article: "", comment: "" }, moderationActions: {
+        approve: "", reject: "", needsReview: "",
+        view: ""
+      },
+      stats: {
+        total: "",
+        pending: "",
+        approved: "",
+        flagged: ""
+      },
+      search: {
+        placeholder: ""
+      },
+      filters: {
+        category: "",
+        status: ""
+      },
+      table: {
+        content: "",
+        uploader: "",
+        status: "",
+        category: "",
+        uploadDate: "",
+        actions: ""
+      },
+      rejectModal: {
+        title: "",
+        reason: "",
+        placeholder: "",
+        cancel: "",
+        confirm: ""
+      }
+    },
+    systemReports: {
+      title: "",
+      subtitle: "",
+      reportTypes: {
+        userActivity: "",
+        contentAnalytics: "",
+        systemPerformance: "",
+        securityAudit: ""
+      },
+      filters: {
+        dateRange: "",
+        reportType: "",
+        export: ""
+      },
+      stats: {
+        totalReports: "",
+        scheduledReports: "",
+        lastGenerated: ""
+      }
+    },
+    systemSettings: {
+      title: "",
+      subtitle: "",
+      sections: {
+        general: "",
+        security: "",
+        notifications: "",
+        api: "",
+        maintenance: ""
+      },
+      general: {
+        siteName: "",
+        language: "",
+        timezone: "",
+        maintenanceMode: ""
+      },
+      security: {
+        passwordPolicy: "",
+        twoFactorAuth: "",
+        sessionTimeout: "",
+        ipWhitelist: ""
+      },
+      notifications: {
+        emailNotifications: "",
+        smsNotifications: "",
+        pushNotifications: ""
+      },
+      actions: {
+        save: "",
+        reset: "",
+        test: ""
+      }
+    },
+    profile: {
+      title: "",
+      subtitle: "",
+      sections: {
+        personalInfo: "",
+        security: "",
+        preferences: "",
+        activity: ""
+      },
+      personalInfo: {
+        name: "",
+        email: "",
+        phone: "",
+        role: "",
+        department: "",
+        avatar: ""
+      },
+      security: {
+        currentPassword: "",
+        newPassword: "",
+        confirmPassword: "",
+        twoFactor: "",
+        loginHistory: ""
+      },
+      preferences: {
+        language: "",
+        theme: "",
+        notifications: "",
+        timezone: ""
+      },
+      actions: {
+        updateProfile: "",
+        changePassword: "",
+        enableTwoFactor: "",
+        downloadData: ""
+      }
+    }
   },
   ngo: {
     common: { dashboard: "", maps: "", content: "", reports: "", statistics: "", profile: "", farmers: "", videos: "", impact: "", reach: "", coverage: "" },

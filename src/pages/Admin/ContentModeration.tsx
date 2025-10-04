@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaVideo, FaCheck, FaTimes, FaEye, FaFlag, FaClock, FaSearch, FaFilter } from "react-icons/fa";
+import { useI18n } from "../../i18n/useI18n";
 
 interface Content {
   id: string;
@@ -102,12 +103,22 @@ const statuses = [
 ];
 
 export default function ContentModeration() {
+  const { t } = useI18n();
   const [content, setContent] = useState<Content[]>(mockContent);
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [selectedStatus, setSelectedStatus] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
   const [showRejectModal, setShowRejectModal] = useState(false);
   const [selectedContentId, setSelectedContentId] = useState<string | null>(null);
+
+  const categories = [t.admin.contentModeration.tabs.all, "Irrigação", "Agricultura", "Proteção", "Meteorologia", "Solos", "Sementes"];
+  const statuses = [
+    { value: "all", label: t.admin.contentModeration.tabs.all },
+    { value: "pending", label: t.admin.contentModeration.tabs.pending },
+    { value: "approved", label: t.admin.contentModeration.tabs.approved },
+    { value: "rejected", label: t.admin.contentModeration.tabs.rejected },
+    { value: "flagged", label: t.admin.contentModeration.tabs.flagged }
+  ];
 
   const filteredContent = content.filter(item => {
     const matchesCategory = selectedCategory === "Todos" || item.category === selectedCategory;
@@ -131,10 +142,10 @@ export default function ContentModeration() {
 
   const getStatusLabel = (status: string) => {
     switch (status) {
-      case "pending": return "Pendente";
-      case "approved": return "Aprovado";
-      case "rejected": return "Rejeitado";
-      case "flagged": return "Sinalizado";
+      case "pending": return t.admin.contentModeration.tabs.pending;
+      case "approved": return t.admin.contentModeration.tabs.approved;
+      case "rejected": return t.admin.contentModeration.tabs.rejected;
+      case "flagged": return t.admin.contentModeration.tabs.flagged;
       default: return status;
     }
   };
@@ -174,10 +185,10 @@ export default function ContentModeration() {
     <div className="p-6">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          Moderação de Conteúdo
+          {t.admin.contentModeration.title}
         </h1>
         <p className="text-gray-600">
-          Revise e aprove conteúdo educativo para a plataforma AgriFlix
+          {t.admin.contentModeration.subtitle}
         </p>
       </div>
 

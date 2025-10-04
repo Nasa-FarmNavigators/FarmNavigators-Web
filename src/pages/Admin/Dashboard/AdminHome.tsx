@@ -36,23 +36,23 @@ const userGrowthData: UserGrowth[] = [
   { month: "Jun", farmers: 9800, ngos: 23, admins: 12 }
 ];
 
-const systemAlerts = [
-  { id: 1, type: "warning", message: "API NASA com latência alta (2.3s)", time: "15 min atrás" },
-  { id: 2, type: "info", message: "Backup automático concluído", time: "1 hora atrás" },
-  { id: 3, type: "success", message: "Nova ONG registrada: Verde Angola", time: "2 horas atrás" },
-  { id: 4, type: "warning", message: "Uso de storage em 85%", time: "3 horas atrás" }
-];
-
-const recentActivity = [
-  { action: "Upload de vídeo", user: "ONG Sementes do Futuro", detail: "Irrigação por gotejamento", time: "10 min" },
-  { action: "Novo registro", user: "João Silva", detail: "Agricultor - Luanda", time: "25 min" },
-  { action: "Relatório gerado", user: "Admin System", detail: "Relatório mensal", time: "1 hora" },
-  { action: "Conteúdo aprovado", user: "Admin Maria", detail: "3 vídeos aprovados", time: "2 horas" }
-];
-
 export default function AdminDashboard() {
   const { t } = useI18n();
   const [timeRange, setTimeRange] = useState("30d");
+
+  const systemAlerts = [
+    { id: 1, type: "warning", message: t.admin.dashboard.alerts.high_latency, time: "15 min atrás" },
+    { id: 2, type: "info", message: t.admin.dashboard.alerts.backup_completed, time: "1 hora atrás" },
+    { id: 3, type: "success", message: `${t.admin.dashboard.alerts.new_ngo}: Verde Angola`, time: "2 horas atrás" },
+    { id: 4, type: "warning", message: t.admin.dashboard.alerts.storage_warning, time: "3 horas atrás" }
+  ];
+
+  const recentActivity = [
+    { action: t.admin.dashboard.activity.video_upload, user: "ONG Sementes do Futuro", detail: "Irrigação por gotejamento", time: "10 min" },
+    { action: t.admin.dashboard.activity.new_registration, user: "João Silva", detail: "Agricultor - Luanda", time: "25 min" },
+    { action: t.admin.dashboard.activity.report_generated, user: "Admin System", detail: "Relatório mensal", time: "1 hora" },
+    { action: t.admin.dashboard.activity.content_approved, user: "Admin Maria", detail: "3 vídeos aprovados", time: "2 horas" }
+  ];
 
   const getAlertIcon = (type: string) => {
     switch (type) {
@@ -102,7 +102,7 @@ export default function AdminDashboard() {
         </div>
         <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center">
           <FaDownload className="mr-2" />
-          Exportar Relatório
+          {t.admin.common.export}
         </button>
       </div>
 
@@ -115,7 +115,7 @@ export default function AdminDashboard() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-gray-900">{mockStats.totalUsers.toLocaleString()}</h3>
-              <p className="text-gray-600">Usuários Totais</p>
+              <p className="text-gray-600">{t.admin.dashboard.stats.totalUsers}</p>
               <p className="text-sm text-green-600">+12% vs mês anterior</p>
             </div>
           </div>
@@ -128,7 +128,7 @@ export default function AdminDashboard() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-gray-900">{mockStats.totalNGOs}</h3>
-              <p className="text-gray-600">ONGs Ativas</p>
+              <p className="text-gray-600">{t.admin.dashboard.stats.totalNGOs}</p>
               <p className="text-sm text-green-600">+2 este mês</p>
             </div>
           </div>
@@ -141,7 +141,7 @@ export default function AdminDashboard() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-gray-900">{mockStats.totalContent}</h3>
-              <p className="text-gray-600">Conteúdos Ativos</p>
+              <p className="text-gray-600">{t.admin.dashboard.stats.totalContent}</p>
               <p className="text-sm text-green-600">+8 esta semana</p>
             </div>
           </div>
@@ -154,7 +154,7 @@ export default function AdminDashboard() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-gray-900">{mockStats.systemHealth}%</h3>
-              <p className="text-gray-600">Saúde do Sistema</p>
+              <p className="text-gray-600">{t.admin.dashboard.stats.systemHealth}</p>
               <p className="text-sm text-green-600">Excelente</p>
             </div>
           </div>
@@ -165,7 +165,7 @@ export default function AdminDashboard() {
         {/* User Growth Chart */}
         <div className="lg:col-span-2 bg-white rounded-lg shadow">
           <div className="p-6 border-b border-gray-200">
-            <h2 className="text-xl font-bold text-gray-900">Crescimento de Usuários</h2>
+            <h2 className="text-xl font-bold text-gray-900">{t.admin.dashboard.charts.userGrowth}</h2>
           </div>
           <div className="p-6">
             <div className="h-64 bg-gradient-to-br from-green-50 to-blue-50 rounded-lg flex items-center justify-center">
@@ -191,7 +191,7 @@ export default function AdminDashboard() {
         {/* System Alerts */}
         <div className="bg-white rounded-lg shadow">
           <div className="p-6 border-b border-gray-200">
-            <h2 className="text-xl font-bold text-gray-900">Alertas do Sistema</h2>
+            <h2 className="text-xl font-bold text-gray-900">{t.admin.dashboard.charts.systemAlerts}</h2>
           </div>
           <div className="p-6">
             <div className="space-y-3">
@@ -217,7 +217,7 @@ export default function AdminDashboard() {
         {/* Recent Activity */}
         <div className="bg-white rounded-lg shadow">
           <div className="p-6 border-b border-gray-200">
-            <h2 className="text-xl font-bold text-gray-900">Atividade Recente</h2>
+            <h2 className="text-xl font-bold text-gray-900">{t.admin.dashboard.charts.recentActivity}</h2>
           </div>
           <div className="p-6">
             <div className="space-y-4">
@@ -247,19 +247,19 @@ export default function AdminDashboard() {
             <div className="grid grid-cols-2 gap-4">
               <button className="p-4 bg-blue-50 rounded-lg text-center hover:bg-blue-100 transition-colors">
                 <FaUsers className="text-2xl text-blue-600 mx-auto mb-2" />
-                <p className="text-sm font-medium text-gray-900">Gerenciar Usuários</p>
+                <p className="text-sm font-medium text-gray-900">{t.admin.navigation.userManagement}</p>
               </button>
               <button className="p-4 bg-green-50 rounded-lg text-center hover:bg-green-100 transition-colors">
                 <FaVideo className="text-2xl text-green-600 mx-auto mb-2" />
-                <p className="text-sm font-medium text-gray-900">Moderar Conteúdo</p>
+                <p className="text-sm font-medium text-gray-900">{t.admin.navigation.contentModeration}</p>
               </button>
               <button className="p-4 bg-purple-50 rounded-lg text-center hover:bg-purple-100 transition-colors">
                 <FaChartLine className="text-2xl text-purple-600 mx-auto mb-2" />
-                <p className="text-sm font-medium text-gray-900">Ver Relatórios</p>
+                <p className="text-sm font-medium text-gray-900">{t.admin.navigation.systemReports}</p>
               </button>
               <button className="p-4 bg-orange-50 rounded-lg text-center hover:bg-orange-100 transition-colors">
                 <FaCog className="text-2xl text-orange-600 mx-auto mb-2" />
-                <p className="text-sm font-medium text-gray-900">Configurações</p>
+                <p className="text-sm font-medium text-gray-900">{t.admin.navigation.systemSettings}</p>
               </button>
             </div>
           </div>
@@ -275,7 +275,7 @@ export default function AdminDashboard() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="text-center">
               <h3 className="text-2xl font-bold text-blue-600">{mockStats.apiCalls.toLocaleString()}</h3>
-              <p className="text-gray-600">Chamadas hoje</p>
+              <p className="text-gray-600">{t.admin.dashboard.stats.apiCalls}</p>
             </div>
             <div className="text-center">
               <h3 className="text-2xl font-bold text-green-600">1.2s</h3>
