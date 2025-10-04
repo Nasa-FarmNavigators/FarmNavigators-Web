@@ -656,6 +656,106 @@ export interface Translations {
       label: string;
     };
   };
+  
+  // FarmTinder Full Application
+  farmTinderFull: {
+    // Header and Navigation
+    header: {
+      title: string;
+      subtitle: string;
+      progress: string; // "X de Y"
+    };
+    
+    // Main Card Interface
+    card: {
+      nasaConfidence: string;
+      scientificName: string;
+      idealConditions: string;
+      bestPlantingSeason: string;
+      yieldUnit: string; // "kg/hectare"
+      profitUnit: string; // "lucro/hectare"
+      advantages: string;
+      considerations: string;
+    };
+    
+    // Climate Information
+    climate: {
+      rainfall: string;
+      temperature: string;
+      humidity: string;
+    };
+    
+    // Action Buttons
+    actions: {
+      reject: string;
+      accept: string;
+      rejectButton: string; // "Não Plantar"
+      acceptButton: string; // "Quero Plantar!"
+    };
+    
+    // Results Page
+    results: {
+      title: string;
+      subtitle: string;
+      selectedCrops: string;
+      noSelection: {
+        title: string;
+        subtitle: string;
+      };
+      nextSteps: {
+        title: string;
+        items: string[];
+      };
+      buttons: {
+        tryAgain: string;
+        backHome: string;
+      };
+    };
+    
+    // Crop Data
+    crops: {
+      corn: {
+        name: string;
+        description: string;
+        pros: string[];
+        considerations: string[];
+        plantingSeason: string;
+      };
+      cassava: {
+        name: string;
+        description: string;
+        pros: string[];
+        considerations: string[];
+        plantingSeason: string;
+      };
+      beans: {
+        name: string;
+        description: string;
+        pros: string[];
+        considerations: string[];
+        plantingSeason: string;
+      };
+      sweetPotato: {
+        name: string;
+        description: string;
+        pros: string[];
+        considerations: string[];
+        plantingSeason: string;
+      };
+      tomato: {
+        name: string;
+        description: string;
+        pros: string[];
+        considerations: string[];
+        plantingSeason: string;
+      };
+    };
+    
+    // Demo Information
+    demo: {
+      info: string;
+    };
+  };
 }
 
 // Tradução em Português (PT) - Padrão
@@ -1281,6 +1381,148 @@ export const pt: Translations = {
       instructor: "Instrutor",
       back: "Voltar"
     }
+  },
+  
+  // FarmTinder Full Application
+  farmTinderFull: {
+    // Header and Navigation
+    header: {
+      title: "Farm Tinder 🌱❤️",
+      subtitle: "Encontre as culturas perfeitas para sua terra",
+      progress: "{current} de {total}",
+    },
+    
+    // Main Card Interface
+    card: {
+      nasaConfidence: "NASA",
+      scientificName: "Nome científico",
+      idealConditions: "Condições Ideais:",
+      bestPlantingSeason: "Melhor época de plantio",
+      yieldUnit: "kg/hectare",
+      profitUnit: "lucro/hectare",
+      advantages: "✅ Vantagens:",
+      considerations: "⚠️ Considerações:",
+    },
+    
+    // Climate Information
+    climate: {
+      rainfall: "Chuva:",
+      temperature: "Temperatura:",
+      humidity: "Umidade:",
+    },
+    
+    // Action Buttons
+    actions: {
+      reject: "Rejeitar",
+      accept: "Aceitar",
+      rejectButton: "Não Plantar",
+      acceptButton: "Quero Plantar!",
+    },
+    
+    // Results Page
+    results: {
+      title: "Suas Recomendações Farm Tinder 🌱❤️",
+      subtitle: "Baseado nas suas escolhas e dados NASA da sua região",
+      selectedCrops: "Culturas Selecionadas ({count})",
+      noSelection: {
+        title: "Nenhuma cultura selecionada",
+        subtitle: "Tente novamente para encontrar as melhores opções para sua terra",
+      },
+      nextSteps: {
+        title: "Próximos Passos Recomendados",
+        items: [
+          "✅ Prepare o solo conforme as especificações de cada cultura",
+          "✅ Configure alertas climáticos no app para suas culturas",
+          "✅ Assista aos vídeos AgriFlix específicos para cada plantio",
+          "✅ Use o Simulador de Crescimento para planejar o calendário",
+          "✅ Conecte-se com cooperativas locais para suporte técnico",
+        ],
+      },
+      buttons: {
+        tryAgain: "Tentar Novamente",
+        backHome: "Voltar ao Início",
+      },
+    },
+    
+    // Crop Data
+    crops: {
+      corn: {
+        name: "Milho",
+        description: "Cultura base da alimentação angolana com alto potencial de rendimento",
+        pros: [
+          "Alta demanda no mercado local",
+          "Resistente a variações climáticas",
+          "Múltiplos usos (alimentação, ração)",
+        ],
+        considerations: [
+          "Necessita irrigação regular",
+          "Sensível a pragas na época seca",
+        ],
+        plantingSeason: "Outubro - Dezembro",
+      },
+      cassava: {
+        name: "Mandioca",
+        description: "Cultura resistente ideal para solos pobres e clima tropical",
+        pros: [
+          "Muito resistente à seca",
+          "Cresce em solos pobres",
+          "Longa durabilidade no solo",
+        ],
+        considerations: [
+          "Preço de venda mais baixo",
+          "Processamento necessário",
+        ],
+        plantingSeason: "Novembro - Janeiro",
+      },
+      beans: {
+        name: "Feijão",
+        description: "Fonte importante de proteína com boa rotação de culturas",
+        pros: [
+          "Alto valor nutricional",
+          "Fixa nitrogênio no solo",
+          "Ciclo curto (90 dias)",
+        ],
+        considerations: [
+          "Sensível a excesso de água",
+          "Requer cuidado com pragas",
+        ],
+        plantingSeason: "Setembro - Novembro",
+      },
+      sweetPotato: {
+        name: "Batata Doce",
+        description: "Cultura nutritiva e resistente, ideal para segurança alimentar",
+        pros: [
+          "Rica em vitaminas",
+          "Tolera solos ácidos",
+          "Folhas também são comestíveis",
+        ],
+        considerations: [
+          "Necessita preparo do solo",
+          "Armazenamento limitado",
+        ],
+        plantingSeason: "Março - Maio",
+      },
+      tomato: {
+        name: "Tomate",
+        description: "Cultura de alto valor mas que requer manejo técnico",
+        pros: [
+          "Alto valor de mercado",
+          "Grande demanda urbana",
+          "Múltiplas colheitas/ano",
+        ],
+        considerations: [
+          "Requer irrigação constante",
+          "Sensível a doenças",
+          "Necessita investimento inicial",
+        ],
+        plantingSeason: "Maio - Julho",
+      },
+    },
+    
+    // Demo Information
+    demo: {
+      info: "💡 Demo do Farm Tinder - Dados baseados em informações reais da NASA e agricultura angolana",
+    },
   }
 };
 
@@ -1853,6 +2095,148 @@ export const en: Translations = {
       instructor: "Instructor",
       back: "Back"
     }
+  },
+  
+  // FarmTinder Full Application
+  farmTinderFull: {
+    // Header and Navigation
+    header: {
+      title: "Farm Tinder 🌱❤️",
+      subtitle: "Find the perfect crops for your land",
+      progress: "{current} of {total}",
+    },
+    
+    // Main Card Interface
+    card: {
+      nasaConfidence: "NASA",
+      scientificName: "Scientific name",
+      idealConditions: "Ideal Conditions:",
+      bestPlantingSeason: "Best planting season",
+      yieldUnit: "kg/hectare",
+      profitUnit: "profit/hectare",
+      advantages: "✅ Advantages:",
+      considerations: "⚠️ Considerations:",
+    },
+    
+    // Climate Information
+    climate: {
+      rainfall: "Rainfall:",
+      temperature: "Temperature:",
+      humidity: "Humidity:",
+    },
+    
+    // Action Buttons
+    actions: {
+      reject: "Reject",
+      accept: "Accept",
+      rejectButton: "Don't Plant",
+      acceptButton: "Want to Plant!",
+    },
+    
+    // Results Page
+    results: {
+      title: "Your Farm Tinder Recommendations 🌱❤️",
+      subtitle: "Based on your choices and NASA data from your region",
+      selectedCrops: "Selected Crops ({count})",
+      noSelection: {
+        title: "No crops selected",
+        subtitle: "Try again to find the best options for your land",
+      },
+      nextSteps: {
+        title: "Recommended Next Steps",
+        items: [
+          "✅ Prepare soil according to each crop's specifications",
+          "✅ Set up climate alerts in the app for your crops",
+          "✅ Watch AgriFlix videos specific to each planting",
+          "✅ Use Growth Simulator to plan calendar",
+          "✅ Connect with local cooperatives for technical support",
+        ],
+      },
+      buttons: {
+        tryAgain: "Try Again",
+        backHome: "Back to Home",
+      },
+    },
+    
+    // Crop Data
+    crops: {
+      corn: {
+        name: "Corn",
+        description: "Base crop of Angolan diet with high yield potential",
+        pros: [
+          "High demand in local market",
+          "Resistant to climate variations",
+          "Multiple uses (food, feed)",
+        ],
+        considerations: [
+          "Requires regular irrigation",
+          "Sensitive to pests in dry season",
+        ],
+        plantingSeason: "October - December",
+      },
+      cassava: {
+        name: "Cassava",
+        description: "Resistant crop ideal for poor soils and tropical climate",
+        pros: [
+          "Very drought resistant",
+          "Grows in poor soils",
+          "Long durability in soil",
+        ],
+        considerations: [
+          "Lower selling price",
+          "Processing required",
+        ],
+        plantingSeason: "November - January",
+      },
+      beans: {
+        name: "Beans",
+        description: "Important protein source with good crop rotation",
+        pros: [
+          "High nutritional value",
+          "Fixes nitrogen in soil",
+          "Short cycle (90 days)",
+        ],
+        considerations: [
+          "Sensitive to excess water",
+          "Requires pest care",
+        ],
+        plantingSeason: "September - November",
+      },
+      sweetPotato: {
+        name: "Sweet Potato",
+        description: "Nutritious and resistant crop, ideal for food security",
+        pros: [
+          "Rich in vitamins",
+          "Tolerates acid soils",
+          "Leaves are also edible",
+        ],
+        considerations: [
+          "Requires soil preparation",
+          "Limited storage",
+        ],
+        plantingSeason: "March - May",
+      },
+      tomato: {
+        name: "Tomato",
+        description: "High-value crop but requires technical management",
+        pros: [
+          "High market value",
+          "Great urban demand",
+          "Multiple harvests/year",
+        ],
+        considerations: [
+          "Requires constant irrigation",
+          "Sensitive to diseases",
+          "Needs initial investment",
+        ],
+        plantingSeason: "May - July",
+      },
+    },
+    
+    // Demo Information
+    demo: {
+      info: "💡 Farm Tinder Demo - Based on real NASA data and Angolan agriculture",
+    },
   }
 };
 
@@ -2261,6 +2645,23 @@ export const umb: Translations = {
     },
     messages: { noResults: "Ovya kimbamba", noResultsDesc: "Ovya tondilua.", loading: "Okukonga...", error: "Ekuluvila", tryFilters: "Hemelela ohengelo." },
     common: { views: "ohengelo", likes: "okuvila", share: "kasakanisa", download: "tunga", watch: "telela", instructor: "ombolongeli", back: "vutuka" }
+  },
+  
+  // FarmTinder Full Application - Versão Simplificada Umbundu
+  farmTinderFull: {
+    header: { title: "Farm Tinder 🌱❤️", subtitle: "Olima mema", progress: "{current} ya {total}" },
+    card: { nasaConfidence: "NASA", scientificName: "ocitema", idealConditions: "Mema:", bestPlantingSeason: "Otumba olima", yieldUnit: "kg/ha", profitUnit: "lupakasa/ha", advantages: "✅ Mema:", considerations: "⚠️ Katuluka:" },
+    climate: { rainfall: "Ochimbanda:", temperature: "Otete:", humidity: "Ombela:" },
+    actions: { reject: "Kutula", accept: "Kutambula", rejectButton: "Olima kwa", acceptButton: "Olima!" },
+    results: { title: "Farm Tinder 🌱❤️", subtitle: "NASA ya olima", selectedCrops: "Olima ({count})", noSelection: { title: "Olima kimbamba", subtitle: "Tondilua olima mema" }, nextSteps: { title: "Okuhenga", items: ["✅ Olima", "✅ NASA", "✅ AgriFlix", "✅ Simulador", "✅ Cooperativas"] }, buttons: { tryAgain: "Tondilua", backHome: "Vutuka" } },
+    crops: {
+      corn: { name: "Omilho", description: "Kuria mema Angola", pros: ["Kuria mema", "Otete mema", "Kuria lumbu"], considerations: ["Ombela", "Otumba"], plantingSeason: "Outubro - Dezembro" },
+      cassava: { name: "Omanioka", description: "Olima kwa solo", pros: ["Ombela kwa", "Solo", "Otumba lumbu"], considerations: ["Lupakasa", "Kutula"], plantingSeason: "Novembro - Janeiro" },
+      beans: { name: "Omakunde", description: "Kuria mema", pros: ["Kuria", "Solo", "90 dias"], considerations: ["Ombela", "Katuluka"], plantingSeason: "Setembro - Novembro" },
+      sweetPotato: { name: "Orimbanda", description: "Kuria mema", pros: ["Vitaminas", "Solo", "Kuria"], considerations: ["Solo", "Konga"], plantingSeason: "Março - Maio" },
+      tomato: { name: "Otomate", description: "Lupakasa mema", pros: ["Lupakasa", "Kuria", "Lumbu"], considerations: ["Ombela", "Katuluka", "Lupakasa"], plantingSeason: "Maio - Julho" }
+    },
+    demo: { info: "💡 Farm Tinder Demo - NASA ya Angola olima" }
   }
 };
 
@@ -2669,6 +3070,23 @@ export const kmb: Translations = {
     },
     messages: { noResults: "Kimbamba masolo", noResultsDesc: "Masolo maadi.", loading: "Kubanda...", error: "Kimbamba", tryFilters: "Sobolola kisobo." },
     common: { views: "kuluela", likes: "kuvila", share: "kabongisa", download: "solola", watch: "banda", instructor: "mujinga", back: "kuvutuka" }
+  },
+  
+  // FarmTinder Full Application - Versão Simplificada Kimbundu
+  farmTinderFull: {
+    header: { title: "Farm Tinder 🌱❤️", subtitle: "Kilima mema", progress: "{current} ya {total}" },
+    card: { nasaConfidence: "NASA", scientificName: "disolo", idealConditions: "Mema:", bestPlantingSeason: "Tempu kilima", yieldUnit: "kg/ha", profitUnit: "lukeba/ha", advantages: "✅ Mema:", considerations: "⚠️ Kandengesa:" },
+    climate: { rainfall: "Mvula:", temperature: "Moto:", humidity: "Mesu:" },
+    actions: { reject: "Katula", accept: "Kutambula", rejectButton: "Kilima kwa", acceptButton: "Kilima!" },
+    results: { title: "Farm Tinder 🌱❤️", subtitle: "NASA ya kilima", selectedCrops: "Kilima ({count})", noSelection: { title: "Kilima kimbamba", subtitle: "Kandengesa kilima mema" }, nextSteps: { title: "Kulonda", items: ["✅ Kilima", "✅ NASA", "✅ AgriFlix", "✅ Simulador", "✅ Cooperativas"] }, buttons: { tryAgain: "Kandengesa", backHome: "Kuvutuka" } },
+    crops: {
+      corn: { name: "Milho", description: "Kilima mema Angola", pros: ["Kilima mema", "Moto mema", "Kilima tempu"], considerations: ["Mesu", "Tempu"], plantingSeason: "Outubro - Dezembro" },
+      cassava: { name: "Manioca", description: "Kilima kya muxi", pros: ["Mesu kwa", "Muxi", "Tempu lumbu"], considerations: ["Lukeba", "Kulonda"], plantingSeason: "Novembro - Janeiro" },
+      beans: { name: "Makunde", description: "Kilima mema", pros: ["Kilima", "Muxi", "90 dias"], considerations: ["Mesu", "Kandengesa"], plantingSeason: "Setembro - Novembro" },
+      sweetPotato: { name: "Rimbanda", description: "Kilima mema", pros: ["Vitaminas", "Muxi", "Kilima"], considerations: ["Muxi", "Konga"], plantingSeason: "Março - Maio" },
+      tomato: { name: "Tomate", description: "Lukeba mema", pros: ["Lukeba", "Kilima", "Tempu"], considerations: ["Mesu", "Kandengesa", "Lukeba"], plantingSeason: "Maio - Julho" }
+    },
+    demo: { info: "💡 Farm Tinder Demo - NASA ya Angola kilima" }
   }
 };
 
@@ -3077,6 +3495,23 @@ export const lun: Translations = {
     },
     messages: { noResults: "Kimbamba masolo", noResultsDesc: "Masolo maadi.", loading: "Kukomesa...", error: "Kimbamba", tryFilters: "Longela kilongo." },
     common: { views: "kuluela", likes: "kuvila", share: "longela", download: "solola", watch: "komesa", instructor: "mujinga", back: "kuvutuka" }
+  },
+  
+  // FarmTinder Full Application - Versão Simplificada Lunda
+  farmTinderFull: {
+    header: { title: "Farm Tinder 🌱❤️", subtitle: "Kilima mema", progress: "{current} ya {total}" },
+    card: { nasaConfidence: "NASA", scientificName: "disolo", idealConditions: "Mema:", bestPlantingSeason: "Tempu kilima", yieldUnit: "kg/ha", profitUnit: "lukeba/ha", advantages: "✅ Mema:", considerations: "⚠️ Longela:" },
+    climate: { rainfall: "Mvula:", temperature: "Moto:", humidity: "Mema:" },
+    actions: { reject: "Katula", accept: "Kutambula", rejectButton: "Kilima kwa", acceptButton: "Kilima!" },
+    results: { title: "Farm Tinder 🌱❤️", subtitle: "NASA ya kilima", selectedCrops: "Kilima ({count})", noSelection: { title: "Kilima kimbamba", subtitle: "Longela kilima mema" }, nextSteps: { title: "Kulonda", items: ["✅ Kilima", "✅ NASA", "✅ AgriFlix", "✅ Simulador", "✅ Cooperativas"] }, buttons: { tryAgain: "Longela", backHome: "Kuvutuka" } },
+    crops: {
+      corn: { name: "Milho", description: "Kilima mema Angola", pros: ["Kilima mema", "Moto mema", "Kilima tempu"], considerations: ["Mema", "Tempu"], plantingSeason: "Outubro - Dezembro" },
+      cassava: { name: "Manioca", description: "Kilima kya muxi", pros: ["Mema kwa", "Muxi", "Tempu lumbu"], considerations: ["Lukeba", "Kulonda"], plantingSeason: "Novembro - Janeiro" },
+      beans: { name: "Makunde", description: "Kilima mema", pros: ["Kilima", "Muxi", "90 dias"], considerations: ["Mema", "Longela"], plantingSeason: "Setembro - Novembro" },
+      sweetPotato: { name: "Rimbanda", description: "Kilima mema", pros: ["Vitaminas", "Muxi", "Kilima"], considerations: ["Muxi", "Konga"], plantingSeason: "Março - Maio" },
+      tomato: { name: "Tomate", description: "Lukeba mema", pros: ["Lukeba", "Kilima", "Tempu"], considerations: ["Mema", "Longela", "Lukeba"], plantingSeason: "Maio - Julho" }
+    },
+    demo: { info: "💡 Farm Tinder Demo - NASA ya Angola kilima" }
   }
 };
 
