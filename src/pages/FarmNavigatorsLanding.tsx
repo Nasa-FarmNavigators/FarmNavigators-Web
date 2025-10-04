@@ -152,7 +152,7 @@ const FarmNavigatorsLanding: React.FC = () => {
                     <div className="flex items-center space-x-3">
                         <div className="w-12 h-12  from-green-500 to-blue-600 rounded-xl flex items-center justify-center">
                             {/* <FaSeedling className="bg-gradient-to-br text-white text-xl" /> */}
-                            <img src='public/images/others/logo.png'></img>
+                            <img src='/images/others/logo.png'></img>
                         </div>
                         <div>
                             <h1 className="text-xl font-bold text-gray-900">{t.companyName}</h1>
