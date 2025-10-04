@@ -12,9 +12,9 @@ export default function LoginPage() {
   const navigate = useNavigate();
 
   const backgroundImages = [
-    "/images/conclusion-background.jpg",
-    "/images/pricing-background.jpg",
-    "/images/details-1.jpg"
+    "/images/others/back4.jpg",
+    "/images/others/back4.jpg",
+    "/images/others/back4.jpg"
   ];
 
   const changeBackground = () => {
@@ -62,7 +62,8 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen relative bg-gradient-to-br from-green-50 to-blue-50 flex items-center justify-center p-4"
          style={{
-           backgroundImage: `url('${backgroundImage}')`,
+        //    backgroundImage: `url('${backgroundImage}')`,
+           backgroundImage: `url('/images/others/back4.jpg')`,
            backgroundSize: 'cover',
            backgroundPosition: 'center',
            backgroundRepeat: 'no-repeat'
