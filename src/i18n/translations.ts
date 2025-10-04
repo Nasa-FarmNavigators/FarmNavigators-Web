@@ -199,6 +199,128 @@ export interface Translations {
     };
   };
   
+  // AgriClix Complete Interface
+  agriFlixFull: {
+    // Header and Navigation
+    header: {
+      title: string;
+      subtitle: string;
+      searchPlaceholder: string;
+    };
+    
+    // Filters and Categories
+    filters: {
+      title: string;
+      clearAll: string;
+      category: string;
+      language: string;
+      difficulty: string;
+      activeFilters: string;
+    };
+    
+    // Categories
+    categories: {
+      all: string;
+      soilPrep: string;
+      irrigation: string;
+      pestControl: string;
+      harvesting: string;
+      sustainability: string;
+      technology: string;
+      composting: string;
+    };
+    
+    // Difficulty Levels
+    difficulty: {
+      basic: string;
+      intermediate: string;
+      advanced: string;
+    };
+    
+    // Languages
+    languages: {
+      all: string;
+      portuguese: string;
+      umbundu: string;
+      kimbundu: string;
+      lunda: string;
+    };
+    
+    // Video Player Interface
+    player: {
+      play: string;
+      pause: string;
+      like: string;
+      share: string;
+      download: string;
+      transcript: string;
+      backToList: string;
+      videoInfo: string;
+      instructor: string;
+      duration: string;
+      views: string;
+      likes: string;
+      category: string;
+      tags: string;
+    };
+    
+    // Videos Content
+    videos: {
+      soilPrep: {
+        title: string;
+        description: string;
+      };
+      irrigation: {
+        title: string;
+        description: string;
+      };
+      pestControl: {
+        title: string;
+        description: string;
+      };
+      cropRotation: {
+        title: string;
+        description: string;
+      };
+      waterConservation: {
+        title: string;
+        description: string;
+      };
+      nasaData: {
+        title: string;
+        description: string;
+      };
+      composting: {
+        title: string;
+        description: string;
+      };
+      organicFarming: {
+        title: string;
+        description: string;
+      };
+    };
+    
+    // UI Messages
+    messages: {
+      noResults: string;
+      noResultsDesc: string;
+      loading: string;
+      error: string;
+      tryFilters: string;
+    };
+    
+    // Common elements
+    common: {
+      views: string;
+      likes: string;
+      share: string;
+      download: string;
+      watch: string;
+      instructor: string;
+      back: string;
+    };
+  };
+  
   // Partners Section
   partners: {
     title: string;
@@ -1048,6 +1170,117 @@ export const pt: Translations = {
       title: "Sem internet? Sem problema!",
       description: "Envie AGRI para +244 900 000 000 via SMS"
     }
+  },
+  agriFlixFull: {
+    header: {
+      title: "AgriFlix 🎥",
+      subtitle: "Plataforma de vídeos educativos para agricultura angolana",
+      searchPlaceholder: "Pesquisar vídeos por título, instrutor, categoria ou tags..."
+    },
+    
+    filters: {
+      title: "Filtros",
+      clearAll: "Limpar todos os filtros",
+      category: "Categoria",
+      language: "Idioma",
+      difficulty: "Dificuldade",
+      activeFilters: "Filtros ativos:"
+    },
+    
+    categories: {
+      all: "Todos",
+      soilPrep: "Preparação do Solo",
+      irrigation: "Irrigação",
+      pestControl: "Controle de Pragas",
+      harvesting: "Colheita",
+      sustainability: "Sustentabilidade",
+      technology: "Tecnologia",
+      composting: "Compostagem"
+    },
+    
+    difficulty: {
+      basic: "Básico",
+      intermediate: "Intermediário",
+      advanced: "Avançado"
+    },
+    
+    languages: {
+      all: "Todos",
+      portuguese: "Português",
+      umbundu: "Umbundu",
+      kimbundu: "Kimbundu",
+      lunda: "Lunda"
+    },
+    
+    player: {
+      play: "Reproduzir",
+      pause: "Pausar",
+      like: "Curtir",
+      share: "Compartilhar",
+      download: "Baixar",
+      transcript: "Transcrição",
+      backToList: "Voltar à Lista",
+      videoInfo: "Informações do Vídeo",
+      instructor: "Instrutor",
+      duration: "Duração",
+      views: "Visualizações",
+      likes: "Curtidas",
+      category: "Categoria",
+      tags: "Tags"
+    },
+    
+    videos: {
+      soilPrep: {
+        title: "Como Preparar o Solo para Plantio de Milho",
+        description: "Aprenda as técnicas essenciais para preparar o solo antes de plantar milho, incluindo análise do pH e adubação adequada."
+      },
+      irrigation: {
+        title: "Otalapia Ukwashika - Irrigação Inteligente",
+        description: "Técnicas de irrigação eficiente em Umbundu, usando dados de satélite para otimizar o uso da água."
+      },
+      pestControl: {
+        title: "Combate Natural a Pragas na Mandioca",
+        description: "Métodos orgânicos e sustentáveis para controlar pragas na cultura da mandioca sem usar produtos químicos."
+      },
+      cropRotation: {
+        title: "Rotação de Culturas para Pequenos Agricultores",
+        description: "Como fazer rotação de culturas em pequenas áreas para melhorar a produtividade e a saúde do solo."
+      },
+      waterConservation: {
+        title: "Ochisenge - Conservação da Água",
+        description: "Aprenda técnicas tradicionais e modernas de conservação da água para agricultura sustentável."
+      },
+      nasaData: {
+        title: "Usando Dados da NASA para Plantio",
+        description: "Como interpretar dados satelitais da NASA para tomar decisões de plantio mais inteligentes."
+      },
+      composting: {
+        title: "Compostagem Caseira Simples",
+        description: "Transforme restos orgânicos em adubo natural rico em nutrientes para suas plantas."
+      },
+      organicFarming: {
+        title: "Agricultura Orgânica em Angola",
+        description: "Princípios e práticas da agricultura orgânica adaptados às condições climáticas angolanas."
+      }
+    },
+    
+    messages: {
+      noResults: "Nenhum vídeo encontrado",
+      noResultsDesc: "Nenhum vídeo corresponde aos filtros selecionados.",
+      loading: "Carregando vídeos...",
+      error: "Erro ao carregar vídeos",
+      tryFilters: "Tente alterar os filtros para ver mais conteúdo."
+    },
+    
+    common: {
+      views: "visualizações",
+      likes: "curtidas",
+      share: "Compartilhar",
+      download: "Baixar",
+      watch: "Assistir",
+      instructor: "Instrutor",
+      back: "Voltar"
+    }
   }
 };
 
@@ -1509,6 +1742,117 @@ export const en: Translations = {
       level: "Level", season: "Season",
       seasons: { planting: "Planting", growing: "Growing", harvest: "Harvest" }
     }
+  },
+  agriFlixFull: {
+    header: {
+      title: "AgriFlix 🎥",
+      subtitle: "Educational video platform for Angolan agriculture",
+      searchPlaceholder: "Search videos by title, instructor, category or tags..."
+    },
+    
+    filters: {
+      title: "Filters",
+      clearAll: "Clear all filters",
+      category: "Category",
+      language: "Language",
+      difficulty: "Difficulty",
+      activeFilters: "Active filters:"
+    },
+    
+    categories: {
+      all: "All",
+      soilPrep: "Soil Preparation",
+      irrigation: "Irrigation",
+      pestControl: "Pest Control",
+      harvesting: "Harvesting",
+      sustainability: "Sustainability",
+      technology: "Technology",
+      composting: "Composting"
+    },
+    
+    difficulty: {
+      basic: "Basic",
+      intermediate: "Intermediate",
+      advanced: "Advanced"
+    },
+    
+    languages: {
+      all: "All",
+      portuguese: "Portuguese",
+      umbundu: "Umbundu",
+      kimbundu: "Kimbundu",
+      lunda: "Lunda"
+    },
+    
+    player: {
+      play: "Play",
+      pause: "Pause",
+      like: "Like",
+      share: "Share",
+      download: "Download",
+      transcript: "Transcript",
+      backToList: "Back to List",
+      videoInfo: "Video Information",
+      instructor: "Instructor",
+      duration: "Duration",
+      views: "Views",
+      likes: "Likes",
+      category: "Category",
+      tags: "Tags"
+    },
+    
+    videos: {
+      soilPrep: {
+        title: "How to Prepare Soil for Corn Planting",
+        description: "Learn essential techniques for preparing soil before planting corn, including pH analysis and proper fertilization."
+      },
+      irrigation: {
+        title: "Smart Irrigation Techniques",
+        description: "Efficient irrigation techniques using satellite data to optimize water usage."
+      },
+      pestControl: {
+        title: "Natural Pest Control in Cassava",
+        description: "Organic and sustainable methods to control pests in cassava crops without using chemicals."
+      },
+      cropRotation: {
+        title: "Crop Rotation for Small Farmers",
+        description: "How to rotate crops in small areas to improve productivity and soil health."
+      },
+      waterConservation: {
+        title: "Water Conservation Techniques",
+        description: "Learn traditional and modern water conservation techniques for sustainable agriculture."
+      },
+      nasaData: {
+        title: "Using NASA Data for Planting",
+        description: "How to interpret NASA satellite data to make smarter planting decisions."
+      },
+      composting: {
+        title: "Simple Home Composting",
+        description: "Transform organic waste into nutrient-rich natural fertilizer for your plants."
+      },
+      organicFarming: {
+        title: "Organic Farming in Angola",
+        description: "Principles and practices of organic farming adapted to Angolan climate conditions."
+      }
+    },
+    
+    messages: {
+      noResults: "No videos found",
+      noResultsDesc: "No videos match the selected filters.",
+      loading: "Loading videos...",
+      error: "Error loading videos",
+      tryFilters: "Try changing filters to see more content."
+    },
+    
+    common: {
+      views: "views",
+      likes: "likes",
+      share: "Share",
+      download: "Download",
+      watch: "Watch",
+      instructor: "Instructor",
+      back: "Back"
+    }
   }
 };
 
@@ -1889,6 +2233,34 @@ export const umb: Translations = {
       level: "Osila", season: "Epoko",
       seasons: { planting: "Olima", growing: "Okuvila", harvest: "Okuwonga" }
     }
+  },
+  agriFlixFull: {
+    header: {
+      title: "AgriFlix 🎥",
+      subtitle: "Okulongela olima Angola",
+      searchPlaceholder: "Ukela vya olima..."
+    },
+    filters: {
+      title: "Ohengelo", clearAll: "Hengela vahi", category: "Ondunge", language: "Olulimi", difficulty: "Osila", activeFilters: "Ohengelo:"
+    },
+    categories: {
+      all: "Vahi", soilPrep: "Ovunda", irrigation: "Ombela", pestControl: "Ombili", harvesting: "Okuwonga", sustainability: "Okulonga", technology: "Ovitumbu", composting: "Ovunda"
+    },
+    difficulty: { basic: "Osimbandula", intermediate: "Okatikati", advanced: "Osandule" },
+    languages: { all: "Vahi", portuguese: "Olupulukesi", umbundu: "Olumbundu", kimbundu: "Olukimbundu", lunda: "Olulunda" },
+    player: { play: "Telela", pause: "Etelele", like: "Kuvila", share: "Kasakanisa", download: "Tunga", transcript: "Ekulongela", backToList: "Vutuka", videoInfo: "Okulonga", instructor: "Ombolongeli", duration: "Ovala", views: "Ohengelo", likes: "Okuvila", category: "Ondunge", tags: "Ovalombelo" },
+    videos: {
+      soilPrep: { title: "Ovunda ya olima", description: "Longolola ovunda ya mema." },
+      irrigation: { title: "Ombela ya mema", description: "Ombela ya kuvila." },
+      pestControl: { title: "Ombili ya ovunda", description: "Ombili kufita." },
+      cropRotation: { title: "Olima sila", description: "Olima kwa mema." },
+      waterConservation: { title: "Ombela konga", description: "Ombela ya kuvila." },
+      nasaData: { title: "NASA vya olima", description: "NASA kwa olima." },
+      composting: { title: "Ovunda mema", description: "Ovunda kuvila." },
+      organicFarming: { title: "Olima Angola", description: "Olima kwa mema." }
+    },
+    messages: { noResults: "Ovya kimbamba", noResultsDesc: "Ovya tondilua.", loading: "Okukonga...", error: "Ekuluvila", tryFilters: "Hemelela ohengelo." },
+    common: { views: "ohengelo", likes: "okuvila", share: "kasakanisa", download: "tunga", watch: "telela", instructor: "ombolongeli", back: "vutuka" }
   }
 };
 
@@ -2269,6 +2641,34 @@ export const kmb: Translations = {
       level: "Nivel", season: "Tempu",
       seasons: { planting: "Kilima", growing: "Mbongo", harvest: "Kusola" }
     }
+  },
+  agriFlixFull: {
+    header: {
+      title: "AgriFlix 🎥",
+      subtitle: "Jingu ya kilima Angola",
+      searchPlaceholder: "Kuenga masolo ya kilima..."
+    },
+    filters: {
+      title: "Kisobo", clearAll: "Jiha vya kima", category: "Kisobo", language: "Kilelu", difficulty: "Nivel", activeFilters: "Kisobo:"
+    },
+    categories: {
+      all: "Kima", soilPrep: "Muxi", irrigation: "Mesu", pestControl: "Bibila", harvesting: "Kusola", sustainability: "Kujinga", technology: "Dya mema", composting: "Muxi"
+    },
+    difficulty: { basic: "Muenho", intermediate: "Katikati", advanced: "Makuxi" },
+    languages: { all: "Kima", portuguese: "Kilelu ya Putukesi", umbundu: "Kilelu ya Umbundu", kimbundu: "Kilelu ya Kimbundu", lunda: "Kilelu ya Lunda" },
+    player: { play: "Banda", pause: "Kandengesa", like: "Kuvila", share: "Kabongisa", download: "Solola", transcript: "Masolo", backToList: "Kuvutuka", videoInfo: "Masolo", instructor: "Mujinga", duration: "Tempu", views: "Kuluela", likes: "Kuvila", category: "Kisobo", tags: "Bisolo" },
+    videos: {
+      soilPrep: { title: "Muxi wa kilima", description: "Jingisa muxi wa mema." },
+      irrigation: { title: "Mesu ya mema", description: "Mesu ya kuluela." },
+      pestControl: { title: "Bibila bya muxi", description: "Bibila kufua." },
+      cropRotation: { title: "Kilima sila", description: "Kilima kya mema." },
+      waterConservation: { title: "Mesu konga", description: "Mesu ya kuluela." },
+      nasaData: { title: "NASA dya kilima", description: "NASA kwa kilima." },
+      composting: { title: "Muxi mema", description: "Muxi kuluela." },
+      organicFarming: { title: "Kilima Angola", description: "Kilima kya mema." }
+    },
+    messages: { noResults: "Kimbamba masolo", noResultsDesc: "Masolo maadi.", loading: "Kubanda...", error: "Kimbamba", tryFilters: "Sobolola kisobo." },
+    common: { views: "kuluela", likes: "kuvila", share: "kabongisa", download: "solola", watch: "banda", instructor: "mujinga", back: "kuvutuka" }
   }
 };
 
@@ -2649,6 +3049,34 @@ export const lun: Translations = {
       level: "Nivel", season: "Tempu",
       seasons: { planting: "Kilima", growing: "Ngongo", harvest: "Kulonga" }
     }
+  },
+  agriFlixFull: {
+    header: {
+      title: "AgriFlix 🎥",
+      subtitle: "Ntuxi ya kilima Angola",
+      searchPlaceholder: "Kuenga masolo ya kilima..."
+    },
+    filters: {
+      title: "Kilongo", clearAll: "Jiha masolo", category: "Kilongo", language: "Xilelu", difficulty: "Nivel", activeFilters: "Kilongo:"
+    },
+    categories: {
+      all: "Masolo", soilPrep: "Muxi", irrigation: "Mema", pestControl: "Bibila", harvesting: "Kulonga", sustainability: "Kujinga", technology: "Dya mema", composting: "Muxi"
+    },
+    difficulty: { basic: "Muenho", intermediate: "Katikati", advanced: "Makuxi" },
+    languages: { all: "Masolo", portuguese: "Xilelu xa Putukesi", umbundu: "Xilelu xa Umbundu", kimbundu: "Xilelu xa Kimbundu", lunda: "Xilelu xa Lunda" },
+    player: { play: "Komesa", pause: "Lalela", like: "Kuvila", share: "Longela", download: "Solola", transcript: "Masolo", backToList: "Kuvutuka", videoInfo: "Masolo", instructor: "Mujinga", duration: "Tempu", views: "Kuluela", likes: "Kuvila", category: "Kilongo", tags: "Masolo" },
+    videos: {
+      soilPrep: { title: "Muxi wa kilima", description: "Jingisa muxi wa mema." },
+      irrigation: { title: "Mema ya mema", description: "Mema ya kuluela." },
+      pestControl: { title: "Bibila bya muxi", description: "Bibila kufua." },
+      cropRotation: { title: "Kilima sila", description: "Kilima kya mema." },
+      waterConservation: { title: "Mema konga", description: "Mema ya kuluela." },
+      nasaData: { title: "NASA dya kilima", description: "NASA kwa kilima." },
+      composting: { title: "Muxi mema", description: "Muxi kuluela." },
+      organicFarming: { title: "Kilima Angola", description: "Kilima kya mema." }
+    },
+    messages: { noResults: "Kimbamba masolo", noResultsDesc: "Masolo maadi.", loading: "Kukomesa...", error: "Kimbamba", tryFilters: "Longela kilongo." },
+    common: { views: "kuluela", likes: "kuvila", share: "longela", download: "solola", watch: "komesa", instructor: "mujinga", back: "kuvutuka" }
   }
 };
 

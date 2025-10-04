@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useI18n } from '../i18n/useI18n';
 import { 
   FaPlay, 
   FaPause, 
@@ -24,7 +25,7 @@ interface Video {
   likes: number;
   category: string;
   language: string;
-  difficulty: 'Básico' | 'Intermediário' | 'Avançado';
+  difficulty: string;
   instructor: string;
   thumbnail: string;
   tags: string[];
@@ -32,10 +33,12 @@ interface Video {
 }
 
 const AgriFlixDemo: React.FC = () => {
+  const { t } = useI18n();
+  
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState('Todos');
-  const [selectedLanguage, setSelectedLanguage] = useState('Todos');
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedLanguage, setSelectedLanguage] = useState("all");
   const [searchQuery, setSearchQuery] = useState('');
   const [showFilters, setShowFilters] = useState(false);
 
@@ -43,14 +46,14 @@ const AgriFlixDemo: React.FC = () => {
   const videos: Video[] = [
     {
       id: 1,
-      title: "Como Preparar o Solo para Plantio de Milho",
-      description: "Aprenda as técnicas essenciais para preparar o solo antes de plantar milho, incluindo análise do pH e adubação adequada.",
+      title: t.agriFlixFull.videos.soilPrep.title,
+      description: t.agriFlixFull.videos.soilPrep.description,
       duration: "2:30",
       views: 1250,
       likes: 89,
-      category: "Preparo do Solo",
-      language: "Português",
-      difficulty: "Básico",
+      category: t.agriFlixFull.categories.soilPrep,
+      language: t.agriFlixFull.languages.portuguese,
+      difficulty: t.agriFlixFull.difficulty.basic,
       instructor: "Eng. Maria Santos",
       thumbnail: "/images/videos/soil-prep.jpg",
       tags: ["milho", "solo", "preparo", "adubação"],
@@ -58,115 +61,151 @@ const AgriFlixDemo: React.FC = () => {
     },
     {
       id: 2,
-      title: "Otalapia Ukwashika - Irrigação Inteligente",
-      description: "Vídeo em Kimbundu sobre técnicas de irrigação que economizam água usando dados climáticos.",
+      title: t.agriFlixFull.videos.irrigation.title,
+      description: t.agriFlixFull.videos.irrigation.description,
       duration: "1:45",
       views: 890,
       likes: 67,
-      category: "Irrigação",
-      language: "Kimbundu",
-      difficulty: "Intermediário",
+      category: t.agriFlixFull.categories.irrigation,
+      language: t.agriFlixFull.languages.kimbundu,
+      difficulty: t.agriFlixFull.difficulty.intermediate,
       instructor: "João Kikonda",
       thumbnail: "/images/videos/irrigation.jpg",
       tags: ["irrigação", "água", "economia"],
     },
     {
       id: 3,
-      title: "Combate Natural a Pragas na Mandioca",
-      description: "Métodos orgânicos e sustentáveis para proteger a plantação de mandioca sem usar pesticidas químicos.",
+      title: t.agriFlixFull.videos.pestControl.title,
+      description: t.agriFlixFull.videos.pestControl.description,
       duration: "3:15",
       views: 2100,
       likes: 156,
-      category: "Controle de Pragas",
-      language: "Português",
-      difficulty: "Intermediário",
+      category: t.agriFlixFull.categories.pestControl,
+      language: t.agriFlixFull.languages.portuguese,
+      difficulty: t.agriFlixFull.difficulty.intermediate,
       instructor: "Dr. Carlos Ngola",
       thumbnail: "/images/videos/pest-control.jpg",
       tags: ["mandioca", "pragas", "orgânico", "sustentável"],
     },
     {
       id: 4,
-      title: "Rotação de Culturas para Pequenos Agricultores",
-      description: "Como fazer rotação de culturas em pequenas áreas para melhorar a produtividade e a saúde do solo.",
+      title: t.agriFlixFull.videos.cropRotation.title,
+      description: t.agriFlixFull.videos.cropRotation.description,
       duration: "2:50",
       views: 1650,
       likes: 112,
-      category: "Técnicas Agrícolas",
-      language: "Português",
-      difficulty: "Básico",
+      category: t.agriFlixFull.categories.sustainability,
+      language: t.agriFlixFull.languages.portuguese,
+      difficulty: t.agriFlixFull.difficulty.basic,
       instructor: "Ana Muhongo",
       thumbnail: "/images/videos/crop-rotation.jpg",
-      tags: ["rotação", "culturas", "produtividade"],
+      tags: ["rotação", "solo", "produtividade"],
     },
     {
       id: 5,
-      title: "Ochisenge - Conservação da Água",
-      description: "Técnicas tradicionais e modernas em Umbundu para conservar água durante a época seca.",
-      duration: "2:10",
-      views: 756,
-      likes: 54,
-      category: "Conservação",
-      language: "Umbundu",
-      difficulty: "Básico",
-      instructor: "Mama Katarina",
-      thumbnail: "/images/videos/water-conservation.jpg",
-      tags: ["água", "conservação", "seca"],
+      title: t.agriFlixFull.videos.nasaData.title,
+      description: t.agriFlixFull.videos.nasaData.description,
+      duration: "4:20",
+      views: 2800,
+      likes: 245,
+      category: t.agriFlixFull.categories.technology,
+      language: t.agriFlixFull.languages.umbundu,
+      difficulty: t.agriFlixFull.difficulty.advanced,
+      instructor: "Prof. Helena Cipanda",
+      thumbnail: "/images/videos/climate.jpg",
+      tags: ["clima", "adaptação", "variedades"],
     },
     {
       id: 6,
-      title: "Usando Dados da NASA para Plantio",
-      description: "Como interpretar dados satelitais da NASA para tomar decisões de plantio mais inteligentes.",
-      duration: "4:20",
-      views: 3200,
-      likes: 245,
-      category: "Tecnologia",
-      language: "Português",
-      difficulty: "Avançado",
-      instructor: "Prof. Ricardo Silva",
-      thumbnail: "/images/videos/nasa-data.jpg",
-      tags: ["NASA", "satélite", "dados", "tecnologia"],
+      title: t.agriFlixFull.videos.waterConservation.title,
+      description: t.agriFlixFull.videos.waterConservation.description,
+      duration: "3:45",
+      views: 1980,
+      likes: 178,
+      category: t.agriFlixFull.categories.irrigation,
+      language: t.agriFlixFull.languages.portuguese,
+      difficulty: t.agriFlixFull.difficulty.intermediate,
+      instructor: "Eng. Manuel Neto",
+      thumbnail: "/images/videos/water-management.jpg",
+      tags: ["água", "gestão", "eficiência"],
     },
     {
       id: 7,
-      title: "Compostagem Caseira Simples",
-      description: "Aprenda a fazer adubo orgânico em casa usando restos de comida e materiais do dia a dia.",
-      duration: "1:55",
-      views: 1890,
-      likes: 134,
-      category: "Adubação",
-      language: "Português",
-      difficulty: "Básico",
-      instructor: "Dona Esperança",
-      thumbnail: "/images/videos/composting.jpg",
-      tags: ["compostagem", "orgânico", "adubo"],
+      title: t.agriFlixFull.videos.organicFarming.title,
+      description: t.agriFlixFull.videos.organicFarming.description,
+      duration: "5:10",
+      views: 3200,
+      likes: 289,
+      category: t.agriFlixFull.categories.sustainability,
+      language: t.agriFlixFull.languages.lunda,
+      difficulty: t.agriFlixFull.difficulty.advanced,
+      instructor: "Dra. Teresa Mukongo",
+      thumbnail: "/images/videos/organic.jpg",
+      tags: ["orgânico", "certificação", "mercado"],
     },
     {
       id: 8,
-      title: "Colheita no Tempo Certo - Indicadores",
-      description: "Sinais naturais e técnicos para saber quando suas culturas estão prontas para colheita.",
-      duration: "3:05",
+      title: t.agriFlixFull.videos.composting.title,
+      description: t.agriFlixFull.videos.composting.description,
+      duration: "2:30",
       views: 1420,
       likes: 98,
-      category: "Colheita",
-      language: "Português",
-      difficulty: "Intermediário",
-      instructor: "Mestre António",
-      thumbnail: "/images/videos/harvest-timing.jpg",
-      tags: ["colheita", "timing", "sinais"],
-    }
+      category: t.agriFlixFull.categories.harvesting,
+      language: t.agriFlixFull.languages.portuguese,
+      difficulty: t.agriFlixFull.difficulty.basic,
+      instructor: "Filipe Caldas",
+      thumbnail: "/images/videos/market.jpg",
+      tags: ["mercado", "vendas", "cooperativas"],
+    },
   ];
 
-  const categories = ["Todos", "Preparo do Solo", "Irrigação", "Controle de Pragas", "Técnicas Agrícolas", "Conservação", "Tecnologia", "Adubação", "Colheita"];
-  const languages = ["Todos", "Português", "Kimbundu", "Umbundu", "Kikongo"];
+  const categories = [
+    { id: "all", name: t.agriFlixFull.categories.all },
+    { id: "soilPrep", name: t.agriFlixFull.categories.soilPrep },
+    { id: "irrigation", name: t.agriFlixFull.categories.irrigation },
+    { id: "pestControl", name: t.agriFlixFull.categories.pestControl },
+    { id: "harvesting", name: t.agriFlixFull.categories.harvesting },
+    { id: "sustainability", name: t.agriFlixFull.categories.sustainability },
+    { id: "technology", name: t.agriFlixFull.categories.technology },
+    { id: "composting", name: t.agriFlixFull.categories.composting },
+  ];
 
-  const filteredVideos = videos.filter(video => {
-    const categoryMatch = selectedCategory === 'Todos' || video.category === selectedCategory;
-    const languageMatch = selectedLanguage === 'Todos' || video.language === selectedLanguage;
+  const languages = [
+    { id: "all", name: t.agriFlixFull.languages.all },
+    { id: "portuguese", name: t.agriFlixFull.languages.portuguese },
+    { id: "umbundu", name: t.agriFlixFull.languages.umbundu },
+    { id: "kimbundu", name: t.agriFlixFull.languages.kimbundu },
+    { id: "lunda", name: t.agriFlixFull.languages.lunda },
+  ];
+
+  const difficulties = [
+    { id: "all", name: "Todas as Dificuldades" },
+    { id: "basic", name: t.agriFlixFull.difficulty.basic },
+    { id: "intermediate", name: t.agriFlixFull.difficulty.intermediate },
+    { id: "advanced", name: t.agriFlixFull.difficulty.advanced },
+  ];
+
+  const filteredVideos = videos.filter((video: Video) => {
+    const categoryMatch = selectedCategory === "all" || 
+      (selectedCategory === "soilPrep" && video.category === t.agriFlixFull.categories.soilPrep) ||
+      (selectedCategory === "irrigation" && video.category === t.agriFlixFull.categories.irrigation) ||
+      (selectedCategory === "pestControl" && video.category === t.agriFlixFull.categories.pestControl) ||
+      (selectedCategory === "sustainability" && video.category === t.agriFlixFull.categories.sustainability) ||
+      (selectedCategory === "technology" && video.category === t.agriFlixFull.categories.technology) ||
+      (selectedCategory === "harvesting" && video.category === t.agriFlixFull.categories.harvesting) ||
+      (selectedCategory === "composting" && video.category === t.agriFlixFull.categories.composting);
+    
+    const languageMatch = selectedLanguage === "all" || 
+      (selectedLanguage === "portuguese" && video.language === t.agriFlixFull.languages.portuguese) ||
+      (selectedLanguage === "umbundu" && video.language === t.agriFlixFull.languages.umbundu) ||
+      (selectedLanguage === "kimbundu" && video.language === t.agriFlixFull.languages.kimbundu) ||
+      (selectedLanguage === "lunda" && video.language === t.agriFlixFull.languages.lunda);
+    
     const searchMatch = searchQuery === '' || 
       video.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       video.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
       video.instructor.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      video.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+      video.tags.some((tag: string) => tag.toLowerCase().includes(searchQuery.toLowerCase()));
     
     return categoryMatch && languageMatch && searchMatch;
   });
@@ -177,8 +216,8 @@ const AgriFlixDemo: React.FC = () => {
 
   const clearAllFilters = () => {
     setSearchQuery('');
-    setSelectedCategory('Todos');
-    setSelectedLanguage('Todos');
+    setSelectedCategory("all");
+    setSelectedLanguage("all");
   };
 
   const handleVideoSelect = (video: Video) => {
@@ -192,9 +231,9 @@ const AgriFlixDemo: React.FC = () => {
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
-      case 'Básico': return 'bg-green-100 text-green-800';
-      case 'Intermediário': return 'bg-yellow-100 text-yellow-800';
-      case 'Avançado': return 'bg-red-100 text-red-800';
+      case t.agriFlixFull.difficulty.basic: return 'bg-green-100 text-green-800';
+      case t.agriFlixFull.difficulty.intermediate: return 'bg-yellow-100 text-yellow-800';
+      case t.agriFlixFull.difficulty.advanced: return 'bg-red-100 text-red-800';
       default: return 'bg-gray-100 text-gray-800';
     }
   };
@@ -210,7 +249,7 @@ const AgriFlixDemo: React.FC = () => {
               className="text-white hover:text-green-400 flex items-center"
             >
               <FaArrowLeft className="mr-2" />
-              Voltar aos Vídeos
+              {t.agriFlixFull.player.backToList}
             </button>
             <div className="text-white text-sm">
               AgriFlix - Educação Agrícola
@@ -325,7 +364,7 @@ const AgriFlixDemo: React.FC = () => {
                 {/* Transcript */}
                 {selectedVideo.transcript && (
                   <div className="bg-gray-50 rounded-lg p-4">
-                    <h3 className="font-semibold text-gray-900 mb-2">Transcrição:</h3>
+                    <h3 className="font-semibold text-gray-900 mb-2">{t.agriFlixFull.player.transcript}:</h3>
                     <p className="text-gray-700 text-sm leading-relaxed">
                       {selectedVideo.transcript}
                     </p>
@@ -376,8 +415,8 @@ const AgriFlixDemo: React.FC = () => {
                 <FaArrowLeft className="text-gray-600" />
               </button>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">AgriFlix 🎥</h1>
-                <p className="text-sm text-gray-600">Educação agrícola em vídeos curtos</p>
+                <h1 className="text-2xl font-bold text-gray-900">{t.agriFlixFull.header.title}</h1>
+                <p className="text-sm text-gray-600">{t.agriFlixFull.header.subtitle}</p>
               </div>
             </div>
             
@@ -396,7 +435,7 @@ const AgriFlixDemo: React.FC = () => {
               <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
               <input
                 type="text"
-                placeholder="Pesquisar vídeos por título, instrutor, categoria ou tags..."
+                placeholder={t.agriFlixFull.header.searchPlaceholder}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-12 pr-12 py-4 border border-gray-300 rounded-xl text-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-white shadow-sm"
@@ -446,7 +485,7 @@ const AgriFlixDemo: React.FC = () => {
                 className="flex items-center space-x-2 px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
               >
                 <FaFilter className="text-gray-500" />
-                <span className="text-sm font-semibold text-gray-700">Filtros</span>
+                <span className="text-sm font-semibold text-gray-700">{t.agriFlixFull.filters.title}</span>
               </button>
               
               {(searchQuery || selectedCategory !== 'Todos' || selectedLanguage !== 'Todos') && (
@@ -454,7 +493,7 @@ const AgriFlixDemo: React.FC = () => {
                   onClick={clearAllFilters}
                   className="text-sm text-red-600 hover:text-red-800 transition-colors"
                 >
-                  Limpar todos os filtros
+                  {t.agriFlixFull.filters.clearAll}
                 </button>
               )}
             </div>
@@ -470,28 +509,28 @@ const AgriFlixDemo: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Category Filter */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Categoria</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">{t.agriFlixFull.filters.category}</label>
                   <select
                     value={selectedCategory}
                     onChange={(e) => setSelectedCategory(e.target.value)}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500"
                   >
                     {categories.map(category => (
-                      <option key={category} value={category}>{category}</option>
+                      <option key={category.id} value={category.id}>{category.name}</option>
                     ))}
                   </select>
                 </div>
 
                 {/* Language Filter */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Idioma</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">{t.agriFlixFull.filters.language}</label>
                   <select
                     value={selectedLanguage}
                     onChange={(e) => setSelectedLanguage(e.target.value)}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500"
                   >
                     {languages.map(language => (
-                      <option key={language} value={language}>{language}</option>
+                      <option key={language.id} value={language.id}>{language.name}</option>
                     ))}
                   </select>
                 </div>
@@ -501,10 +540,10 @@ const AgriFlixDemo: React.FC = () => {
         </div>
 
         {/* Active Filters Display */}
-        {(searchQuery || selectedCategory !== 'Todos' || selectedLanguage !== 'Todos') && (
+        {(searchQuery || selectedCategory !== 'all' || selectedLanguage !== 'all') && (
           <div className="mb-6">
             <div className="flex flex-wrap gap-2 items-center">
-              <span className="text-sm text-gray-600">Filtros ativos:</span>
+              <span className="text-sm text-gray-600">{t.agriFlixFull.filters.activeFilters}:</span>
               
               {searchQuery && (
                 <span className="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">
