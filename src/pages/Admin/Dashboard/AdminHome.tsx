@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaUsers, FaVideo, FaMapMarkerAlt, FaChartLine, FaCog, FaExclamationTriangle, FaBell, FaDownload } from "react-icons/fa";
+import { useI18n } from "../../../i18n/useI18n";
 
 interface PlatformStats {
   totalUsers: number;
@@ -50,6 +51,7 @@ const recentActivity = [
 ];
 
 export default function AdminDashboard() {
+  const { t } = useI18n();
   const [timeRange, setTimeRange] = useState("30d");
 
   const getAlertIcon = (type: string) => {
@@ -74,17 +76,17 @@ export default function AdminDashboard() {
     <div className="p-6">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          Dashboard Administrativo
+          {t.admin.dashboard.title}
         </h1>
         <p className="text-gray-600">
-          Gestão e monitoramento da plataforma Farm Navigators Angola
+          {t.admin.dashboard.subtitle}
         </p>
       </div>
 
       {/* Time Range Selector */}
       <div className="mb-6 flex justify-between items-center">
         <div className="flex space-x-2">
-          {["24h", "7d", "30d", "90d"].map((range) => (
+          {(["24h", "7d", "30d", "90d"] as const).map((range) => (
             <button
               key={range}
               onClick={() => setTimeRange(range)}
@@ -94,7 +96,7 @@ export default function AdminDashboard() {
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
-              {range}
+              {t.admin.dashboard.timeRanges[range]}
             </button>
           ))}
         </div>

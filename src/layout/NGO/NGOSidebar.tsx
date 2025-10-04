@@ -8,6 +8,7 @@ import {
   FaUser,
   FaTimes
 } from "react-icons/fa";
+import { useI18n } from "../../i18n/useI18n";
 
 interface NGOSidebarProps {
   isOpen: boolean;
@@ -20,16 +21,17 @@ interface NavItem {
   icon: React.ReactNode;
 }
 
-const navItems: NavItem[] = [
-  { name: "Dashboard", path: "/ngo", icon: <FaHome /> },
-  { name: "Mapas Regionais", path: "/ngo/regional-maps", icon: <FaMap /> },
-  { name: "Conteúdo Educativo", path: "/ngo/educational-content", icon: <FaVideo /> },
-  { name: "Relatórios de Impacto", path: "/ngo/impact-reports", icon: <FaChartLine /> },
-  { name: "Estatísticas Regionais", path: "/ngo/regional-stats", icon: <FaChartBar /> },
-];
-
 const NGOSidebar: React.FC<NGOSidebarProps> = ({ isOpen, setIsOpen }) => {
+  const { t } = useI18n();
   const location = useLocation();
+
+  const navItems: NavItem[] = [
+    { name: t.ngo.navigation.dashboard, path: "/ngo", icon: <FaHome /> },
+    { name: t.ngo.navigation.regionalMaps, path: "/ngo/regional-maps", icon: <FaMap /> },
+    { name: t.ngo.navigation.educationalContent, path: "/ngo/educational-content", icon: <FaVideo /> },
+    { name: t.ngo.navigation.impactReports, path: "/ngo/impact-reports", icon: <FaChartLine /> },
+    { name: t.ngo.navigation.regionalStats, path: "/ngo/regional-stats", icon: <FaChartBar /> },
+  ];
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -98,7 +100,7 @@ const NGOSidebar: React.FC<NGOSidebarProps> = ({ isOpen, setIsOpen }) => {
               `}
             >
               <FaUser className="mr-3 text-lg" />
-              <span>Perfil</span>
+              <span>{t.ngo.navigation.profile}</span>
             </Link>
           </div>
         </div>

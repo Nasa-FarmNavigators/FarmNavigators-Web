@@ -800,6 +800,247 @@ export interface Translations {
       copyright: string;
     };
   };
+  
+  // Admin Platform (Internal - Portuguese/English only)
+  admin: {
+    // Common Elements
+    common: {
+      dashboard: string;
+      users: string;
+      content: string;
+      reports: string;
+      settings: string;
+      profile: string;
+      search: string;
+      filter: string;
+      export: string;
+      save: string;
+      cancel: string;
+      delete: string;
+      edit: string;
+      view: string;
+      approve: string;
+      reject: string;
+      loading: string;
+      error: string;
+      success: string;
+      warning: string;
+    };
+    
+    // Navigation/Sidebar
+  navigation: {
+    main: string;
+    others: string;
+    dashboard: string;
+    userManagement: string;
+    contentModeration: string;
+    systemReports: string;
+    systemSettings: string;
+    profile: string;
+  };    // Dashboard
+    dashboard: {
+      title: string;
+      subtitle: string;
+      timeRanges: {
+        "24h": string;
+        "7d": string;
+        "30d": string;
+        "90d": string;
+      };
+      stats: {
+        totalUsers: string;
+        activeUsers: string;
+        totalNGOs: string;
+        totalContent: string;
+        systemHealth: string;
+        apiCalls: string;
+      };
+      charts: {
+        userGrowth: string;
+        contentStats: string;
+        systemAlerts: string;
+        recentActivity: string;
+      };
+      alerts: {
+        high_latency: string;
+        backup_completed: string;
+        new_ngo: string;
+        storage_warning: string;
+      };
+      activity: {
+        video_upload: string;
+        new_registration: string;
+        report_generated: string;
+        content_approved: string;
+      };
+    };
+    
+    // User Management
+    userManagement: {
+      title: string;
+      subtitle: string;
+      tabs: {
+        farmers: string;
+        ngos: string;
+        admins: string;
+      };
+      actions: {
+        addUser: string;
+        exportData: string;
+        bulkActions: string;
+      };
+      userDetails: {
+        name: string;
+        email: string;
+        role: string;
+        status: string;
+        registrationDate: string;
+        lastLogin: string;
+        location: string;
+      };
+      status: {
+        active: string;
+        inactive: string;
+        suspended: string;
+      };
+    };
+    
+    // Content Moderation
+    contentModeration: {
+      title: string;
+      subtitle: string;
+      tabs: {
+        pending: string;
+        approved: string;
+        rejected: string;
+      };
+      contentTypes: {
+        video: string;
+        article: string;
+        comment: string;
+      };
+      moderationActions: {
+        approve: string;
+        reject: string;
+        needsReview: string;
+      };
+    };
+  };
+  
+  // NGO Platform (Internal - Portuguese/English only)
+  ngo: {
+    // Common Elements
+    common: {
+      dashboard: string;
+      maps: string;
+      content: string;
+      reports: string;
+      statistics: string;
+      profile: string;
+      farmers: string;
+      videos: string;
+      impact: string;
+      reach: string;
+      coverage: string;
+    };
+    
+    // Navigation/Sidebar
+    navigation: {
+      dashboard: string;
+      regionalMaps: string;
+      educationalContent: string;
+      impactReports: string;
+      regionalStats: string;
+      profile: string;
+    };
+    
+    // Dashboard
+    dashboard: {
+      title: string;
+      subtitle: string;
+      stats: {
+        farmersReached: string;
+        agriflixVideos: string;
+        totalViews: string;
+        provincesCovered: string;
+        monthlyGrowth: string;
+        newThisMonth: string;
+        vsLastMonth: string;
+        nationalCoverage: string;
+      };
+      sections: {
+        regionalImpact: string;
+        mostWatchedContent: string;
+        quickActions: string;
+      };
+      categories: {
+        water: string;
+        planting: string;
+        protection: string;
+        soil: string;
+      };
+      actions: {
+        uploadVideo: string;
+        createReport: string;
+        viewMaps: string;
+        manageContent: string;
+      };
+    };
+    
+    // Regional Maps
+    regionalMaps: {
+      title: string;
+      subtitle: string;
+      filters: {
+        province: string;
+        timeRange: string;
+        dataType: string;
+      };
+      dataTypes: {
+        farmerDensity: string;
+        contentEngagement: string;
+        cropDistribution: string;
+        weatherPatterns: string;
+      };
+    };
+    
+    // Educational Content
+    educationalContent: {
+      title: string;
+      subtitle: string;
+      tabs: {
+        myVideos: string;
+        published: string;
+        drafts: string;
+        analytics: string;
+      };
+      videoStats: {
+        views: string;
+        likes: string;
+        shares: string;
+        duration: string;
+        uploadDate: string;
+      };
+    };
+    
+    // Impact Reports
+    impactReports: {
+      title: string;
+      subtitle: string;
+      reportTypes: {
+        monthly: string;
+        quarterly: string;
+        annual: string;
+        custom: string;
+      };
+      metrics: {
+        reach: string;
+        engagement: string;
+        outcomes: string;
+        feedback: string;
+      };
+    };
+  };
 }
 
 // Tradução em Português (PT) - Padrão
@@ -1612,6 +1853,249 @@ export const pt: Translations = {
       copyright: "© 2025 Farm Navigators Angola. Todos os direitos reservados.",
     },
   },
+  
+  // Admin Platform (Internal - Portuguese/English only)
+  admin: {
+    // Common Elements
+    common: {
+      dashboard: "Dashboard",
+      users: "Usuários",
+      content: "Conteúdo",
+      reports: "Relatórios",
+      settings: "Configurações",
+      profile: "Perfil",
+      search: "Pesquisar",
+      filter: "Filtrar",
+      export: "Exportar",
+      save: "Salvar",
+      cancel: "Cancelar",
+      delete: "Excluir",
+      edit: "Editar",
+      view: "Visualizar",
+      approve: "Aprovar",
+      reject: "Rejeitar",
+      loading: "Carregando...",
+      error: "Erro",
+      success: "Sucesso",
+      warning: "Aviso",
+    },
+    
+    // Navigation/Sidebar
+    navigation: {
+      main: "Principal",
+      others: "Outros", 
+      dashboard: "Dashboard",
+      userManagement: "Gestão de Usuários",
+      contentModeration: "Moderação de Conteúdo",
+      systemReports: "Relatórios",
+      systemSettings: "Configurações",
+      profile: "Perfil",
+    },
+    
+    // Dashboard
+    dashboard: {
+      title: "Dashboard Administrativo",
+      subtitle: "Gestão e monitoramento da plataforma Farm Navigators Angola",
+      timeRanges: {
+        "24h": "24h",
+        "7d": "7d",
+        "30d": "30d",
+        "90d": "90d",
+      },
+      stats: {
+        totalUsers: "Total de Usuários",
+        activeUsers: "Usuários Ativos",
+        totalNGOs: "Total de ONGs",
+        totalContent: "Total de Conteúdo",
+        systemHealth: "Saúde do Sistema",
+        apiCalls: "Chamadas de API",
+      },
+      charts: {
+        userGrowth: "Crescimento de Usuários",
+        contentStats: "Estatísticas de Conteúdo",
+        systemAlerts: "Alertas do Sistema",
+        recentActivity: "Atividade Recente",
+      },
+      alerts: {
+        high_latency: "API NASA com latência alta",
+        backup_completed: "Backup automático concluído",
+        new_ngo: "Nova ONG registrada",
+        storage_warning: "Uso de storage em 85%",
+      },
+      activity: {
+        video_upload: "Upload de vídeo",
+        new_registration: "Novo registro",
+        report_generated: "Relatório gerado",
+        content_approved: "Conteúdo aprovado",
+      },
+    },
+    
+    // User Management
+    userManagement: {
+      title: "Gestão de Usuários",
+      subtitle: "Gerencie agricultores, ONGs e administradores da plataforma",
+      tabs: {
+        farmers: "Agricultores",
+        ngos: "ONGs",
+        admins: "Administradores",
+      },
+      actions: {
+        addUser: "Adicionar Usuário",
+        exportData: "Exportar Dados",
+        bulkActions: "Ações em Lote",
+      },
+      userDetails: {
+        name: "Nome",
+        email: "Email",
+        role: "Função",
+        status: "Status",
+        registrationDate: "Data de Registro",
+        lastLogin: "Último Login",
+        location: "Localização",
+      },
+      status: {
+        active: "Ativo",
+        inactive: "Inativo",
+        suspended: "Suspenso",
+      },
+    },
+    
+    // Content Moderation
+    contentModeration: {
+      title: "Moderação de Conteúdo",
+      subtitle: "Revise e aprove conteúdo da plataforma",
+      tabs: {
+        pending: "Pendente",
+        approved: "Aprovado",
+        rejected: "Rejeitado",
+      },
+      contentTypes: {
+        video: "Vídeo",
+        article: "Artigo",
+        comment: "Comentário",
+      },
+      moderationActions: {
+        approve: "Aprovar",
+        reject: "Rejeitar",
+        needsReview: "Precisa Revisão",
+      },
+    },
+  },
+  
+  // NGO Platform (Internal - Portuguese/English only)
+  ngo: {
+    // Common Elements
+    common: {
+      dashboard: "Dashboard",
+      maps: "Mapas",
+      content: "Conteúdo",
+      reports: "Relatórios",
+      statistics: "Estatísticas",
+      profile: "Perfil",
+      farmers: "Agricultores",
+      videos: "Vídeos",
+      impact: "Impacto",
+      reach: "Alcance",
+      coverage: "Cobertura",
+    },
+    
+    // Navigation/Sidebar
+    navigation: {
+      dashboard: "Dashboard",
+      regionalMaps: "Mapas Regionais",
+      educationalContent: "Conteúdo Educativo",
+      impactReports: "Relatórios de Impacto",
+      regionalStats: "Estatísticas Regionais",
+      profile: "Perfil",
+    },
+    
+    // Dashboard
+    dashboard: {
+      title: "Dashboard ONG - Farm Navigators",
+      subtitle: "Monitore o impacto da sua organização na agricultura angolana",
+      stats: {
+        farmersReached: "Agricultores Atingidos",
+        agriflixVideos: "Vídeos AgriFlix",
+        totalViews: "Visualizações",
+        provincesCovered: "Províncias Cobertas",
+        monthlyGrowth: "+23% este mês",
+        newThisMonth: "novos este mês",
+        vsLastMonth: "+156% vs mês anterior",
+        nationalCoverage: "cobertura nacional",
+      },
+      sections: {
+        regionalImpact: "Impacto Regional",
+        mostWatchedContent: "Conteúdo Mais Assistido",
+        quickActions: "Ações Rápidas",
+      },
+      categories: {
+        water: "Água",
+        planting: "Plantio",
+        protection: "Proteção",
+        soil: "Solo",
+      },
+      actions: {
+        uploadVideo: "Upload de Vídeo",
+        createReport: "Criar Relatório",
+        viewMaps: "Ver Mapas",
+        manageContent: "Gerenciar Conteúdo",
+      },
+    },
+    
+    // Regional Maps
+    regionalMaps: {
+      title: "Mapas Regionais",
+      subtitle: "Visualize dados regionais e impacto da sua ONG",
+      filters: {
+        province: "Província",
+        timeRange: "Período",
+        dataType: "Tipo de Dados",
+      },
+      dataTypes: {
+        farmerDensity: "Densidade de Agricultores",
+        contentEngagement: "Engajamento de Conteúdo",
+        cropDistribution: "Distribuição de Culturas",
+        weatherPatterns: "Padrões Climáticos",
+      },
+    },
+    
+    // Educational Content
+    educationalContent: {
+      title: "Conteúdo Educativo",
+      subtitle: "Gerencie seus vídeos e materiais educativos",
+      tabs: {
+        myVideos: "Meus Vídeos",
+        published: "Publicados",
+        drafts: "Rascunhos",
+        analytics: "Análises",
+      },
+      videoStats: {
+        views: "visualizações",
+        likes: "curtidas",
+        shares: "compartilhamentos",
+        duration: "duração",
+        uploadDate: "data de upload",
+      },
+    },
+    
+    // Impact Reports
+    impactReports: {
+      title: "Relatórios de Impacto",
+      subtitle: "Analise o impacto das suas ações na comunidade",
+      reportTypes: {
+        monthly: "Mensal",
+        quarterly: "Trimestral",
+        annual: "Anual",
+        custom: "Personalizado",
+      },
+      metrics: {
+        reach: "Alcance",
+        engagement: "Engajamento",
+        outcomes: "Resultados",
+        feedback: "Feedback",
+      },
+    },
+  },
 };
 
 // Tradução em Inglês (EN)
@@ -2370,6 +2854,249 @@ export const en: Translations = {
       copyright: "© 2025 Farm Navigators Angola. All rights reserved.",
     },
   },
+  
+  // Admin Platform (Internal - Portuguese/English only)
+  admin: {
+    // Common Elements
+    common: {
+      dashboard: "Dashboard",
+      users: "Users",
+      content: "Content",
+      reports: "Reports",
+      settings: "Settings",
+      profile: "Profile",
+      search: "Search",
+      filter: "Filter",
+      export: "Export",
+      save: "Save",
+      cancel: "Cancel",
+      delete: "Delete",
+      edit: "Edit",
+      view: "View",
+      approve: "Approve",
+      reject: "Reject",
+      loading: "Loading...",
+      error: "Error",
+      success: "Success",
+      warning: "Warning",
+    },
+    
+    // Navigation/Sidebar
+    navigation: {
+      main: "Main",
+      others: "Others",
+      dashboard: "Dashboard",
+      userManagement: "User Management",
+      contentModeration: "Content Moderation",
+      systemReports: "System Reports",
+      systemSettings: "System Settings",
+      profile: "Profile",
+    },
+    
+    // Dashboard
+    dashboard: {
+      title: "Administrative Dashboard",
+      subtitle: "Farm Navigators Angola platform management and monitoring",
+      timeRanges: {
+        "24h": "24h",
+        "7d": "7d",
+        "30d": "30d",
+        "90d": "90d",
+      },
+      stats: {
+        totalUsers: "Total Users",
+        activeUsers: "Active Users",
+        totalNGOs: "Total NGOs",
+        totalContent: "Total Content",
+        systemHealth: "System Health",
+        apiCalls: "API Calls",
+      },
+      charts: {
+        userGrowth: "User Growth",
+        contentStats: "Content Statistics",
+        systemAlerts: "System Alerts",
+        recentActivity: "Recent Activity",
+      },
+      alerts: {
+        high_latency: "NASA API with high latency",
+        backup_completed: "Automatic backup completed",
+        new_ngo: "New NGO registered",
+        storage_warning: "Storage usage at 85%",
+      },
+      activity: {
+        video_upload: "Video upload",
+        new_registration: "New registration",
+        report_generated: "Report generated",
+        content_approved: "Content approved",
+      },
+    },
+    
+    // User Management
+    userManagement: {
+      title: "User Management",
+      subtitle: "Manage farmers, NGOs and platform administrators",
+      tabs: {
+        farmers: "Farmers",
+        ngos: "NGOs",
+        admins: "Administrators",
+      },
+      actions: {
+        addUser: "Add User",
+        exportData: "Export Data",
+        bulkActions: "Bulk Actions",
+      },
+      userDetails: {
+        name: "Name",
+        email: "Email",
+        role: "Role",
+        status: "Status",
+        registrationDate: "Registration Date",
+        lastLogin: "Last Login",
+        location: "Location",
+      },
+      status: {
+        active: "Active",
+        inactive: "Inactive",
+        suspended: "Suspended",
+      },
+    },
+    
+    // Content Moderation
+    contentModeration: {
+      title: "Content Moderation",
+      subtitle: "Review and approve platform content",
+      tabs: {
+        pending: "Pending",
+        approved: "Approved",
+        rejected: "Rejected",
+      },
+      contentTypes: {
+        video: "Video",
+        article: "Article",
+        comment: "Comment",
+      },
+      moderationActions: {
+        approve: "Approve",
+        reject: "Reject",
+        needsReview: "Needs Review",
+      },
+    },
+  },
+  
+  // NGO Platform (Internal - Portuguese/English only)
+  ngo: {
+    // Common Elements
+    common: {
+      dashboard: "Dashboard",
+      maps: "Maps",
+      content: "Content",
+      reports: "Reports",
+      statistics: "Statistics",
+      profile: "Profile",
+      farmers: "Farmers",
+      videos: "Videos",
+      impact: "Impact",
+      reach: "Reach",
+      coverage: "Coverage",
+    },
+    
+    // Navigation/Sidebar
+    navigation: {
+      dashboard: "Dashboard",
+      regionalMaps: "Regional Maps",
+      educationalContent: "Educational Content",
+      impactReports: "Impact Reports",
+      regionalStats: "Regional Statistics",
+      profile: "Profile",
+    },
+    
+    // Dashboard
+    dashboard: {
+      title: "NGO Dashboard - Farm Navigators",
+      subtitle: "Monitor your organization's impact on Angolan agriculture",
+      stats: {
+        farmersReached: "Farmers Reached",
+        agriflixVideos: "AgriFlix Videos",
+        totalViews: "Total Views",
+        provincesCovered: "Provinces Covered",
+        monthlyGrowth: "+23% this month",
+        newThisMonth: "new this month",
+        vsLastMonth: "+156% vs last month",
+        nationalCoverage: "national coverage",
+      },
+      sections: {
+        regionalImpact: "Regional Impact",
+        mostWatchedContent: "Most Watched Content",
+        quickActions: "Quick Actions",
+      },
+      categories: {
+        water: "Water",
+        planting: "Planting",
+        protection: "Protection",
+        soil: "Soil",
+      },
+      actions: {
+        uploadVideo: "Upload Video",
+        createReport: "Create Report",
+        viewMaps: "View Maps",
+        manageContent: "Manage Content",
+      },
+    },
+    
+    // Regional Maps
+    regionalMaps: {
+      title: "Regional Maps",
+      subtitle: "Visualize regional data and your NGO's impact",
+      filters: {
+        province: "Province",
+        timeRange: "Time Range",
+        dataType: "Data Type",
+      },
+      dataTypes: {
+        farmerDensity: "Farmer Density",
+        contentEngagement: "Content Engagement",
+        cropDistribution: "Crop Distribution",
+        weatherPatterns: "Weather Patterns",
+      },
+    },
+    
+    // Educational Content
+    educationalContent: {
+      title: "Educational Content",
+      subtitle: "Manage your videos and educational materials",
+      tabs: {
+        myVideos: "My Videos",
+        published: "Published",
+        drafts: "Drafts",
+        analytics: "Analytics",
+      },
+      videoStats: {
+        views: "views",
+        likes: "likes",
+        shares: "shares",
+        duration: "duration",
+        uploadDate: "upload date",
+      },
+    },
+    
+    // Impact Reports
+    impactReports: {
+      title: "Impact Reports",
+      subtitle: "Analyze your actions' impact on the community",
+      reportTypes: {
+        monthly: "Monthly",
+        quarterly: "Quarterly",
+        annual: "Annual",
+        custom: "Custom",
+      },
+      metrics: {
+        reach: "Reach",
+        engagement: "Engagement",
+        outcomes: "Outcomes",
+        feedback: "Feedback",
+      },
+    },
+  },
 };
 
 // Tradução em Umbundu (UMB) - Uma das línguas nacionais mais faladas
@@ -2803,6 +3530,23 @@ export const umb: Translations = {
     quickLogin: { title: "Demo - Kinjila:", adminButton: "Admin", ngoButton: "ONG", credentials: { admin: "Admin: admin@farmnavigators.ao / admin123", ngo: "ONG: ong@farmnavigators.ao / ong123" } },
     errors: { invalidCredentials: "Sima kimbamba. Hemelela demo.", loginError: "Ekuluvila kinjila. Tondilua.", required: "Otondile oviya" },
     footer: { copyright: "© 2025 Farm Navigators Angola. Omvelo vosi." }
+  },
+  
+  // Placeholders vazios - línguas nacionais não acessam admin/NGO
+  admin: {
+    common: { dashboard: "", users: "", content: "", reports: "", settings: "", profile: "", search: "", filter: "", export: "", save: "", cancel: "", delete: "", edit: "", view: "", approve: "", reject: "", loading: "", error: "", success: "", warning: "" },
+    navigation: { main: "", others: "", dashboard: "", userManagement: "", contentModeration: "", systemReports: "", systemSettings: "", profile: "" },
+    dashboard: { title: "", subtitle: "", timeRanges: { "24h": "", "7d": "", "30d": "", "90d": "" }, stats: { totalUsers: "", activeUsers: "", totalNGOs: "", totalContent: "", systemHealth: "", apiCalls: "" }, charts: { userGrowth: "", contentStats: "", systemAlerts: "", recentActivity: "" }, alerts: { high_latency: "", backup_completed: "", new_ngo: "", storage_warning: "" }, activity: { video_upload: "", new_registration: "", report_generated: "", content_approved: "" } },
+    userManagement: { title: "", subtitle: "", tabs: { farmers: "", ngos: "", admins: "" }, actions: { addUser: "", exportData: "", bulkActions: "" }, userDetails: { name: "", email: "", role: "", status: "", registrationDate: "", lastLogin: "", location: "" }, status: { active: "", inactive: "", suspended: "" } },
+    contentModeration: { title: "", subtitle: "", tabs: { pending: "", approved: "", rejected: "" }, contentTypes: { video: "", article: "", comment: "" }, moderationActions: { approve: "", reject: "", needsReview: "" } }
+  },
+  ngo: {
+    common: { dashboard: "", maps: "", content: "", reports: "", statistics: "", profile: "", farmers: "", videos: "", impact: "", reach: "", coverage: "" },
+    navigation: { dashboard: "", regionalMaps: "", educationalContent: "", impactReports: "", regionalStats: "", profile: "" },
+    dashboard: { title: "", subtitle: "", stats: { farmersReached: "", agriflixVideos: "", totalViews: "", provincesCovered: "", monthlyGrowth: "", newThisMonth: "", vsLastMonth: "", nationalCoverage: "" }, sections: { regionalImpact: "", mostWatchedContent: "", quickActions: "" }, categories: { water: "", planting: "", protection: "", soil: "" }, actions: { uploadVideo: "", createReport: "", viewMaps: "", manageContent: "" } },
+    regionalMaps: { title: "", subtitle: "", filters: { province: "", timeRange: "", dataType: "" }, dataTypes: { farmerDensity: "", contentEngagement: "", cropDistribution: "", weatherPatterns: "" } },
+    educationalContent: { title: "", subtitle: "", tabs: { myVideos: "", published: "", drafts: "", analytics: "" }, videoStats: { views: "", likes: "", shares: "", duration: "", uploadDate: "" } },
+    impactReports: { title: "", subtitle: "", reportTypes: { monthly: "", quarterly: "", annual: "", custom: "" }, metrics: { reach: "", engagement: "", outcomes: "", feedback: "" } }
   }
 };
 
@@ -3237,6 +3981,23 @@ export const kmb: Translations = {
     quickLogin: { title: "Demo - Kinjila:", adminButton: "Admin", ngoButton: "ONG", credentials: { admin: "Admin: admin@farmnavigators.ao / admin123", ngo: "ONG: ong@farmnavigators.ao / ong123" } },
     errors: { invalidCredentials: "Sima kimbamba. Sobolola demo.", loginError: "Kimbamba kinjila. Kandengesa.", required: "Osolola oviya" },
     footer: { copyright: "© 2025 Farm Navigators Angola. Mavalo osi." }
+  },
+  
+  // Placeholders vazios - línguas nacionais não acessam admin/NGO
+  admin: {
+    common: { dashboard: "", users: "", content: "", reports: "", settings: "", profile: "", search: "", filter: "", export: "", save: "", cancel: "", delete: "", edit: "", view: "", approve: "", reject: "", loading: "", error: "", success: "", warning: "" },
+    navigation: { main: "", others: "", dashboard: "", userManagement: "", contentModeration: "", systemReports: "", systemSettings: "", profile: "" },
+    dashboard: { title: "", subtitle: "", timeRanges: { "24h": "", "7d": "", "30d": "", "90d": "" }, stats: { totalUsers: "", activeUsers: "", totalNGOs: "", totalContent: "", systemHealth: "", apiCalls: "" }, charts: { userGrowth: "", contentStats: "", systemAlerts: "", recentActivity: "" }, alerts: { high_latency: "", backup_completed: "", new_ngo: "", storage_warning: "" }, activity: { video_upload: "", new_registration: "", report_generated: "", content_approved: "" } },
+    userManagement: { title: "", subtitle: "", tabs: { farmers: "", ngos: "", admins: "" }, actions: { addUser: "", exportData: "", bulkActions: "" }, userDetails: { name: "", email: "", role: "", status: "", registrationDate: "", lastLogin: "", location: "" }, status: { active: "", inactive: "", suspended: "" } },
+    contentModeration: { title: "", subtitle: "", tabs: { pending: "", approved: "", rejected: "" }, contentTypes: { video: "", article: "", comment: "" }, moderationActions: { approve: "", reject: "", needsReview: "" } }
+  },
+  ngo: {
+    common: { dashboard: "", maps: "", content: "", reports: "", statistics: "", profile: "", farmers: "", videos: "", impact: "", reach: "", coverage: "" },
+    navigation: { dashboard: "", regionalMaps: "", educationalContent: "", impactReports: "", regionalStats: "", profile: "" },
+    dashboard: { title: "", subtitle: "", stats: { farmersReached: "", agriflixVideos: "", totalViews: "", provincesCovered: "", monthlyGrowth: "", newThisMonth: "", vsLastMonth: "", nationalCoverage: "" }, sections: { regionalImpact: "", mostWatchedContent: "", quickActions: "" }, categories: { water: "", planting: "", protection: "", soil: "" }, actions: { uploadVideo: "", createReport: "", viewMaps: "", manageContent: "" } },
+    regionalMaps: { title: "", subtitle: "", filters: { province: "", timeRange: "", dataType: "" }, dataTypes: { farmerDensity: "", contentEngagement: "", cropDistribution: "", weatherPatterns: "" } },
+    educationalContent: { title: "", subtitle: "", tabs: { myVideos: "", published: "", drafts: "", analytics: "" }, videoStats: { views: "", likes: "", shares: "", duration: "", uploadDate: "" } },
+    impactReports: { title: "", subtitle: "", reportTypes: { monthly: "", quarterly: "", annual: "", custom: "" }, metrics: { reach: "", engagement: "", outcomes: "", feedback: "" } }
   }
 };
 
@@ -3671,6 +4432,23 @@ export const lun: Translations = {
     quickLogin: { title: "Demo - Kinjila:", adminButton: "Admin", ngoButton: "ONG", credentials: { admin: "Admin: admin@farmnavigators.ao / admin123", ngo: "ONG: ong@farmnavigators.ao / ong123" } },
     errors: { invalidCredentials: "Sima kimbamba. Longela demo.", loginError: "Kimbamba kinjila. Longela.", required: "Olongela oviya" },
     footer: { copyright: "© 2025 Farm Navigators Angola. Mavalo osi." }
+  },
+  
+  // Placeholders vazios - línguas nacionais não acessam admin/NGO
+  admin: {
+    common: { dashboard: "", users: "", content: "", reports: "", settings: "", profile: "", search: "", filter: "", export: "", save: "", cancel: "", delete: "", edit: "", view: "", approve: "", reject: "", loading: "", error: "", success: "", warning: "" },
+    navigation: { main: "", others: "", dashboard: "", userManagement: "", contentModeration: "", systemReports: "", systemSettings: "", profile: "" },
+    dashboard: { title: "", subtitle: "", timeRanges: { "24h": "", "7d": "", "30d": "", "90d": "" }, stats: { totalUsers: "", activeUsers: "", totalNGOs: "", totalContent: "", systemHealth: "", apiCalls: "" }, charts: { userGrowth: "", contentStats: "", systemAlerts: "", recentActivity: "" }, alerts: { high_latency: "", backup_completed: "", new_ngo: "", storage_warning: "" }, activity: { video_upload: "", new_registration: "", report_generated: "", content_approved: "" } },
+    userManagement: { title: "", subtitle: "", tabs: { farmers: "", ngos: "", admins: "" }, actions: { addUser: "", exportData: "", bulkActions: "" }, userDetails: { name: "", email: "", role: "", status: "", registrationDate: "", lastLogin: "", location: "" }, status: { active: "", inactive: "", suspended: "" } },
+    contentModeration: { title: "", subtitle: "", tabs: { pending: "", approved: "", rejected: "" }, contentTypes: { video: "", article: "", comment: "" }, moderationActions: { approve: "", reject: "", needsReview: "" } }
+  },
+  ngo: {
+    common: { dashboard: "", maps: "", content: "", reports: "", statistics: "", profile: "", farmers: "", videos: "", impact: "", reach: "", coverage: "" },
+    navigation: { dashboard: "", regionalMaps: "", educationalContent: "", impactReports: "", regionalStats: "", profile: "" },
+    dashboard: { title: "", subtitle: "", stats: { farmersReached: "", agriflixVideos: "", totalViews: "", provincesCovered: "", monthlyGrowth: "", newThisMonth: "", vsLastMonth: "", nationalCoverage: "" }, sections: { regionalImpact: "", mostWatchedContent: "", quickActions: "" }, categories: { water: "", planting: "", protection: "", soil: "" }, actions: { uploadVideo: "", createReport: "", viewMaps: "", manageContent: "" } },
+    regionalMaps: { title: "", subtitle: "", filters: { province: "", timeRange: "", dataType: "" }, dataTypes: { farmerDensity: "", contentEngagement: "", cropDistribution: "", weatherPatterns: "" } },
+    educationalContent: { title: "", subtitle: "", tabs: { myVideos: "", published: "", drafts: "", analytics: "" }, videoStats: { views: "", likes: "", shares: "", duration: "", uploadDate: "" } },
+    impactReports: { title: "", subtitle: "", reportTypes: { monthly: "", quarterly: "", annual: "", custom: "" }, metrics: { reach: "", engagement: "", outcomes: "", feedback: "" } }
   }
 };
 

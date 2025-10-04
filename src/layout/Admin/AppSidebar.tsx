@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router";
+import { useI18n } from "../../i18n/useI18n";
 
 // Assume these icons are imported from an icon library
 import {
@@ -29,46 +30,48 @@ type NavItem = {
   subItems?: { name: string; path: string; pro?: boolean; new?: boolean }[];
 };
 
-const navItems: NavItem[] = [
-  {
-    icon: <GridIcon />,
-    name: "Dashboard",
-    path: "/admin/dashboard",
-  },
-  {
-    icon: <UserCircleIcon />,
-    name: "Gestão de Usuários",
-    path: "/admin/user-management",
-  },
-  {
-    icon: <BoxCubeIcon />,
-    name: "Moderação de Conteúdo",
-    path: "/admin/content-moderation",
-  },
-  {
-    icon: <PieChartIcon />,
-    name: "Relatórios",
-    path: "/admin/system-reports",
-  },
-  {
-    icon: <BoltIcon />,
-    name: "Configurações",
-    path: "/admin/system-settings",
-  },
-];
-
-const othersItems: NavItem[] = [
-  {
-    icon: <UserCircleIcon />,
-    name: "Perfil",
-    path: "/admin/profile"
-  },
-];
-
 const AppSidebar: React.FC = () => {
+  const { t } = useI18n();
   const { isExpanded, isMobileOpen, isHovered, setIsHovered } = useSidebar();
   const location = useLocation();
 
+  // Create navItems using translations
+  const navItems: NavItem[] = [
+    {
+      icon: <GridIcon />,
+      name: t.admin.navigation.dashboard,
+      path: "/admin/dashboard",
+    },
+    {
+      icon: <UserCircleIcon />,
+      name: t.admin.navigation.userManagement,
+      path: "/admin/user-management",
+    },
+    {
+      icon: <BoxCubeIcon />,
+      name: t.admin.navigation.contentModeration,
+      path: "/admin/content-moderation",
+    },
+    {
+      icon: <PieChartIcon />,
+      name: t.admin.navigation.systemReports,
+      path: "/admin/system-reports",
+    },
+    {
+      icon: <BoltIcon />,
+      name: t.admin.navigation.systemSettings,
+      path: "/admin/system-settings",
+    },
+  ];
+
+  const othersItems: NavItem[] = [
+    {
+      icon: <UserCircleIcon />,
+      name: t.admin.navigation.profile,
+      path: "/admin/profile"
+    },
+  ];
+  
   const [openSubmenu, setOpenSubmenu] = useState<{
     type: "main" | "others";
     index: number;
@@ -289,7 +292,7 @@ const AppSidebar: React.FC = () => {
                   }`}
               >
                 {isExpanded || isHovered || isMobileOpen ? (
-                  "Principal"
+                  t.admin.navigation.main
                 ) : (
                   <HorizontaLDots className="size-6" />
                 )}
@@ -304,7 +307,7 @@ const AppSidebar: React.FC = () => {
                   }`}
               >
                 {isExpanded || isHovered || isMobileOpen ? (
-                  "Outros"
+                  t.admin.navigation.others
                 ) : (
                   <HorizontaLDots />
                 )}
