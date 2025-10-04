@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaApple, FaGooglePlay, FaFacebookF, FaInstagram, FaYoutube, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import FarmRewards from '../components/landing/FarmRewards';
 
 const Home: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -189,6 +190,9 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Farm Rewards */}
+      <FarmRewards />
 
       {/* Testimonials */}
       <div className="py-32 bg-gray-100">

@@ -199,6 +199,36 @@ export interface Translations {
     };
   };
   
+  // Farm Rewards Section
+  farmRewards: {
+    title: string;
+    subtitle: string;
+    description: string;
+    cards: {
+      foodVouchers: {
+        title: string;
+        description: string;
+        icon: string;
+      };
+      agriculturalTools: {
+        title: string;
+        description: string;
+        icon: string;
+      };
+      ecoRewards: {
+        title: string;
+        description: string;
+        icon: string;
+      };
+      localPartnerships: {
+        title: string;
+        description: string;
+        icon: string;
+      };
+    };
+    cta: string;
+  };
+  
   // AgriClix Complete Interface
   agriFlixFull: {
     // Header and Navigation
@@ -1792,6 +1822,37 @@ export const pt: Translations = {
       }
     }
   },
+  
+  // Farm Rewards Section
+  farmRewards: {
+    title: "Farm Rewards 🌾",
+    subtitle: "Ganhe recompensas reais enquanto melhora sua jornada agrícola",
+    description: "O Farm Navigators recompensa usuários ativos com benefícios da vida real — desde vouchers de comida e ferramentas agrícolas até descontos de parceiros locais. Cada ação na plataforma te aproxima de algo valioso.",
+    cards: {
+      foodVouchers: {
+        title: "Vouchers de Comida & Mercado",
+        description: "Troque suas FarmCoins por vouchers de comida e compras em mercados parceiros.",
+        icon: "🛒"
+      },
+      agriculturalTools: {
+        title: "Ferramentas Agrícolas",
+        description: "Obtenha ferramentas essenciais como luvas, botas, kits de irrigação e mais para aumentar sua produtividade.",
+        icon: "🛠️"
+      },
+      ecoRewards: {
+        title: "Recompensas Eco",
+        description: "Ganhe prêmios eco-friendly como painéis solares, sacolas reutilizáveis e plantas nativas.",
+        icon: "🌱"
+      },
+      localPartnerships: {
+        title: "Parcerias Locais",
+        description: "Desfrute de descontos exclusivos e recompensas de cooperativas e mercados locais.",
+        icon: "🤝"
+      }
+    },
+    cta: "Comece a Ganhar Recompensas"
+  },
+  
   partners: {
     title: "Nossos Parceiros",
     subtitle: "Colaboração estratégica para impacto nacional",
@@ -2927,6 +2988,37 @@ export const en: Translations = {
       }
     }
   },
+  
+  // Farm Rewards Section
+  farmRewards: {
+    title: "Farm Rewards 🌾",
+    subtitle: "Earn real rewards while improving your farming journey",
+    description: "Farm Navigators rewards active users with real-life benefits — from food vouchers and agricultural tools to discounts from local partners. Every action on the platform brings you closer to something valuable.",
+    cards: {
+      foodVouchers: {
+        title: "Food & Market Vouchers",
+        description: "Exchange your FarmCoins for food and shopping vouchers in partner markets.",
+        icon: "🛒"
+      },
+      agriculturalTools: {
+        title: "Agricultural Tools",
+        description: "Get essential tools like gloves, boots, irrigation kits, and more to boost your productivity.",
+        icon: "🛠️"
+      },
+      ecoRewards: {
+        title: "Eco Rewards",
+        description: "Earn eco-friendly prizes such as solar panels, reusable bags, and native plants.",
+        icon: "🌱"
+      },
+      localPartnerships: {
+        title: "Local Partnerships",
+        description: "Enjoy exclusive discounts and rewards from local cooperatives and markets.",
+        icon: "🤝"
+      }
+    },
+    cta: "Start Earning Rewards"
+  },
+  
   partners: {
     title: "Our Partners",
     subtitle: "Strategic collaboration for national impact",
@@ -4219,6 +4311,37 @@ export const umb: Translations = {
       }
     }
   },
+  
+  // Farm Rewards Section - Placeholder para Umbundu
+  farmRewards: {
+    title: "",
+    subtitle: "",
+    description: "",
+    cards: {
+      foodVouchers: {
+        title: "",
+        description: "",
+        icon: ""
+      },
+      agriculturalTools: {
+        title: "",
+        description: "",
+        icon: ""
+      },
+      ecoRewards: {
+        title: "",
+        description: "",
+        icon: ""
+      },
+      localPartnerships: {
+        title: "",
+        description: "",
+        icon: ""
+      }
+    },
+    cta: ""
+  },
+  
   partners: {
     title: "Ovikama Vyetu",
     subtitle: "Okulonga kwa estratégia ku impacto wa inação",
@@ -4841,6 +4964,37 @@ export const kmb: Translations = {
       }
     }
   },
+  
+  // Farm Rewards Section - Placeholder para Kimbundu
+  farmRewards: {
+    title: "",
+    subtitle: "",
+    description: "",
+    cards: {
+      foodVouchers: {
+        title: "",
+        description: "",
+        icon: ""
+      },
+      agriculturalTools: {
+        title: "",
+        description: "",
+        icon: ""
+      },
+      ecoRewards: {
+        title: "",
+        description: "",
+        icon: ""
+      },
+      localPartnerships: {
+        title: "",
+        description: "",
+        icon: ""
+      }
+    },
+    cta: ""
+  },
+  
   partners: {
     title: "Makama Yetu",
     subtitle: "Kusolonga kwa estratégia ku impacto wa inação",
@@ -5463,6 +5617,37 @@ export const lun: Translations = {
       }
     }
   },
+  
+  // Farm Rewards Section - Placeholder para Lundu
+  farmRewards: {
+    title: "",
+    subtitle: "",
+    description: "",
+    cards: {
+      foodVouchers: {
+        title: "",
+        description: "",
+        icon: ""
+      },
+      agriculturalTools: {
+        title: "",
+        description: "",
+        icon: ""
+      },
+      ecoRewards: {
+        title: "",
+        description: "",
+        icon: ""
+      },
+      localPartnerships: {
+        title: "",
+        description: "",
+        icon: ""
+      }
+    },
+    cta: ""
+  },
+  
   partners: {
     title: "Makama Yetu",
     subtitle: "Kulonga kwa estratégia ku impacto wa inação",

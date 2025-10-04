@@ -33,6 +33,7 @@ import {
 } from 'react-icons/fa';
 import { useTranslations } from '../i18n/useI18n';
 import { LanguageSelector } from '../components/LanguageSelector';
+import FarmRewards from '../components/landing/FarmRewards';
 
 const FarmNavigatorsLanding: React.FC = () => {
     const t = useTranslations();
@@ -896,6 +897,9 @@ const FarmNavigatorsLanding: React.FC = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Farm Rewards Section */}
+            <FarmRewards />
 
             {/* CTA Download */}
             <section id="download" className="relative py-20 overflow-hidden">
