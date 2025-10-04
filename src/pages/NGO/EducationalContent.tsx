@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaPlay, FaPlus, FaEdit, FaTrash, FaEye, FaUpload, FaFilter, FaSearch } from "react-icons/fa";
+import { useI18n } from "../../i18n/useI18n";
 
 interface Video {
   id: string;
@@ -69,6 +70,7 @@ const categories = ["Todos", "Irrigação", "Agricultura", "Meteorologia", "Prot
 const statuses = ["Todos", "published", "draft", "pending"];
 
 export default function EducationalContent() {
+  const { t } = useI18n();
   const [videos, setVideos] = useState<Video[]>(mockVideos);
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [selectedStatus, setSelectedStatus] = useState("Todos");
@@ -95,9 +97,9 @@ export default function EducationalContent() {
 
   const getStatusText = (status: string) => {
     switch (status) {
-      case "published": return "Publicado";
-      case "draft": return "Rascunho";
-      case "pending": return "Pendente";
+      case "published": return t.ngo.educationalContent.status.published;
+      case "draft": return t.ngo.educationalContent.status.draft;
+      case "pending": return t.ngo.educationalContent.status.pending;
       default: return status;
     }
   };
@@ -109,10 +111,10 @@ export default function EducationalContent() {
     <div className="p-6">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          Gestão de Conteúdo Educativo
+          {t.ngo.educationalContent.title}
         </h1>
         <p className="text-gray-600">
-          Gerencie vídeos educativos do AgriFlix para agricultores angolanos
+          {t.ngo.educationalContent.subtitle}
         </p>
       </div>
 
@@ -125,7 +127,7 @@ export default function EducationalContent() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-gray-900">{videos.length}</h3>
-              <p className="text-gray-600">Total de Vídeos</p>
+              <p className="text-gray-600">{t.ngo.educationalContent.stats.totalVideos}</p>
             </div>
           </div>
         </div>
@@ -137,7 +139,7 @@ export default function EducationalContent() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-gray-900">{totalViews.toLocaleString()}</h3>
-              <p className="text-gray-600">Total de Visualizações</p>
+              <p className="text-gray-600">{t.ngo.educationalContent.stats.totalViews}</p>
             </div>
           </div>
         </div>
@@ -149,7 +151,7 @@ export default function EducationalContent() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-gray-900">{publishedVideos}</h3>
-              <p className="text-gray-600">Vídeos Publicados</p>
+              <p className="text-gray-600">{t.ngo.educationalContent.stats.publishedVideos}</p>
             </div>
           </div>
         </div>
@@ -161,7 +163,7 @@ export default function EducationalContent() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-gray-900">{categories.length - 1}</h3>
-              <p className="text-gray-600">Categorias</p>
+              <p className="text-gray-600">{t.ngo.educationalContent.stats.categories}</p>
             </div>
           </div>
         </div>
@@ -176,7 +178,7 @@ export default function EducationalContent() {
               <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
               <input
                 type="text"
-                placeholder="Buscar vídeos..."
+                placeholder={t.ngo.educationalContent.search.placeholder}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
@@ -190,7 +192,7 @@ export default function EducationalContent() {
               className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
             >
               {categories.map(category => (
-                <option key={category} value={category}>{category}</option>
+                <option key={category} value={category}>{category === "Todos" ? t.ngo.educationalContent.search.allCategories : category}</option>
               ))}
             </select>
 
@@ -202,7 +204,7 @@ export default function EducationalContent() {
             >
               {statuses.map(status => (
                 <option key={status} value={status}>
-                  {status === "Todos" ? "Todos os Status" : getStatusText(status)}
+                  {status === "Todos" ? t.ngo.educationalContent.search.allStatuses : getStatusText(status)}
                 </option>
               ))}
             </select>
@@ -214,7 +216,7 @@ export default function EducationalContent() {
             className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center"
           >
             <FaUpload className="mr-2" />
-            Enviar Novo Vídeo
+            {t.ngo.educationalContent.upload.button}
           </button>
         </div>
       </div>
@@ -245,7 +247,7 @@ export default function EducationalContent() {
               
               <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
                 <span className="bg-gray-100 px-2 py-1 rounded">{video.category}</span>
-                <span>{video.views.toLocaleString()} visualizações</span>
+                <span>{video.views.toLocaleString()} {t.ngo.educationalContent.video.views}</span>
               </div>
               
               <div className="flex justify-between items-center">

@@ -991,6 +991,27 @@ export interface Translations {
     regionalMaps: {
       title: string;
       subtitle: string;
+      layers: {
+        title: string;
+        climate: string;
+        soil: string;
+        rainfall: string;
+        alerts: string;
+      };
+      interactiveMap: {
+        title: string;
+        description: string;
+        integration: string;
+      };
+      provinceDetails: {
+        title: string;
+        temperature: string;
+        rainfall: string;
+        soilHealth: string;
+        activeFarmers: string;
+        activeAlerts: string;
+      };
+      nationalSummary: string;
       filters: {
         province: string;
         timeRange: string;
@@ -1008,6 +1029,33 @@ export interface Translations {
     educationalContent: {
       title: string;
       subtitle: string;
+      stats: {
+        totalVideos: string;
+        totalViews: string;
+        publishedVideos: string;
+        categories: string;
+      };
+      search: {
+        placeholder: string;
+        allCategories: string;
+        allStatuses: string;
+      };
+      upload: {
+        button: string;
+        title: string;
+      };
+      video: {
+        views: string;
+        duration: string;
+        edit: string;
+        delete: string;
+        publish: string;
+      };
+      status: {
+        published: string;
+        draft: string;
+        pending: string;
+      };
       tabs: {
         myVideos: string;
         published: string;
@@ -1027,17 +1075,92 @@ export interface Translations {
     impactReports: {
       title: string;
       subtitle: string;
+      selector: {
+        period: string;
+        type: string;
+        export: string;
+      };
+      metrics: {
+        farmersReached: string;
+        videosWatched: string;
+        completionRate: string;
+        avgEngagement: string;
+        provincesActive: string;
+        topCategory: string;
+      };
       reportTypes: {
         monthly: string;
         quarterly: string;
         annual: string;
         custom: string;
       };
-      metrics: {
-        reach: string;
+      sections: {
+        keyMetrics: string;
+        provinceBreakdown: string;
+        categoryPerformance: string;
+        trends: string;
+      };
+      province: {
+        farmers: string;
         engagement: string;
-        outcomes: string;
-        feedback: string;
+        videos: string;
+      };
+      category: {
+        views: string;
+        completion: string;
+        growth: string;
+      };
+    };
+    regionalStats: {
+      title: string;
+      subtitle: string;
+      summaryCards: {
+        totalFarmers: string;
+        activeUsers: string;
+        totalViews: string;
+        avgGrowth: string;
+      };
+      filters: {
+        searchPlaceholder: string;
+        period: string;
+        sortBy: string;
+        exportData: string;
+      };
+      sortOptions: {
+        farmers: string;
+        activeUsers: string;
+        videoViews: string;
+        growthRate: string;
+      };
+      tableTitle: string;
+      tableHeaders: {
+        province: string;
+        farmers: string;
+        activeUsers: string;
+        views: string;
+        avgTime: string;
+        topCategory: string;
+        growth: string;
+        lastActivity: string;
+      };
+      percentActive: string;
+      charts: {
+        engagement: {
+          title: string;
+          subtitle: string;
+          description: string;
+        };
+        growth: {
+          title: string;
+          subtitle: string;
+          description: string;
+        };
+      };
+      timeRanges: {
+        "24h": string;
+        "7d": string;
+        "30d": string;
+        "90d": string;
       };
     };
   };
@@ -2044,8 +2167,29 @@ export const pt: Translations = {
     
     // Regional Maps
     regionalMaps: {
-      title: "Mapas Regionais",
-      subtitle: "Visualize dados regionais e impacto da sua ONG",
+      title: "Mapas Regionais de Angola",
+      subtitle: "Monitoramento climático e agrícola por província usando dados da NASA",
+      layers: {
+        title: "Camadas de Dados",
+        climate: "Dados Climáticos",
+        soil: "Saúde do Solo",
+        rainfall: "Precipitação",
+        alerts: "Alertas",
+      },
+      interactiveMap: {
+        title: "Mapa Interativo",
+        description: "Visualização dos dados da NASA por província",
+        integration: "Integração com Mapbox em desenvolvimento",
+      },
+      provinceDetails: {
+        title: "Província",
+        temperature: "Temperatura",
+        rainfall: "Precipitação",
+        soilHealth: "Saúde do Solo",
+        activeFarmers: "Agricultores Ativos",
+        activeAlerts: "Alertas Ativos",
+      },
+      nationalSummary: "Resumo Nacional",
       filters: {
         province: "Província",
         timeRange: "Período",
@@ -2061,8 +2205,35 @@ export const pt: Translations = {
     
     // Educational Content
     educationalContent: {
-      title: "Conteúdo Educativo",
-      subtitle: "Gerencie seus vídeos e materiais educativos",
+      title: "Gestão de Conteúdo Educativo",
+      subtitle: "Gerencie vídeos educativos do AgriFlix para agricultores angolanos",
+      stats: {
+        totalVideos: "Total de Vídeos",
+        totalViews: "Total de Visualizações",
+        publishedVideos: "Vídeos Publicados",
+        categories: "Categorias",
+      },
+      search: {
+        placeholder: "Buscar vídeos...",
+        allCategories: "Todos",
+        allStatuses: "Todos os Status",
+      },
+      upload: {
+        button: "Enviar Novo Vídeo",
+        title: "Upload de Vídeo",
+      },
+      video: {
+        views: "visualizações",
+        duration: "Duração",
+        edit: "Editar",
+        delete: "Excluir",
+        publish: "Publicar",
+      },
+      status: {
+        published: "Publicado",
+        draft: "Rascunho",
+        pending: "Pendente",
+      },
       tabs: {
         myVideos: "Meus Vídeos",
         published: "Publicados",
@@ -2081,18 +2252,93 @@ export const pt: Translations = {
     // Impact Reports
     impactReports: {
       title: "Relatórios de Impacto",
-      subtitle: "Analise o impacto das suas ações na comunidade",
+      subtitle: "Análise detalhada do impacto educacional em Angola",
+      selector: {
+        period: "Período",
+        type: "Tipo",
+        export: "Exportar Relatório",
+      },
+      metrics: {
+        farmersReached: "Agricultores Alcançados",
+        videosWatched: "Vídeos Assistidos",
+        completionRate: "Taxa de Conclusão",
+        avgEngagement: "Engajamento Médio",
+        provincesActive: "Províncias Ativas",
+        topCategory: "Categoria Principal",
+      },
       reportTypes: {
         monthly: "Mensal",
         quarterly: "Trimestral",
         annual: "Anual",
         custom: "Personalizado",
       },
-      metrics: {
-        reach: "Alcance",
-        engagement: "Engajamento",
-        outcomes: "Resultados",
-        feedback: "Feedback",
+      sections: {
+        keyMetrics: "Métricas Principais",
+        provinceBreakdown: "Breakdown por Província",
+        categoryPerformance: "Performance por Categoria",
+        trends: "Tendências",
+      },
+      province: {
+        farmers: "agricultores",
+        engagement: "engajamento",
+        videos: "vídeos",
+      },
+      category: {
+        views: "visualizações",
+        completion: "conclusão",
+        growth: "crescimento",
+      },
+    },
+    regionalStats: {
+      title: "Estatísticas Regionais",
+      subtitle: "Análise detalhada do engajamento por província em Angola",
+      summaryCards: {
+        totalFarmers: "Total de Agricultores",
+        activeUsers: "Usuários Ativos",
+        totalViews: "Visualizações Totais",
+        avgGrowth: "Crescimento Médio",
+      },
+      filters: {
+        searchPlaceholder: "Buscar província...",
+        period: "Período:",
+        sortBy: "Ordenar por:",
+        exportData: "Exportar Dados",
+      },
+      sortOptions: {
+        farmers: "Agricultores",
+        activeUsers: "Usuários Ativos",
+        videoViews: "Visualizações",
+        growthRate: "Crescimento",
+      },
+      tableTitle: "Dados por Província",
+      tableHeaders: {
+        province: "Província",
+        farmers: "Agricultores",
+        activeUsers: "Usuários Ativos",
+        views: "Visualizações",
+        avgTime: "Tempo Médio",
+        topCategory: "Categoria Popular",
+        growth: "Crescimento",
+        lastActivity: "Última Atividade",
+      },
+      percentActive: "ativos",
+      charts: {
+        engagement: {
+          title: "Engajamento por Província",
+          subtitle: "Gráfico de Barras",
+          description: "Comparação de engajamento entre províncias",
+        },
+        growth: {
+          title: "Tendências de Crescimento",
+          subtitle: "Gráfico de Linhas",
+          description: "Evolução do crescimento ao longo do tempo",
+        },
+      },
+      timeRanges: {
+        "24h": "24h",
+        "7d": "7d",
+        "30d": "30d",
+        "90d": "90d",
       },
     },
   },
@@ -3045,8 +3291,29 @@ export const en: Translations = {
     
     // Regional Maps
     regionalMaps: {
-      title: "Regional Maps",
-      subtitle: "Visualize regional data and your NGO's impact",
+      title: "Regional Maps of Angola",
+      subtitle: "Climate and agricultural monitoring by province using NASA data",
+      layers: {
+        title: "Data Layers",
+        climate: "Climate Data",
+        soil: "Soil Health",
+        rainfall: "Rainfall",
+        alerts: "Alerts",
+      },
+      interactiveMap: {
+        title: "Interactive Map",
+        description: "NASA data visualization by province",
+        integration: "Mapbox integration in development",
+      },
+      provinceDetails: {
+        title: "Province",
+        temperature: "Temperature",
+        rainfall: "Rainfall",
+        soilHealth: "Soil Health",
+        activeFarmers: "Active Farmers",
+        activeAlerts: "Active Alerts",
+      },
+      nationalSummary: "National Summary",
       filters: {
         province: "Province",
         timeRange: "Time Range",
@@ -3062,8 +3329,35 @@ export const en: Translations = {
     
     // Educational Content
     educationalContent: {
-      title: "Educational Content",
-      subtitle: "Manage your videos and educational materials",
+      title: "Educational Content Management",
+      subtitle: "Manage AgriFlix educational videos for Angolan farmers",
+      stats: {
+        totalVideos: "Total Videos",
+        totalViews: "Total Views",
+        publishedVideos: "Published Videos",
+        categories: "Categories",
+      },
+      search: {
+        placeholder: "Search videos...",
+        allCategories: "All",
+        allStatuses: "All Statuses",
+      },
+      upload: {
+        button: "Upload New Video",
+        title: "Video Upload",
+      },
+      video: {
+        views: "views",
+        duration: "Duration",
+        edit: "Edit",
+        delete: "Delete",
+        publish: "Publish",
+      },
+      status: {
+        published: "Published",
+        draft: "Draft",
+        pending: "Pending",
+      },
       tabs: {
         myVideos: "My Videos",
         published: "Published",
@@ -3082,18 +3376,93 @@ export const en: Translations = {
     // Impact Reports
     impactReports: {
       title: "Impact Reports",
-      subtitle: "Analyze your actions' impact on the community",
+      subtitle: "Detailed analysis of educational impact in Angola",
+      selector: {
+        period: "Period",
+        type: "Type",
+        export: "Export Report",
+      },
+      metrics: {
+        farmersReached: "Farmers Reached",
+        videosWatched: "Videos Watched",
+        completionRate: "Completion Rate",
+        avgEngagement: "Average Engagement",
+        provincesActive: "Active Provinces",
+        topCategory: "Top Category",
+      },
       reportTypes: {
         monthly: "Monthly",
         quarterly: "Quarterly",
         annual: "Annual",
         custom: "Custom",
       },
-      metrics: {
-        reach: "Reach",
-        engagement: "Engagement",
-        outcomes: "Outcomes",
-        feedback: "Feedback",
+      sections: {
+        keyMetrics: "Key Metrics",
+        provinceBreakdown: "Province Breakdown",
+        categoryPerformance: "Category Performance",
+        trends: "Trends",
+      },
+      province: {
+        farmers: "farmers",
+        engagement: "engagement",
+        videos: "videos",
+      },
+      category: {
+        views: "views",
+        completion: "completion",
+        growth: "growth",
+      },
+    },
+    regionalStats: {
+      title: "Regional Statistics",
+      subtitle: "Detailed analysis of engagement by province in Angola",
+      summaryCards: {
+        totalFarmers: "Total Farmers",
+        activeUsers: "Active Users",
+        totalViews: "Total Views",
+        avgGrowth: "Average Growth",
+      },
+      filters: {
+        searchPlaceholder: "Search province...",
+        period: "Period:",
+        sortBy: "Sort by:",
+        exportData: "Export Data",
+      },
+      sortOptions: {
+        farmers: "Farmers",
+        activeUsers: "Active Users",
+        videoViews: "Views",
+        growthRate: "Growth",
+      },
+      tableTitle: "Data by Province",
+      tableHeaders: {
+        province: "Province",
+        farmers: "Farmers",
+        activeUsers: "Active Users",
+        views: "Views",
+        avgTime: "Average Time",
+        topCategory: "Top Category",
+        growth: "Growth",
+        lastActivity: "Last Activity",
+      },
+      percentActive: "active",
+      charts: {
+        engagement: {
+          title: "Engagement by Province",
+          subtitle: "Bar Chart",
+          description: "Comparison of engagement between provinces",
+        },
+        growth: {
+          title: "Growth Trends",
+          subtitle: "Line Chart",
+          description: "Evolution of growth over time",
+        },
+      },
+      timeRanges: {
+        "24h": "24h",
+        "7d": "7d",
+        "30d": "30d",
+        "90d": "90d",
       },
     },
   },
@@ -3544,9 +3913,9 @@ export const umb: Translations = {
     common: { dashboard: "", maps: "", content: "", reports: "", statistics: "", profile: "", farmers: "", videos: "", impact: "", reach: "", coverage: "" },
     navigation: { dashboard: "", regionalMaps: "", educationalContent: "", impactReports: "", regionalStats: "", profile: "" },
     dashboard: { title: "", subtitle: "", stats: { farmersReached: "", agriflixVideos: "", totalViews: "", provincesCovered: "", monthlyGrowth: "", newThisMonth: "", vsLastMonth: "", nationalCoverage: "" }, sections: { regionalImpact: "", mostWatchedContent: "", quickActions: "" }, categories: { water: "", planting: "", protection: "", soil: "" }, actions: { uploadVideo: "", createReport: "", viewMaps: "", manageContent: "" } },
-    regionalMaps: { title: "", subtitle: "", filters: { province: "", timeRange: "", dataType: "" }, dataTypes: { farmerDensity: "", contentEngagement: "", cropDistribution: "", weatherPatterns: "" } },
-    educationalContent: { title: "", subtitle: "", tabs: { myVideos: "", published: "", drafts: "", analytics: "" }, videoStats: { views: "", likes: "", shares: "", duration: "", uploadDate: "" } },
-    impactReports: { title: "", subtitle: "", reportTypes: { monthly: "", quarterly: "", annual: "", custom: "" }, metrics: { reach: "", engagement: "", outcomes: "", feedback: "" } }
+    regionalMaps: { title: "", subtitle: "", layers: { title: "", climate: "", soil: "", rainfall: "", alerts: "" }, interactiveMap: { title: "", description: "", integration: "" }, provinceDetails: { title: "", temperature: "", rainfall: "", soilHealth: "", activeFarmers: "", activeAlerts: "" }, nationalSummary: "", filters: { province: "", timeRange: "", dataType: "" }, dataTypes: { farmerDensity: "", contentEngagement: "", cropDistribution: "", weatherPatterns: "" } },
+    educationalContent: { title: "", subtitle: "", stats: { totalVideos: "", totalViews: "", publishedVideos: "", categories: "" }, search: { placeholder: "", allCategories: "", allStatuses: "" }, upload: { button: "", title: "" }, video: { views: "", duration: "", edit: "", delete: "", publish: "" }, status: { published: "", draft: "", pending: "" }, tabs: { myVideos: "", published: "", drafts: "", analytics: "" }, videoStats: { views: "", likes: "", shares: "", duration: "", uploadDate: "" } },
+    impactReports: { title: "", subtitle: "", selector: { period: "", type: "", export: "" }, metrics: { farmersReached: "", videosWatched: "", completionRate: "", avgEngagement: "", provincesActive: "", topCategory: "" }, reportTypes: { monthly: "", quarterly: "", annual: "", custom: "" }, sections: { keyMetrics: "", provinceBreakdown: "", categoryPerformance: "", trends: "" }, province: { farmers: "", engagement: "", videos: "" }, category: { views: "", completion: "", growth: "" } }, regionalStats: { title: "", subtitle: "", summaryCards: { totalFarmers: "", activeUsers: "", totalViews: "", avgGrowth: "" }, filters: { searchPlaceholder: "", period: "", sortBy: "", exportData: "" }, sortOptions: { farmers: "", activeUsers: "", videoViews: "", growthRate: "" }, tableTitle: "", tableHeaders: { province: "", farmers: "", activeUsers: "", views: "", avgTime: "", topCategory: "", growth: "", lastActivity: "" }, percentActive: "", charts: { engagement: { title: "", subtitle: "", description: "" }, growth: { title: "", subtitle: "", description: "" } }, timeRanges: { "24h": "", "7d": "", "30d": "", "90d": "" } }
   }
 };
 
@@ -3995,9 +4364,9 @@ export const kmb: Translations = {
     common: { dashboard: "", maps: "", content: "", reports: "", statistics: "", profile: "", farmers: "", videos: "", impact: "", reach: "", coverage: "" },
     navigation: { dashboard: "", regionalMaps: "", educationalContent: "", impactReports: "", regionalStats: "", profile: "" },
     dashboard: { title: "", subtitle: "", stats: { farmersReached: "", agriflixVideos: "", totalViews: "", provincesCovered: "", monthlyGrowth: "", newThisMonth: "", vsLastMonth: "", nationalCoverage: "" }, sections: { regionalImpact: "", mostWatchedContent: "", quickActions: "" }, categories: { water: "", planting: "", protection: "", soil: "" }, actions: { uploadVideo: "", createReport: "", viewMaps: "", manageContent: "" } },
-    regionalMaps: { title: "", subtitle: "", filters: { province: "", timeRange: "", dataType: "" }, dataTypes: { farmerDensity: "", contentEngagement: "", cropDistribution: "", weatherPatterns: "" } },
-    educationalContent: { title: "", subtitle: "", tabs: { myVideos: "", published: "", drafts: "", analytics: "" }, videoStats: { views: "", likes: "", shares: "", duration: "", uploadDate: "" } },
-    impactReports: { title: "", subtitle: "", reportTypes: { monthly: "", quarterly: "", annual: "", custom: "" }, metrics: { reach: "", engagement: "", outcomes: "", feedback: "" } }
+    regionalMaps: { title: "", subtitle: "", layers: { title: "", climate: "", soil: "", rainfall: "", alerts: "" }, interactiveMap: { title: "", description: "", integration: "" }, provinceDetails: { title: "", temperature: "", rainfall: "", soilHealth: "", activeFarmers: "", activeAlerts: "" }, nationalSummary: "", filters: { province: "", timeRange: "", dataType: "" }, dataTypes: { farmerDensity: "", contentEngagement: "", cropDistribution: "", weatherPatterns: "" } },
+    educationalContent: { title: "", subtitle: "", stats: { totalVideos: "", totalViews: "", publishedVideos: "", categories: "" }, search: { placeholder: "", allCategories: "", allStatuses: "" }, upload: { button: "", title: "" }, video: { views: "", duration: "", edit: "", delete: "", publish: "" }, status: { published: "", draft: "", pending: "" }, tabs: { myVideos: "", published: "", drafts: "", analytics: "" }, videoStats: { views: "", likes: "", shares: "", duration: "", uploadDate: "" } },
+    impactReports: { title: "", subtitle: "", selector: { period: "", type: "", export: "" }, metrics: { farmersReached: "", videosWatched: "", completionRate: "", avgEngagement: "", provincesActive: "", topCategory: "" }, reportTypes: { monthly: "", quarterly: "", annual: "", custom: "" }, sections: { keyMetrics: "", provinceBreakdown: "", categoryPerformance: "", trends: "" }, province: { farmers: "", engagement: "", videos: "" }, category: { views: "", completion: "", growth: "" } }, regionalStats: { title: "", subtitle: "", summaryCards: { totalFarmers: "", activeUsers: "", totalViews: "", avgGrowth: "" }, filters: { searchPlaceholder: "", period: "", sortBy: "", exportData: "" }, sortOptions: { farmers: "", activeUsers: "", videoViews: "", growthRate: "" }, tableTitle: "", tableHeaders: { province: "", farmers: "", activeUsers: "", views: "", avgTime: "", topCategory: "", growth: "", lastActivity: "" }, percentActive: "", charts: { engagement: { title: "", subtitle: "", description: "" }, growth: { title: "", subtitle: "", description: "" } }, timeRanges: { "24h": "", "7d": "", "30d": "", "90d": "" } }
   }
 };
 
@@ -4446,9 +4815,9 @@ export const lun: Translations = {
     common: { dashboard: "", maps: "", content: "", reports: "", statistics: "", profile: "", farmers: "", videos: "", impact: "", reach: "", coverage: "" },
     navigation: { dashboard: "", regionalMaps: "", educationalContent: "", impactReports: "", regionalStats: "", profile: "" },
     dashboard: { title: "", subtitle: "", stats: { farmersReached: "", agriflixVideos: "", totalViews: "", provincesCovered: "", monthlyGrowth: "", newThisMonth: "", vsLastMonth: "", nationalCoverage: "" }, sections: { regionalImpact: "", mostWatchedContent: "", quickActions: "" }, categories: { water: "", planting: "", protection: "", soil: "" }, actions: { uploadVideo: "", createReport: "", viewMaps: "", manageContent: "" } },
-    regionalMaps: { title: "", subtitle: "", filters: { province: "", timeRange: "", dataType: "" }, dataTypes: { farmerDensity: "", contentEngagement: "", cropDistribution: "", weatherPatterns: "" } },
-    educationalContent: { title: "", subtitle: "", tabs: { myVideos: "", published: "", drafts: "", analytics: "" }, videoStats: { views: "", likes: "", shares: "", duration: "", uploadDate: "" } },
-    impactReports: { title: "", subtitle: "", reportTypes: { monthly: "", quarterly: "", annual: "", custom: "" }, metrics: { reach: "", engagement: "", outcomes: "", feedback: "" } }
+    regionalMaps: { title: "", subtitle: "", layers: { title: "", climate: "", soil: "", rainfall: "", alerts: "" }, interactiveMap: { title: "", description: "", integration: "" }, provinceDetails: { title: "", temperature: "", rainfall: "", soilHealth: "", activeFarmers: "", activeAlerts: "" }, nationalSummary: "", filters: { province: "", timeRange: "", dataType: "" }, dataTypes: { farmerDensity: "", contentEngagement: "", cropDistribution: "", weatherPatterns: "" } },
+    educationalContent: { title: "", subtitle: "", stats: { totalVideos: "", totalViews: "", publishedVideos: "", categories: "" }, search: { placeholder: "", allCategories: "", allStatuses: "" }, upload: { button: "", title: "" }, video: { views: "", duration: "", edit: "", delete: "", publish: "" }, status: { published: "", draft: "", pending: "" }, tabs: { myVideos: "", published: "", drafts: "", analytics: "" }, videoStats: { views: "", likes: "", shares: "", duration: "", uploadDate: "" } },
+    impactReports: { title: "", subtitle: "", selector: { period: "", type: "", export: "" }, metrics: { farmersReached: "", videosWatched: "", completionRate: "", avgEngagement: "", provincesActive: "", topCategory: "" }, reportTypes: { monthly: "", quarterly: "", annual: "", custom: "" }, sections: { keyMetrics: "", provinceBreakdown: "", categoryPerformance: "", trends: "" }, province: { farmers: "", engagement: "", videos: "" }, category: { views: "", completion: "", growth: "" } }, regionalStats: { title: "", subtitle: "", summaryCards: { totalFarmers: "", activeUsers: "", totalViews: "", avgGrowth: "" }, filters: { searchPlaceholder: "", period: "", sortBy: "", exportData: "" }, sortOptions: { farmers: "", activeUsers: "", videoViews: "", growthRate: "" }, tableTitle: "", tableHeaders: { province: "", farmers: "", activeUsers: "", views: "", avgTime: "", topCategory: "", growth: "", lastActivity: "" }, percentActive: "", charts: { engagement: { title: "", subtitle: "", description: "" }, growth: { title: "", subtitle: "", description: "" } }, timeRanges: { "24h": "", "7d": "", "30d": "", "90d": "" } }
   }
 };
 

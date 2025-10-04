@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaChartLine, FaUsers, FaPlay, FaDownload, FaCalendarAlt, FaMapMarkerAlt, FaGraduationCap, FaTractor } from "react-icons/fa";
+import { useI18n } from "../../i18n/useI18n";
 
 interface ImpactData {
   period: string;
@@ -58,6 +59,7 @@ const categoryMetrics = [
 ];
 
 export default function ImpactReports() {
+  const { t } = useI18n();
   const [selectedPeriod, setSelectedPeriod] = useState("Janeiro 2024");
   const [reportType, setReportType] = useState("monthly");
 
@@ -79,10 +81,10 @@ export default function ImpactReports() {
     <div className="p-6">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          Relatórios de Impacto
+          {t.ngo.impactReports.title}
         </h1>
         <p className="text-gray-600">
-          Análise detalhada do impacto educacional em Angola
+          {t.ngo.impactReports.subtitle}
         </p>
       </div>
 
@@ -104,22 +106,22 @@ export default function ImpactReports() {
             </div>
 
             <div className="flex items-center space-x-2">
-              <span className="text-gray-700 font-medium">Tipo:</span>
+              <span className="text-gray-700 font-medium">{t.ngo.impactReports.selector.type}:</span>
               <select
                 value={reportType}
                 onChange={(e) => setReportType(e.target.value)}
                 className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
               >
-                <option value="monthly">Mensal</option>
-                <option value="quarterly">Trimestral</option>
-                <option value="annual">Anual</option>
+                <option value="monthly">{t.ngo.impactReports.reportTypes.monthly}</option>
+                <option value="quarterly">{t.ngo.impactReports.reportTypes.quarterly}</option>
+                <option value="annual">{t.ngo.impactReports.reportTypes.annual}</option>
               </select>
             </div>
           </div>
 
           <button className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center">
             <FaDownload className="mr-2" />
-            Exportar Relatório
+            {t.ngo.impactReports.selector.export}
           </button>
         </div>
       </div>
@@ -133,7 +135,7 @@ export default function ImpactReports() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-gray-900">{currentData.farmersReached.toLocaleString()}</h3>
-              <p className="text-gray-600">Agricultores Alcançados</p>
+              <p className="text-gray-600">{t.ngo.impactReports.metrics.farmersReached}</p>
             </div>
           </div>
         </div>
@@ -145,7 +147,7 @@ export default function ImpactReports() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-gray-900">{currentData.videosWatched.toLocaleString()}</h3>
-              <p className="text-gray-600">Vídeos Assistidos</p>
+              <p className="text-gray-600">{t.ngo.impactReports.metrics.videosWatched}</p>
             </div>
           </div>
         </div>
@@ -157,7 +159,7 @@ export default function ImpactReports() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-gray-900">{currentData.completionRate}%</h3>
-              <p className="text-gray-600">Taxa de Conclusão</p>
+              <p className="text-gray-600">{t.ngo.impactReports.metrics.completionRate}</p>
             </div>
           </div>
         </div>
@@ -169,7 +171,7 @@ export default function ImpactReports() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-gray-900">{currentData.provincesActive}</h3>
-              <p className="text-gray-600">Províncias Ativas</p>
+              <p className="text-gray-600">{t.ngo.impactReports.metrics.provincesActive}</p>
             </div>
           </div>
         </div>
@@ -179,7 +181,7 @@ export default function ImpactReports() {
         {/* Provincial Impact */}
         <div className="bg-white rounded-lg shadow">
           <div className="p-6 border-b border-gray-200">
-            <h2 className="text-xl font-bold text-gray-900">Impacto por Província</h2>
+            <h2 className="text-xl font-bold text-gray-900">{t.ngo.impactReports.sections.provinceBreakdown}</h2>
           </div>
           <div className="p-6">
             <div className="space-y-4">
@@ -187,13 +189,13 @@ export default function ImpactReports() {
                 <div key={province.name} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
                   <div>
                     <h3 className="font-semibold text-gray-900">{province.name}</h3>
-                    <p className="text-sm text-gray-600">{province.farmers.toLocaleString()} agricultores</p>
+                    <p className="text-sm text-gray-600">{province.farmers.toLocaleString()} {t.ngo.impactReports.province.farmers}</p>
                   </div>
                   <div className="text-right">
                     <div className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${getEngagementColor(province.engagement)}`}>
-                      {province.engagement}% engajamento
+                      {province.engagement}% {t.ngo.impactReports.province.engagement}
                     </div>
-                    <p className="text-sm text-gray-600 mt-1">{province.videos} vídeos assistidos</p>
+                    <p className="text-sm text-gray-600 mt-1">{province.videos} {t.ngo.impactReports.province.videos}</p>
                   </div>
                 </div>
               ))}

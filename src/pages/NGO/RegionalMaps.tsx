@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaMapMarkerAlt, FaThermometerHalf, FaCloudRain, FaLeaf, FaExclamationTriangle } from "react-icons/fa";
+import { useI18n } from "../../i18n/useI18n";
 
 const provinces = [
   { 
@@ -50,6 +51,7 @@ const provinces = [
 ];
 
 export default function RegionalMaps() {
+  const { t } = useI18n();
   const [selectedProvince, setSelectedProvince] = useState(provinces[0]);
   const [activeLayer, setActiveLayer] = useState("climate");
 
@@ -59,26 +61,36 @@ export default function RegionalMaps() {
     return "text-red-600 bg-red-100";
   };
 
+  const getActiveLayerTitle = () => {
+    switch (activeLayer) {
+      case "climate": return t.ngo.regionalMaps.layers.climate;
+      case "soil": return t.ngo.regionalMaps.layers.soil;
+      case "rainfall": return t.ngo.regionalMaps.layers.rainfall;
+      case "alerts": return t.ngo.regionalMaps.layers.alerts;
+      default: return t.ngo.regionalMaps.layers.climate;
+    }
+  };
+
   return (
     <div className="p-6">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          Mapas Regionais de Angola
+          {t.ngo.regionalMaps.title}
         </h1>
         <p className="text-gray-600">
-          Monitoramento climático e agrícola por província usando dados da NASA
+          {t.ngo.regionalMaps.subtitle}
         </p>
       </div>
 
       {/* Layer Controls */}
       <div className="mb-6 bg-white rounded-lg shadow p-4">
-        <h3 className="text-lg font-semibold text-gray-900 mb-3">Camadas de Dados</h3>
+        <h3 className="text-lg font-semibold text-gray-900 mb-3">{t.ngo.regionalMaps.layers.title}</h3>
         <div className="flex flex-wrap gap-2">
           {[
-            { id: "climate", name: "Dados Climáticos", icon: <FaThermometerHalf /> },
-            { id: "soil", name: "Saúde do Solo", icon: <FaLeaf /> },
-            { id: "rainfall", name: "Precipitação", icon: <FaCloudRain /> },
-            { id: "alerts", name: "Alertas", icon: <FaExclamationTriangle /> }
+            { id: "climate", name: t.ngo.regionalMaps.layers.climate, icon: <FaThermometerHalf /> },
+            { id: "soil", name: t.ngo.regionalMaps.layers.soil, icon: <FaLeaf /> },
+            { id: "rainfall", name: t.ngo.regionalMaps.layers.rainfall, icon: <FaCloudRain /> },
+            { id: "alerts", name: t.ngo.regionalMaps.layers.alerts, icon: <FaExclamationTriangle /> }
           ].map((layer) => (
             <button
               key={layer.id}
@@ -101,16 +113,16 @@ export default function RegionalMaps() {
         <div className="lg:col-span-2">
           <div className="bg-white rounded-lg shadow">
             <div className="p-4 border-b border-gray-200">
-              <h2 className="text-xl font-bold text-gray-900">Mapa Interativo - {activeLayer === "climate" ? "Dados Climáticos" : activeLayer === "soil" ? "Saúde do Solo" : activeLayer === "rainfall" ? "Precipitação" : "Alertas"}</h2>
+              <h2 className="text-xl font-bold text-gray-900">{t.ngo.regionalMaps.interactiveMap.title} - {getActiveLayerTitle()}</h2>
             </div>
             
             {/* Placeholder for Interactive Map */}
             <div className="h-96 bg-gradient-to-br from-green-100 to-blue-100 p-8 flex items-center justify-center relative">
               <div className="text-center">
                 <FaMapMarkerAlt className="text-6xl text-green-600 mb-4 mx-auto" />
-                <h3 className="text-xl font-semibold text-gray-700 mb-2">Mapa Interativo de Angola</h3>
-                <p className="text-gray-500 mb-4">Visualização dos dados da NASA por província</p>
-                <p className="text-sm text-gray-400">Integração com Mapbox em desenvolvimento</p>
+                <h3 className="text-xl font-semibold text-gray-700 mb-2">{t.ngo.regionalMaps.interactiveMap.title}</h3>
+                <p className="text-gray-500 mb-4">{t.ngo.regionalMaps.interactiveMap.description}</p>
+                <p className="text-sm text-gray-400">{t.ngo.regionalMaps.interactiveMap.integration}</p>
               </div>
               
               {/* Sample Province Markers */}
@@ -139,14 +151,14 @@ export default function RegionalMaps() {
           {/* Selected Province Info */}
           <div className="bg-white rounded-lg shadow p-6">
             <h3 className="text-lg font-bold text-gray-900 mb-4">
-              Província: {selectedProvince.name}
+              {t.ngo.regionalMaps.provinceDetails.title}: {selectedProvince.name}
             </h3>
             
             <div className="space-y-4">
               <div className="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
                 <div className="flex items-center">
                   <FaThermometerHalf className="text-blue-600 mr-2" />
-                  <span className="font-medium">Temperatura</span>
+                  <span className="font-medium">{t.ngo.regionalMaps.provinceDetails.temperature}</span>
                 </div>
                 <span className="font-bold text-blue-600">{selectedProvince.temperature}</span>
               </div>
@@ -154,7 +166,7 @@ export default function RegionalMaps() {
               <div className="flex items-center justify-between p-3 bg-cyan-50 rounded-lg">
                 <div className="flex items-center">
                   <FaCloudRain className="text-cyan-600 mr-2" />
-                  <span className="font-medium">Precipitação</span>
+                  <span className="font-medium">{t.ngo.regionalMaps.provinceDetails.rainfall}</span>
                 </div>
                 <span className="font-bold text-cyan-600">{selectedProvince.rainfall}</span>
               </div>
@@ -162,7 +174,7 @@ export default function RegionalMaps() {
               <div className="flex items-center justify-between p-3 bg-green-50 rounded-lg">
                 <div className="flex items-center">
                   <FaLeaf className="text-green-600 mr-2" />
-                  <span className="font-medium">Saúde do Solo</span>
+                  <span className="font-medium">{t.ngo.regionalMaps.provinceDetails.soilHealth}</span>
                 </div>
                 <span className={`font-bold px-2 py-1 rounded ${getHealthColor(selectedProvince.soilHealth)}`}>
                   {selectedProvince.soilHealth}%
@@ -170,7 +182,7 @@ export default function RegionalMaps() {
               </div>
 
               <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                <span className="font-medium">Agricultores Ativos</span>
+                <span className="font-medium">{t.ngo.regionalMaps.provinceDetails.activeFarmers}</span>
                 <span className="font-bold text-gray-700">{selectedProvince.farmers.toLocaleString()}</span>
               </div>
 
@@ -178,7 +190,7 @@ export default function RegionalMaps() {
                 <div className="flex items-center justify-between p-3 bg-red-50 rounded-lg border border-red-200">
                   <div className="flex items-center">
                     <FaExclamationTriangle className="text-red-600 mr-2" />
-                    <span className="font-medium text-red-700">Alertas Ativos</span>
+                    <span className="font-medium text-red-700">{t.ngo.regionalMaps.provinceDetails.activeAlerts}</span>
                   </div>
                   <span className="font-bold text-red-600">{selectedProvince.alerts}</span>
                 </div>
@@ -188,7 +200,7 @@ export default function RegionalMaps() {
 
           {/* All Provinces Summary */}
           <div className="bg-white rounded-lg shadow p-6">
-            <h3 className="text-lg font-bold text-gray-900 mb-4">Resumo Nacional</h3>
+            <h3 className="text-lg font-bold text-gray-900 mb-4">{t.ngo.regionalMaps.nationalSummary}</h3>
             <div className="space-y-3">
               {provinces.map((province) => (
                 <button

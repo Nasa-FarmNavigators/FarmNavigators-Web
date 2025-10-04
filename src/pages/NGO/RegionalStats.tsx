@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaChartBar, FaUsers, FaVideo, FaMapMarkerAlt, FaClock, FaArrowUp, FaDownload, FaFilter } from "react-icons/fa";
+import { useI18n } from "../../i18n/useI18n";
 
 interface RegionalStats {
   province: string;
@@ -96,14 +97,17 @@ const regionalData: RegionalStats[] = [
 ];
 
 const timeRanges = ["24h", "7d", "30d", "90d"];
-const sortOptions = [
-  { value: "farmers", label: "Agricultores" },
-  { value: "activeUsers", label: "Usuários Ativos" },
-  { value: "videoViews", label: "Visualizações" },
-  { value: "growthRate", label: "Crescimento" }
-];
 
 export default function RegionalStats() {
+  const { t } = useI18n();
+  
+  const sortOptions = [
+    { value: "farmers", label: t.ngo.regionalStats.sortOptions.farmers },
+    { value: "activeUsers", label: t.ngo.regionalStats.sortOptions.activeUsers },
+    { value: "videoViews", label: t.ngo.regionalStats.sortOptions.videoViews },
+    { value: "growthRate", label: t.ngo.regionalStats.sortOptions.growthRate }
+  ];
+  
   const [timeRange, setTimeRange] = useState("30d");
   const [sortBy, setSortBy] = useState("farmers");
   const [searchTerm, setSearchTerm] = useState("");
@@ -142,10 +146,10 @@ export default function RegionalStats() {
     <div className="p-6">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          Estatísticas Regionais
+          {t.ngo.regionalStats.title}
         </h1>
         <p className="text-gray-600">
-          Análise detalhada do engajamento por província em Angola
+          {t.ngo.regionalStats.subtitle}
         </p>
       </div>
 
@@ -158,7 +162,7 @@ export default function RegionalStats() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-gray-900">{totalFarmers.toLocaleString()}</h3>
-              <p className="text-gray-600">Total de Agricultores</p>
+              <p className="text-gray-600">{t.ngo.regionalStats.summaryCards.totalFarmers}</p>
             </div>
           </div>
         </div>
@@ -170,7 +174,7 @@ export default function RegionalStats() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-gray-900">{totalActiveUsers.toLocaleString()}</h3>
-              <p className="text-gray-600">Usuários Ativos</p>
+              <p className="text-gray-600">{t.ngo.regionalStats.summaryCards.activeUsers}</p>
             </div>
           </div>
         </div>
@@ -182,7 +186,7 @@ export default function RegionalStats() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-gray-900">{totalVideoViews.toLocaleString()}</h3>
-              <p className="text-gray-600">Visualizações Totais</p>
+              <p className="text-gray-600">{t.ngo.regionalStats.summaryCards.totalViews}</p>
             </div>
           </div>
         </div>
@@ -194,7 +198,7 @@ export default function RegionalStats() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-gray-900">{avgGrowthRate.toFixed(1)}%</h3>
-              <p className="text-gray-600">Crescimento Médio</p>
+              <p className="text-gray-600">{t.ngo.regionalStats.summaryCards.avgGrowth}</p>
             </div>
           </div>
         </div>
@@ -207,7 +211,7 @@ export default function RegionalStats() {
             {/* Search */}
             <input
               type="text"
-              placeholder="Buscar província..."
+              placeholder={t.ngo.regionalStats.filters.searchPlaceholder}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
@@ -215,7 +219,7 @@ export default function RegionalStats() {
 
             {/* Time Range */}
             <div className="flex items-center space-x-2">
-              <span className="text-gray-700 font-medium">Período:</span>
+              <span className="text-gray-700 font-medium">{t.ngo.regionalStats.filters.period}</span>
               <div className="flex border border-gray-300 rounded-lg overflow-hidden">
                 {timeRanges.map(range => (
                   <button
@@ -227,7 +231,7 @@ export default function RegionalStats() {
                         : "bg-white text-gray-700 hover:bg-gray-50"
                     }`}
                   >
-                    {range}
+                    {t.ngo.regionalStats.timeRanges[range as keyof typeof t.ngo.regionalStats.timeRanges]}
                   </button>
                 ))}
               </div>
@@ -235,7 +239,7 @@ export default function RegionalStats() {
 
             {/* Sort By */}
             <div className="flex items-center space-x-2">
-              <span className="text-gray-700 font-medium">Ordenar por:</span>
+              <span className="text-gray-700 font-medium">{t.ngo.regionalStats.filters.sortBy}</span>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
@@ -250,7 +254,7 @@ export default function RegionalStats() {
 
           <button className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center">
             <FaDownload className="mr-2" />
-            Exportar Dados
+            {t.ngo.regionalStats.filters.exportData}
           </button>
         </div>
       </div>
@@ -258,7 +262,7 @@ export default function RegionalStats() {
       {/* Regional Data Table */}
       <div className="bg-white rounded-lg shadow overflow-hidden">
         <div className="p-6 border-b border-gray-200">
-          <h2 className="text-xl font-bold text-gray-900">Dados por Província</h2>
+          <h2 className="text-xl font-bold text-gray-900">{t.ngo.regionalStats.tableTitle}</h2>
         </div>
         
         <div className="overflow-x-auto">
@@ -266,28 +270,28 @@ export default function RegionalStats() {
             <thead className="bg-gray-50">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Província
+                  {t.ngo.regionalStats.tableHeaders.province}
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Agricultores
+                  {t.ngo.regionalStats.tableHeaders.farmers}
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Usuários Ativos
+                  {t.ngo.regionalStats.tableHeaders.activeUsers}
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Visualizações
+                  {t.ngo.regionalStats.tableHeaders.views}
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Tempo Médio
+                  {t.ngo.regionalStats.tableHeaders.avgTime}
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Categoria Popular
+                  {t.ngo.regionalStats.tableHeaders.topCategory}
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Crescimento
+                  {t.ngo.regionalStats.tableHeaders.growth}
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Última Atividade
+                  {t.ngo.regionalStats.tableHeaders.lastActivity}
                 </th>
               </tr>
             </thead>
@@ -306,7 +310,7 @@ export default function RegionalStats() {
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                     {item.activeUsers.toLocaleString()}
                     <div className="text-xs text-gray-500">
-                      {((item.activeUsers / item.farmers) * 100).toFixed(1)}% ativos
+                      {((item.activeUsers / item.farmers) * 100).toFixed(1)}% {t.ngo.regionalStats.percentActive}
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
@@ -345,14 +349,14 @@ export default function RegionalStats() {
         {/* Engagement Chart */}
         <div className="bg-white rounded-lg shadow">
           <div className="p-6 border-b border-gray-200">
-            <h2 className="text-xl font-bold text-gray-900">Engajamento por Província</h2>
+            <h2 className="text-xl font-bold text-gray-900">{t.ngo.regionalStats.charts.engagement.title}</h2>
           </div>
           <div className="p-6">
             <div className="h-64 bg-gradient-to-br from-green-50 to-blue-50 rounded-lg flex items-center justify-center">
               <div className="text-center">
                 <FaChartBar className="text-6xl text-green-600 mb-4 mx-auto" />
-                <h3 className="text-lg font-semibold text-gray-700 mb-2">Gráfico de Barras</h3>
-                <p className="text-gray-500 text-sm">Comparação de engajamento entre províncias</p>
+                <h3 className="text-lg font-semibold text-gray-700 mb-2">{t.ngo.regionalStats.charts.engagement.subtitle}</h3>
+                <p className="text-gray-500 text-sm">{t.ngo.regionalStats.charts.engagement.description}</p>
               </div>
             </div>
           </div>
@@ -361,14 +365,14 @@ export default function RegionalStats() {
         {/* Growth Trends */}
         <div className="bg-white rounded-lg shadow">
           <div className="p-6 border-b border-gray-200">
-            <h2 className="text-xl font-bold text-gray-900">Tendências de Crescimento</h2>
+            <h2 className="text-xl font-bold text-gray-900">{t.ngo.regionalStats.charts.growth.title}</h2>
           </div>
           <div className="p-6">
             <div className="h-64 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg flex items-center justify-center">
               <div className="text-center">
                 <FaArrowUp className="text-6xl text-purple-600 mb-4 mx-auto" />
-                <h3 className="text-lg font-semibold text-gray-700 mb-2">Gráfico de Linhas</h3>
-                <p className="text-gray-500 text-sm">Evolução do crescimento ao longo do tempo</p>
+                <h3 className="text-lg font-semibold text-gray-700 mb-2">{t.ngo.regionalStats.charts.growth.subtitle}</h3>
+                <p className="text-gray-500 text-sm">{t.ngo.regionalStats.charts.growth.description}</p>
               </div>
             </div>
           </div>
